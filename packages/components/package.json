@@ -1,0 +1,26 @@
+{
+    "name": "@atomico/ui",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "atomico": "latest"
+    },
+    "dependencies": {
+        "@atomico/hooks": "^3.48.0",
+        "@atomico/tsconfig": "^1.0.0"
+    },
+    "postcss": {
+        "plugins": {
+            "@atomico/postcss-tokens": {
+                "prefix": "a"
+            }
+        }
+    },
+    "devDependencies": {
+        "@atomico/postcss-tokens": "^1.8.0"
+    }
+}

@@ -1,0 +1,25 @@
+input:
+    border:
+        width: 1px
+        style: solid
+    color:
+        background: red
+        border: red
+        outline: red
+button:
+    border:
+        width: 0px
+        style: solid
+        radius: 1rem
+    color:
+        background: white
+        border: transparent
+        outline: $field.border.outline
+switch:
+    border:
+        width: 1px
+        style: solid
+    color:
+        background: red
+        border: red
+        outline: red

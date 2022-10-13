@@ -1,0 +1,15 @@
+{
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "storybook": "npm run start -w=storybook"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": false
+    }
+}
