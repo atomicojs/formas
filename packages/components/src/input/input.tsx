@@ -3,6 +3,7 @@ import { useRender } from "@atomico/hooks/use-render";
 
 function input({ theme }: Props<typeof input>) {
     useRender(() => <input type="text" slot="input" />);
+
     return (
         <host shadowDom>
             <div>

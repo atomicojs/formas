@@ -6,12 +6,13 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "peerDependencies": {
-        "atomico": "latest"
-    },
     "dependencies": {
-        "@atomico/hooks": "^3.48.0",
-        "@atomico/tsconfig": "^1.0.0"
+        "atomico": "^1.65.1",
+        "@atomico/hooks": "^3.48.0"
+    },
+    "devDependencies": {
+        "@atomico/tsconfig": "^1.0.0",
+        "@atomico/postcss-tokens": "^1.8.0"
     },
     "postcss": {
         "plugins": {
@@ -19,8 +20,5 @@
                 "prefix": "a"
             }
         }
-    },
-    "devDependencies": {
-        "@atomico/postcss-tokens": "^1.8.0"
     }
 }

@@ -11,5 +11,8 @@
     "prettier": {
         "tabWidth": 4,
         "singleQuote": false
+    },
+    "dependencies": {
+        "typescript": "^4.8.4"
     }
 }
