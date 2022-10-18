@@ -11,7 +11,10 @@ button.props = {
 };
 
 button.styles = css`
-    @tokens "../theme/theme.yaml" (import: button);
+    @tokens "../theme/theme.yaml" {
+        import: button;
+    }
+
     :host {
         color: var(--color-text);
         padding: 1rem;
@@ -23,5 +26,3 @@ button.styles = css`
 `;
 
 export const Button = c(button);
-
-customElements.define("a-button", Button);

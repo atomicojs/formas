@@ -20,6 +20,10 @@ module.exports = {
                         postcss: true,
                         minify: true,
                     },
+                    customElements: {
+                        prefix: "a",
+                        define: ["components/src/**/*"],
+                    },
                 }),
             ],
         });

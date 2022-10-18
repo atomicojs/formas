@@ -1,20 +1,29 @@
 import { Props, c, css } from "atomico";
 import { useRender } from "@atomico/hooks/use-render";
+import { InputLayout } from "./input-layout";
 
-function input({ theme }: Props<typeof input>) {
-    useRender(() => <input type="text" slot="input" />);
+function input({ ...props }: Props<typeof input>) {
+    useRender(() => <input slot="input" {...props} />);
 
     return (
         <host shadowDom>
             <div>
-                <slot name="input"></slot>
+                <InputLayout>
+                    <slot slot="input" name="input"></slot>
+                </InputLayout>
             </div>
         </host>
     );
 }
 
 input.props = {
-    theme: {
+    type: {
+        type: String,
+    },
+    name: {
+        type: String,
+    },
+    value: {
         type: String,
     },
 };
@@ -23,7 +32,6 @@ input.styles = css`
     @tokens "../theme/theme.yaml" (import: input);
     :host {
         color: var(--color-text);
-        padding: 1rem;
         display: flex;
         color: var(--color-text);
         background: var(--color-background);
@@ -32,5 +40,3 @@ input.styles = css`
 `;
 
 export const Input = c(input);
-
-customElements.define("a-input", Input);

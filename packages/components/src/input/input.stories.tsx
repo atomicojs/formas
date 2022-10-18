@@ -10,4 +10,8 @@ export default {
     }),
 };
 
-export const ExampleButton = () => <Input>ok!</Input>;
+export const ExampleButton = () => (
+    <Input>
+        <span>😊</span>
+    </Input>
+);

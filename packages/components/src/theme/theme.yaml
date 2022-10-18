@@ -1,9 +1,17 @@
+generic:
+    font:
+        size: 1rem
+    space:
+        around: 1rem
+        between: 1rem
+    size:
+        height: 2.5rem
 input:
     border:
         width: 1px
         style: solid
     color:
-        background: red
+        background: "#f1f1f1"
         border: red
         outline: red
 button:
@@ -23,3 +31,10 @@ switch:
         background: red
         border: red
         outline: red
+dropdown:
+    border:
+        width: 0px
+        style: solid
+    color:
+        background: red
+        border: red
