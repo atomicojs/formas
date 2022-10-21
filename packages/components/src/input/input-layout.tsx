@@ -10,6 +10,7 @@ import {
 } from "atomico";
 import { useListener } from "@atomico/hooks/use-listener";
 import { DropdownLayout } from "../dropdown/dropdown-layout";
+import { GenericStateTokens, GenericTokens } from "../tokens/tokens";
 
 type CLickIn =
     | "input"
@@ -101,13 +102,12 @@ inputLayout.props = {
 };
 
 inputLayout.styles = [
+    GenericTokens,
+    GenericStateTokens,
     css`
-        @tokens "../theme/theme.yaml" (import: generic);
-    `,
-    css`
-        @tokens "../theme/theme.yaml" (import: input);
+        @tokens "../tokens/tokens.yaml" (import: input);
         :host {
-            font-size: var(--font-size);
+            --size-icon: calc(var(--size-height) - (var(--border-width) * 2));
         }
         :host([focused]) {
             --outline: var(--border-focus-width) var(--border-focus-style)
@@ -115,19 +115,18 @@ inputLayout.styles = [
         }
         :host([disabled]) {
             pointer-events: none;
-            opacity: var(--opacity-disabled);
+            opacity: var(--state-disabled-opacity);
         }
         .input {
             display: flex;
-            background: var(--color-input-60);
-            border-radius: var(--border-input-radius);
-
+            background: var(--color-background);
+            border-radius: var(--radius-rounded);
+            border: var(--border-width) var(--border-style) var(--color-border);
             height: var(--size-height);
             box-sizing: border-box;
             position: relative;
         }
         .action-row {
-            padding: var(--padding-action-y);
             box-sizing: border-box;
             min-width: var(--space-around);
             height: 100%;
@@ -136,8 +135,8 @@ inputLayout.styles = [
             display: flex;
             align-items: center;
             justify-content: center;
-            width: var(--size-height);
-            height: var(--size-height);
+            width: var(--size-icon);
+            height: var(--size-icon);
         }
         ::slotted([slot="input"]) {
             width: 100%;

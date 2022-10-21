@@ -1,0 +1,62 @@
+generic:
+    font:
+        size: 1rem
+    space:
+        around: 1rem
+        between: 1rem
+        safe: .4rem
+    size:
+        height: 2.5rem
+    radius:
+        rounded: .5rem
+        circle: 5rem
+state:
+    disabled:
+        opacity: .5
+    focused:
+        outline:
+            width: 1px
+            style: solid
+input:
+    border:
+        width: 1px
+        style: solid
+    color:
+        background: "#fff"
+        border: red
+button:
+    border:
+        width: 1px
+        style: solid
+    color:
+        background: white
+        border: transparent
+        outline: $field.border.outline
+switch:
+    border:
+        width: 1px
+        style: solid
+    color:
+        background: red
+        border: red
+        outline: red
+dropdown:
+    border:
+        width: 0px
+        style: solid
+    color:
+        background: "#fff"
+        border: transparent
+variation:
+    [size=small]:
+        generic:
+            font:
+                size: .5rem
+            space:
+                around: .5rem
+                between: .5rem
+            size:
+                height: 2rem
+            radius:
+                rounded: .25rem
+                circle: 5rem

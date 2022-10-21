@@ -1,7 +1,0 @@
-border:
-    width: $field.border.width
-    style: $field.border.style
-color:
-    background: rgba(0,0,0,.5)
-    border: transparent
-    outline: $field.border.outline
