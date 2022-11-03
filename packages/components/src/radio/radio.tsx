@@ -1,12 +1,12 @@
 import { Props, c, css, useHost } from "atomico";
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
+import { useFormInputRadio } from "@atomico/hooks/use-form";
 import { Checkbox } from "../checkbox/checkbox";
-import { useCheckbox } from "../hooks/use-checkbox";
 
-function component({ tabIndex }: Props<typeof component>) {
+function component({ tabIndex, value }: Props<typeof component>) {
     const host = useHost();
-    const refInput = useCheckbox("checkbox");
+    const refInput = useFormInputRadio(<input value={value} />);
     const disabled = useDisabled();
 
     useReflectEvent(host, refInput, "click");
@@ -33,24 +33,17 @@ component.props = {
 component.styles = [
     Checkbox.styles,
     css`
-        @tokens "../tokens/tokens.yaml" (import: switch);
+        @tokens "../tokens/tokens.yaml" (import: radio);
 
         :host {
-            --state-scale: 0.38;
-            --box-width: 0.9;
-            --box-height: 0.5;
+            --state-width: 0.7;
             --radius: var(--radius-circle);
             --state-unit: calc(var(--size-height) * var(--box-height));
-            --state-width: 0.7;
             --state-radius: var(--radius-circle);
-            --state-transform: translateX(-50%);
-            --background-state: var(--color-border-off);
         }
-
         :host([checked]) {
-            --state-transform: translateX(50%);
         }
     `,
 ];
 
-export const Switch = c(component);
+export const Radio = c(component);

@@ -54,6 +54,7 @@ dropdownLayout.styles = [
             --transform: var(--transform-from);
             --transition: 0.25s ease all;
             --opacity: 0;
+            --background: var(--color-fill);
         }
 
         :host([show]) {
@@ -76,7 +77,7 @@ dropdownLayout.styles = [
         }
 
         .dropdown-card {
-            background: var(--color-background);
+            background: var(--background);
             border-radius: var(--radius-rounded);
             border: var(--border-width) var(--border-style) var(--color-border);
             display: grid;

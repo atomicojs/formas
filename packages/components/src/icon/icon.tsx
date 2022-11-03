@@ -6,7 +6,7 @@ function icon({ type, size, icons, color }: Props<typeof icon>) {
 
     return (
         <host shadowDom>
-            <Element></Element>
+            <Element cloneNode></Element>
             <style>
                 {size && `:host{--width: ${size};}`}
                 {color && `:host{--color: ${color};}`}
@@ -29,7 +29,6 @@ icon.props = {
     color: {
         type: String,
         reflect: true,
-        value: "currentColor",
     },
     icons: {
         type: Object,
@@ -40,7 +39,7 @@ icon.props = {
 icon.styles = css`
     :host {
         width: var(--width);
-        color: var(--color);
+        color: var(--color, currentColor);
         display: inline-flex;
         align-items: center;
         justify-items: center;
@@ -50,10 +49,7 @@ icon.styles = css`
         margin: auto;
     }
     path {
-        fill: var(--color-status, var(--color-current-contrast, currentColor));
-    }
-    :host([define]) {
-        display: none;
+        fill: currentColor;
     }
 `;
 

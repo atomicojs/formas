@@ -6,10 +6,27 @@ generic:
         between: 1rem
         safe: .4rem
     size:
+        icon: .85em
         height: 2.5rem
     radius:
         rounded: .5rem
         circle: 5rem
+    color:
+        fill: white
+        neutral: rgba(0,0,0,.25)
+        accent: black
+        border:
+            on: $color.accent
+            off: $color.neutral
+        background:
+            off: $color.fill
+            on: $color.fill
+        content:
+            off: transparent
+            on: $color.fill
+        state:
+            off: transparent
+            on: $color.accent
 state:
     disabled:
         opacity: .5
@@ -21,42 +38,35 @@ input:
     border:
         width: 1px
         style: solid
-    color:
-        background: "#fff"
-        border: red
 button:
     border:
         width: 1px
         style: solid
-    color:
-        background: white
-        border: transparent
-        outline: $field.border.outline
+checkbox:
+    border:
+        width: 1px
+        style: solid
 switch:
     border:
         width: 1px
         style: solid
-    color:
-        background: red
-        border: red
-        outline: red
+radio:
+    border:
+        width: 1px
+        style: solid
 dropdown:
     border:
         width: 0px
         style: solid
-    color:
-        background: "#fff"
-        border: transparent
-variation:
-    [size=small]:
-        generic:
-            font:
-                size: .5rem
-            space:
-                around: .5rem
-                between: .5rem
-            size:
-                height: 2rem
-            radius:
-                rounded: .25rem
-                circle: 5rem
+[size=small]:
+    generic:
+        font:
+            size: .5rem
+        space:
+            around: .5rem
+            between: .5rem
+        size:
+            height: 2rem
+        radius:
+            rounded: .25rem
+            circle: 5rem

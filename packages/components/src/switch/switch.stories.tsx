@@ -2,12 +2,8 @@ import { Switch } from "./switch";
 import { defineArgTypes } from "@atomico/storybook/utils";
 
 export default {
-    title: "Switch",
-    argTypes: defineArgTypes(Switch),
+    title: "Components/Switch",
+    // argTypes: defineArgTypes(Switch, { size: false }),
 };
 
-export const Default = (props) => <Switch checked={props.checked}></Switch>;
-
-Default.args = {
-    checked: false,
-};
+export const Default = (props) => <Switch {...props}></Switch>;

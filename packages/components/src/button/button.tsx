@@ -1,13 +1,4 @@
-import {
-    Type,
-    Props,
-    DOMListener,
-    c,
-    css,
-    useRef,
-    useProp,
-    useHost,
-} from "atomico";
+import { Type, Props, c, css, useRef, useProp, useHost } from "atomico";
 import { useSlot } from "@atomico/hooks/use-slot";
 import { useRender } from "@atomico/hooks/use-render";
 import { useDisabled } from "@atomico/hooks/use-disabled";
@@ -132,8 +123,7 @@ button.styles = [
         :host {
             --size-icon: calc(var(--size-height) - (var(--border-width) * 2));
             --radius: var(--radius-rounded);
-            --background: var(--color-background);
-
+            --background: var(--color-fill);
             display: inline-block;
             height: var(--size-height);
             white-space: nowrap;

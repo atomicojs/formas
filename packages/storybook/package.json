@@ -14,7 +14,6 @@
         "build": "build-storybook"
     },
     "devDependencies": {
-        "@atomico/storybook": "^1.2.3",
         "@storybook/addon-essentials": "^6.5.12",
         "@storybook/addon-links": "^6.5.12",
         "@storybook/builder-vite": "^0.2.4",
@@ -27,5 +26,8 @@
                 "defaultValue": true
             }
         }
+    },
+    "dependencies": {
+        "@atomico/storybook": "^1.4.1"
     }
 }

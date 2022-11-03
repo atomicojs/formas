@@ -4,7 +4,7 @@ import { Button } from "../button/button";
 
 export default {
     title: "Components/Dropdown",
-    argTypes: defineArgTypes(Dropdown),
+    // argTypes: defineArgTypes(Dropdown),
 };
 
 export const Default = () => (

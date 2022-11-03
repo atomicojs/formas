@@ -4,11 +4,7 @@ import { Icon } from "../icon/icon";
 
 export default {
     title: "components/Input",
-    argTypes: defineArgTypes(Input, {
-        color: {
-            control: "color",
-        },
-    }),
+    // argTypes: defineArgTypes(Input),
 };
 
 const args = {

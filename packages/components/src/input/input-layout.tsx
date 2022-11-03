@@ -107,21 +107,21 @@ inputLayout.styles = [
     css`
         @tokens "../tokens/tokens.yaml" (import: input);
         :host {
-            --size-icon: calc(var(--size-height) - (var(--border-width) * 2));
+            --background: var(--color-fill);
+            --size-icon-box: calc(
+                var(--size-height) - (var(--border-width) * 2)
+            );
         }
-        :host([focused]) {
-            --outline: var(--border-focus-width) var(--border-focus-style)
-                var(--border-focus-color);
-        }
+
         :host([disabled]) {
             pointer-events: none;
             opacity: var(--state-disabled-opacity);
         }
         .input {
             display: flex;
-            background: var(--color-background);
+            background: var(--background);
             border-radius: var(--radius-rounded);
-            border: var(--border-width) var(--border-style) var(--color-border);
+            border: var(--border-width) var(--border-style) var(--color-neutral);
             height: var(--size-height);
             box-sizing: border-box;
             position: relative;
@@ -135,8 +135,8 @@ inputLayout.styles = [
             display: flex;
             align-items: center;
             justify-content: center;
-            width: var(--size-icon);
-            height: var(--size-icon);
+            width: var(--size-icon-box);
+            height: var(--size-icon-box);
         }
         ::slotted([slot="input"]) {
             width: 100%;

@@ -4,7 +4,7 @@ import { defineArgTypes } from "@atomico/storybook/utils";
 
 export default {
     title: "Components/Icon",
-    argTypes: defineArgTypes(Icon),
+    // argTypes: defineArgTypes(Icon),
 };
 
 export const Default = (props) => (
