@@ -3,7 +3,7 @@
         "packages/*"
     ],
     "scripts": {
-        "storybook": "npm run start -w=storybook"
+        "storybook": "npm run storybook -w=storybook"
     },
     "keywords": [],
     "author": "",
