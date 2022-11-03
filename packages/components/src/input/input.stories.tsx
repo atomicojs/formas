@@ -1,10 +1,10 @@
-import { defineArgTypes } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook/utils";
 import { Input } from "./input";
 import { Icon } from "../icon/icon";
 
 export default {
     title: "components/Input",
-    // argTypes: defineArgTypes(Input),
+    ...define(Input),
 };
 
 const args = {

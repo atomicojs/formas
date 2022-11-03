@@ -1,7 +1,9 @@
 import { Select, SelectOption } from "./select";
+import { define } from "@atomico/storybook/utils";
 
 export default {
     title: "Components/Select",
+    ...define(Select),
 };
 
 export const Default = (props) => (

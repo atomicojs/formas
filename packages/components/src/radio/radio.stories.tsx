@@ -1,9 +1,9 @@
 import { Radio } from "./radio";
-import { defineArgTypes } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook/utils";
 
 export default {
     title: "Components/Radio",
-    // argTypes: defineArgTypes(Radio),
+    ...define(Radio),
 };
 
 export const Default = (props) => <Radio {...props}></Radio>;

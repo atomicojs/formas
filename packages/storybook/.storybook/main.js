@@ -22,6 +22,10 @@ export default {
                         postcss: true,
                         minify: true,
                     },
+                    customElements: {
+                        prefix: "a",
+                        define: ["components/src/**/*"],
+                    },
                 }),
             ],
         });

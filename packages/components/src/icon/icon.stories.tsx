@@ -1,10 +1,10 @@
 import { Icon } from "./icon";
 import { Icons, IconsKeys } from "./icons";
-import { defineArgTypes } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook/utils";
 
 export default {
     title: "Components/Icon",
-    // argTypes: defineArgTypes(Icon),
+    ...define(Icon),
 };
 
 export const Default = (props) => (

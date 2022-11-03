@@ -1,10 +1,10 @@
-import { defineArgTypes } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook/utils";
 import { Dropdown } from "./dropdown";
 import { Button } from "../button/button";
 
 export default {
     title: "Components/Dropdown",
-    // argTypes: defineArgTypes(Dropdown),
+    ...define(Dropdown),
 };
 
 export const Default = () => (
