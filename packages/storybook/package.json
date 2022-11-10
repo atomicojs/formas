@@ -8,6 +8,9 @@
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },
+    "dependencies": {
+        "atomico": "^1.68.0"
+    },
     "devDependencies": {
         "@atomico/vite": "^2.3.2",
         "@storybook/addon-actions": "^7.0.0-alpha.47",

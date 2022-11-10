@@ -7,10 +7,10 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@atomico/hooks": "^3.48.0",
+        "@atomico/hooks": "^3.49.0",
         "@atomico/keen-slider": "^1.2.0",
         "@floating-ui/dom": "^1.0.2",
-        "atomico": "^1.66.0"
+        "atomico": "^1.68.0"
     },
     "devDependencies": {
         "@atomico/tsconfig": "^1.0.0"
