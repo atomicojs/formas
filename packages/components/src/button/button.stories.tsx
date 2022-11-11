@@ -1,10 +1,10 @@
 import { Button } from "./button";
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 import { Icon } from "../icon/icon";
 
 export default {
-    title: "components/Button",
     ...define(Button),
+    title: "Components/Button",
 };
 
 export const Default = (props) => <Button {...props}>Button</Button>;

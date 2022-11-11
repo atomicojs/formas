@@ -1,19 +1,17 @@
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 import { Input } from "./input";
 import { Icon } from "../icon/icon";
 
 export default {
     title: "components/Input",
-    ...define(Input),
+    ...define(Input, {
+        args: {
+            placeholder: "Placeholder...",
+        },
+    }),
 };
 
-const args = {
-    placeholder: "Placeholder...",
-};
-
-export const BasicInput = (props) => <Input {...props}></Input>;
-
-BasicInput.args = args;
+export const Default = (props) => <Input {...props}></Input>;
 
 export const IconPrefixInput = (props) => (
     <Input {...props}>
@@ -21,12 +19,8 @@ export const IconPrefixInput = (props) => (
     </Input>
 );
 
-IconPrefixInput.args = args;
-
 export const IconSuffixInput = (props) => (
     <Input {...props}>
         <Icon slot="icon-suffix"></Icon>
     </Input>
 );
-
-IconSuffixInput.args = args;

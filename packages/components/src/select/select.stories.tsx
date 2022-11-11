@@ -1,5 +1,5 @@
 import { Select, SelectOption } from "./select";
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 
 export default {
     title: "Components/Select",

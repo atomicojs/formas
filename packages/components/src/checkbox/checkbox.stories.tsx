@@ -1,7 +1,6 @@
 import { Checkbox } from "./checkbox";
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 
-console.log(define(Checkbox));
 export default {
     title: "Components/Checkbox",
     ...define(Checkbox),

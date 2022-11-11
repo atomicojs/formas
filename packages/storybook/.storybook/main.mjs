@@ -7,13 +7,16 @@ export default {
         "../../components/*.stories.mdx",
         "../../components/*.stories.@(js|jsx|ts|tsx)",
     ],
-    addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+    addons: [
+        "@storybook/addon-links",
+        "@storybook/addon-essentials",
+        "@storybook/addon-docs",
+    ],
     framework: {
         name: "@storybook/web-components-vite",
         options: {},
     },
     async viteFinal(config, { configType }) {
-        // return the customized config
         return mergeConfig(config, {
             plugins: [
                 ...(await import("@atomico/vite")).default({

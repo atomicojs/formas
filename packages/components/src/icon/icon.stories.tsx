@@ -1,6 +1,6 @@
 import { Icon } from "./icon";
 import { Icons, IconsKeys } from "./icons";
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 
 export default {
     title: "Components/Icon",

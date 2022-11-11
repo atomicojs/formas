@@ -1,5 +1,5 @@
 import { Radio } from "./radio";
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 
 export default {
     title: "Components/Radio",

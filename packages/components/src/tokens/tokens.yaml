@@ -61,12 +61,13 @@ dropdown:
 [size=small]:
     generic:
         font:
-            size: .5rem
+            size: .85rem
         space:
-            around: .5rem
-            between: .5rem
+            around: 1rem
+            between: 1rem
+            safe: .4rem
         size:
             height: 2rem
         radius:
-            rounded: .25rem
+            rounded: .4rem
             circle: 5rem

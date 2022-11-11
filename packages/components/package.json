@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {},
     "keywords": [],
-    "author": "",
+    "type": "module",
     "license": "ISC",
     "dependencies": {
         "@atomico/hooks": "^3.49.0",

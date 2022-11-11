@@ -1,4 +1,4 @@
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 import { Dropdown } from "./dropdown";
 import { Button } from "../button/button";
 

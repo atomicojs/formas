@@ -61,6 +61,7 @@ checkbox.styles = [
             --border-color: var(--color-border-off);
             --radius: var(--radius-rounded);
             color: var(--color);
+            display: inline-block;
         }
 
         :host([checked]) {

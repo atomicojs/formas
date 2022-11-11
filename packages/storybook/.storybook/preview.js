@@ -1,6 +1,5 @@
-// import "./disable-hmr";
 import { decorator } from "@atomico/storybook";
-import { options } from "@atomico/storybook/utils";
+import { options } from "@atomico/storybook";
 
 options.global = {
     size: {
@@ -9,10 +8,6 @@ options.global = {
     },
     focused: false,
     focusable: false,
-};
-
-export const parameters = {
-    actions: { argTypesRegex: "^on.*" },
 };
 
 export const decorators = [decorator];

@@ -1,5 +1,5 @@
 import { Switch } from "./switch";
-import { define } from "@atomico/storybook/utils";
+import { define } from "@atomico/storybook";
 
 export default {
     title: "Components/Switch",
