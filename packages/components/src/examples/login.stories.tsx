@@ -1,4 +1,4 @@
-import { Input, Button, Checkbox, Icon } from "../components";
+import { Input, Button, Checkbox, Icon, Label } from "../components";
 
 export default {
     title: "Example/Login",
@@ -13,10 +13,10 @@ export const Default = () => (
             <Input type="password" placeholder="Password">
                 <Icon type="lock" slot="icon-prefix"></Icon>
             </Input>
-            <label>
-                <Checkbox></Checkbox>
+            <Label>
+                <Checkbox slot="action"></Checkbox>
                 Remember password
-            </label>
+            </Label>
             <br />
             <Button>Submit</Button>
         </form>

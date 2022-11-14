@@ -128,7 +128,6 @@ button.styles = [
             height: var(--size-height);
             white-space: nowrap;
         }
-
         :host([only-icon-prefix]) .action-suffix {
             display: none;
         }
@@ -141,7 +140,6 @@ button.styles = [
             --background: transparent;
             --border-width: 0px;
         }
-
         .button {
             position: relative;
             padding: 0px;
@@ -158,17 +156,14 @@ button.styles = [
             background: var(--background);
             transition: var(--transition-action);
         }
-
         .content {
             flex: 0%;
         }
-
         .action {
             box-sizing: border-box;
             min-width: var(--space-around);
             height: 100%;
         }
-
         .row {
             display: flex;
             align-items: center;
@@ -176,7 +171,6 @@ button.styles = [
             z-index: 1;
             height: 100%;
         }
-
         .background {
             width: 100%;
             height: 100%;
@@ -185,7 +179,6 @@ button.styles = [
             left: 0;
             box-sizing: border-box;
         }
-
         .icon {
             display: flex;
             align-items: center;
