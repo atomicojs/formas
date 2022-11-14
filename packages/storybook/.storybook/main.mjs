@@ -23,7 +23,6 @@ export default {
                     storybook: ["components/**/*"],
                     cssLiterals: {
                         postcss: true,
-                        minify: true,
                     },
                     customElements: {
                         prefix: "a",

@@ -125,6 +125,7 @@ inputLayout.styles = [
             height: var(--size-height);
             box-sizing: border-box;
             position: relative;
+            outline: var(--outline);
         }
         .action-row {
             box-sizing: border-box;

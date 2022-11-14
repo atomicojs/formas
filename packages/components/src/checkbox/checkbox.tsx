@@ -1,5 +1,4 @@
-import { Props, c, css, useHost } from "atomico";
-// import { useCheckbox } from "../hooks/use-checkbox";
+import { Props, c, css, useHost, useProp } from "atomico";
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { InputGenericProps } from "../props";
@@ -11,6 +10,7 @@ function checkbox({ tabIndex }: Props<typeof checkbox>) {
     const host = useHost();
     const refInput = useCheckbox("radio");
     const disabled = useDisabled();
+    const [, setFocused] = useProp("focused");
 
     useReflectEvent(host, refInput, "click");
 
@@ -20,10 +20,12 @@ function checkbox({ tabIndex }: Props<typeof checkbox>) {
                 class="checkbox"
                 disabled={disabled}
                 tabIndex={disabled ? -1 : tabIndex}
+                onfocus={() => setFocused(true)}
+                onblur={() => setFocused(false)}
             >
                 <div class="checkbox-box">
                     <div class="checkbox-state">
-                        <Icon size="var(--size-icon)" type="check"></Icon>
+                        <Icon type="check"></Icon>
                     </div>
                 </div>
             </button>
@@ -79,6 +81,7 @@ checkbox.styles = [
             padding: 0;
             cursor: pointer;
             display: flex;
+            outline: none;
         }
 
         .checkbox-box {
@@ -91,6 +94,7 @@ checkbox.styles = [
             overflow: hidden;
             box-sizing: border-box;
             display: flex;
+            outline: var(--outline);
         }
 
         .checkbox-state {

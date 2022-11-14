@@ -70,7 +70,6 @@ dropdownLayout.styles = [
             left: var(--left);
             padding: 0.25rem 0px;
             visibility: var(--visibility);
-            opacity: var(--opacity);
             transform: var(--transform);
             transition: var(--transition);
             box-sizing: border-box;

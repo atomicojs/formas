@@ -1,4 +1,5 @@
 import { Props, c, css, JSX } from "atomico";
+import { GenericTokens } from "../components";
 import { Icons, IconsKeys } from "./icons";
 
 function icon({ type, size, icons, color }: Props<typeof icon>) {
@@ -24,7 +25,6 @@ icon.props = {
     size: {
         type: String,
         reflect: true,
-        value: "1em",
     },
     color: {
         type: String,
@@ -36,21 +36,24 @@ icon.props = {
     },
 };
 
-icon.styles = css`
-    :host {
-        width: var(--width);
-        color: var(--color, currentColor);
-        display: inline-flex;
-        align-items: center;
-        justify-items: center;
-    }
-    svg {
-        width: 100%;
-        margin: auto;
-    }
-    path {
-        fill: currentColor;
-    }
-`;
+icon.styles = [
+    GenericTokens,
+    css`
+        :host {
+            width: var(--width, var(--size-icon));
+            color: var(--color, currentColor);
+            display: inline-flex;
+            align-items: center;
+            justify-items: center;
+        }
+        svg {
+            width: 100%;
+            margin: auto;
+        }
+        path {
+            fill: currentColor;
+        }
+    `,
+];
 
 export const Icon = c(icon);

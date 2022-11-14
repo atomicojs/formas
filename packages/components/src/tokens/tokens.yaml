@@ -27,12 +27,19 @@ generic:
         state:
             off: transparent
             on: $color.accent
-state:
-    disabled:
-        opacity: .5
-    focused:
         outline:
-            width: 1px
+            off: transparent
+            on: rgba(0,0,0,.1)
+    transition:
+        action: .25s ease all
+    [disabled=true]:
+        opacity: .5
+    outline:
+        width: 2px
+        style: solid
+    [focused=true]:
+        outline:
+            width: 2px
             style: solid
 input:
     border:

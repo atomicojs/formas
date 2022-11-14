@@ -129,9 +129,6 @@ button.styles = [
             white-space: nowrap;
         }
 
-        :host([focused]) {
-        }
-
         :host([only-icon-prefix]) .action-suffix {
             display: none;
         }
@@ -151,7 +148,7 @@ button.styles = [
             width: 100%;
             height: var(--size-height);
             min-width: var(--size-height);
-            outline: none;
+            outline: var(--outline);
             border: var(--border-width) var(--border-style) var(--color-border);
             border-radius: var(--radius);
             font-family: unset;
@@ -159,6 +156,7 @@ button.styles = [
             overflow: hidden;
             cursor: pointer;
             background: var(--background);
+            transition: var(--transition-action);
         }
 
         .content {

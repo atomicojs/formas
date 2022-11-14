@@ -1,4 +1,4 @@
-import { Props, c, css, useHost } from "atomico";
+import { Props, c, css, useHost, useProp } from "atomico";
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { useFormInputRadio } from "@atomico/hooks/use-form";
@@ -8,6 +8,7 @@ function component({ tabIndex, value }: Props<typeof component>) {
     const host = useHost();
     const refInput = useFormInputRadio(<input value={value} />);
     const disabled = useDisabled();
+    const [, setFocused] = useProp("focused");
 
     useReflectEvent(host, refInput, "click");
 
@@ -17,6 +18,8 @@ function component({ tabIndex, value }: Props<typeof component>) {
                 class="checkbox"
                 disabled={disabled}
                 tabIndex={disabled ? -1 : tabIndex}
+                onfocus={() => setFocused(true)}
+                onblur={() => setFocused(false)}
             >
                 <div class="checkbox-box">
                     <div class="checkbox-state"></div>
@@ -40,8 +43,6 @@ component.styles = [
             --radius: var(--radius-circle);
             --state-unit: calc(var(--size-height) * var(--box-height));
             --state-radius: var(--radius-circle);
-        }
-        :host([checked]) {
         }
     `,
 ];

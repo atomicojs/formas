@@ -61,12 +61,7 @@ function select({ name, placeholder, size }: Props<typeof select>) {
                 focused={focused}
             >
                 <slot slot="input" name="input"></slot>
-                <Icon
-                    size="var(--size-icon)"
-                    class="input-icon"
-                    type="down"
-                    slot="icon-suffix"
-                ></Icon>
+                <Icon class="input-icon" type="down" slot="icon-suffix"></Icon>
             </InputLayout>
         </host>
     );
