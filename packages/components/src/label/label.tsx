@@ -23,12 +23,15 @@ function label() {
 }
 
 label.props = {
-    layout: {
-        type: String,
+    vertical: {
+        type: Boolean,
         reflect: true,
-        value: (): "vertical" | "horizontal" => "horizontal",
     },
     reverse: {
+        type: Boolean,
+        reflect: true,
+    },
+    gap: {
         type: Boolean,
         reflect: true,
     },
@@ -40,19 +43,25 @@ label.styles = [
         :host {
             display: flex;
             align-items: center;
-            gap: var(--space-between);
+
+            gap: var(--gap);
+        }
+        :host([gap]) {
+            --gap: var(--space-between);
         }
         .content {
             flex: 0%;
             cursor: pointer;
         }
-        :host([layout="vertical"]) {
+
+        :host([vertical][gap]) {
             flex-flow: column;
+            --gap: calc(var(--space-between) / 2);
         }
         :host([reverse]) {
             flex-flow: row-reverse;
         }
-        :host([layout="vertical"][reverse]) {
+        :host([vertical][reverse]) {
             flex-flow: column-reverse;
         }
     `,

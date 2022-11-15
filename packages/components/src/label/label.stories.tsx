@@ -1,6 +1,6 @@
 import { define } from "@atomico/storybook";
 import { Label } from "./label";
-import { Checkbox, Switch, Radio } from "../components";
+import { Checkbox, Switch, Radio, Button } from "../components";
 
 export default {
     title: "components/Label",

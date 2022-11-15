@@ -14,21 +14,23 @@ generic:
     color:
         fill: white
         neutral: rgba(0,0,0,.25)
+        divide: rgba(0,0,0,.1)
         accent: black
+        text: currentColor
         border:
+            =: $color.neutral
             on: $color.accent
-            off: $color.neutral
         background:
-            off: $color.fill
+            =: $color.fill
             on: $color.fill
         content:
-            off: transparent
+            =: transparent
             on: $color.fill
         state:
-            off: transparent
+            =: transparent
             on: $color.accent
         outline:
-            off: transparent
+            =: transparent
             on: rgba(0,0,0,.1)
     transition:
         action: .25s ease all
@@ -47,8 +49,29 @@ input:
         style: solid
 button:
     border:
-        width: 1px
+        width: 0px
         style: solid
+    [badge=true]:
+        font:
+            size: .625rem
+        size:
+            height: 1.25rem
+        space:
+            around: .25rem
+    [outline=true]:
+        border:
+            width: 1px
+        color:
+            border:
+                off: red
+    [color=primary]:
+        color:
+            fill: black
+            text: white
+    [color=secondary]:
+        color:
+            fill: black
+            text: white
 checkbox:
     border:
         width: 1px
@@ -65,7 +88,7 @@ dropdown:
     border:
         width: 0px
         style: solid
-[size=small]:
+[small=true]:
     generic:
         font:
             size: .85rem
@@ -78,3 +101,8 @@ dropdown:
         radius:
             rounded: .4rem
             circle: 5rem
+navigation:
+    space:
+        safe: 1rem
+    color:
+        fill: "#f3f6fc"

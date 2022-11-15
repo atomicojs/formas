@@ -4,10 +4,9 @@ import { Icons, IconsKeys } from "./icons";
 
 function icon({ type, size, icons, color }: Props<typeof icon>) {
     const Element = icons[type] as JSX;
-
     return (
         <host shadowDom>
-            <Element cloneNode></Element>
+            <Element cloneNode staticNode />
             <style>
                 {size && `:host{--width: ${size};}`}
                 {color && `:host{--color: ${color};}`}

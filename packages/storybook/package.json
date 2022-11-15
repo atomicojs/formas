@@ -12,7 +12,7 @@
         "atomico": "^1.68.0"
     },
     "devDependencies": {
-        "@atomico/storybook": "^1.5.2",
+        "@atomico/storybook": "^1.5.4",
         "@atomico/tsconfig": "^1.1.2",
         "@atomico/vite": "^2.3.2",
         "@storybook/addon-actions": "^7.0.0-alpha.48",

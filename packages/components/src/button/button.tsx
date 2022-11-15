@@ -7,23 +7,26 @@ import { InputGenericProps } from "../props";
 import { GenericTokens, GenericStateTokens } from "../tokens/tokens";
 import { ButtonActive } from "./button-active";
 
-function button({ name, href, value, type }: Props<typeof button>) {
+function button({ name, href, value, type, badge }: Props<typeof button>) {
     const refPrefix = useRef();
     const refSuffix = useRef();
     const refContent = useRef();
+    const refBadge = useRef();
     const refButtonLightDom = useRef();
     const refButtonShadowDom = useHost();
     const refButtonActive = useRef<typeof ButtonActive>();
 
     const slotPrefix = useSlot(refPrefix);
     const slotSuffix = useSlot(refSuffix);
+    const slotBadge = useSlot(refBadge);
+
     const slotContent = useSlot(refContent, (el) =>
         el instanceof Text ? !!el.textContent?.trim() : true
     );
 
     const disabled = useDisabled();
 
-    const [focused, setFocused] = useProp<boolean>("focused");
+    const [, setFocused] = useProp<boolean>("focused");
 
     useRender(
         () =>
@@ -62,8 +65,8 @@ function button({ name, href, value, type }: Props<typeof button>) {
         >
             <button
                 class="button"
-                onfocus={() => setFocused(true)}
-                onblur={() => setFocused(false)}
+                onfocus={() => !badge && setFocused(true)}
+                onblur={() => !badge && setFocused(false)}
             >
                 <div class="background">
                     <slot name="background">
@@ -94,6 +97,9 @@ function button({ name, href, value, type }: Props<typeof button>) {
                         >
                             <slot ref={refSuffix} name="icon-suffix"></slot>
                         </div>
+                        <div class={`badge ${slotBadge.length ? "" : "hide"}`}>
+                            <slot ref={refBadge} name="badge"></slot>
+                        </div>
                     </div>
                 </div>
             </button>
@@ -113,6 +119,8 @@ button.props = {
     },
     href: { type: String, reflect: true },
     circle: { type: Boolean, reflect: true },
+    badge: { type: Boolean, reflect: true },
+    color: { type: String, reflect: true },
 };
 
 button.styles = [
@@ -127,6 +135,7 @@ button.styles = [
             display: inline-block;
             height: var(--size-height);
             white-space: nowrap;
+            color: var(--color-text);
         }
         :host([only-icon-prefix]) .action-suffix {
             display: none;
@@ -155,9 +164,12 @@ button.styles = [
             cursor: pointer;
             background: var(--background);
             transition: var(--transition-action);
+            color: unset;
         }
         .content {
             flex: 0%;
+            display: flex;
+            align-items: center;
         }
         .action {
             box-sizing: border-box;
@@ -185,6 +197,13 @@ button.styles = [
             justify-content: center;
             width: var(--size-icon);
             height: var(--size-icon);
+        }
+        .badge {
+            height: 100%;
+            padding: var(--space-safe);
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
         }
         .hide {
             display: none;

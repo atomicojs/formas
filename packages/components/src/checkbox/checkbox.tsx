@@ -57,10 +57,10 @@ checkbox.styles = [
             --state-radius: 0px;
             --state-transform: none;
             --state-transition: 0.25s;
-            --background: var(--color-background-off);
-            --background-state: var(--color-state-off);
-            --color: var(--color-content-off);
-            --border-color: var(--color-border-off);
+            --background: var(--color-background);
+            --background-state: var(--color-state);
+            --color: var(--color-content);
+            --border-color: var(--color-border);
             --radius: var(--radius-rounded);
             color: var(--color);
             display: inline-block;

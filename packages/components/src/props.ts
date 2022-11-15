@@ -5,7 +5,7 @@ export const InputGenericProps = {
     required: { type: Boolean, reflect: true },
     disabled: { type: Boolean, reflect: true },
     value: null,
-    size: { type: String as Type<"small">, reflect: true },
+    small: { type: Boolean, reflect: true },
     focused: { type: Boolean, reflect: true },
     focusable: {
         type: Boolean,

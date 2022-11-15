@@ -47,7 +47,7 @@ component.styles = [
             --state-width: 0.7;
             --state-radius: var(--radius-circle);
             --state-transform: translateX(-50%);
-            --background-state: var(--color-border-off);
+            --background-state: var(--color-border);
         }
 
         :host([checked]) {
