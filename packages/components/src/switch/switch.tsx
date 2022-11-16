@@ -39,9 +39,8 @@ component.styles = [
         @tokens "../tokens/tokens.yaml" (import: switch);
 
         :host {
-            --state-scale: 0.38;
             --box-width: 0.9;
-            --box-height: 0.5;
+            --box-height: 0.48;
             --radius: var(--radius-circle);
             --state-unit: calc(var(--size-height) * var(--box-height));
             --state-width: 0.7;

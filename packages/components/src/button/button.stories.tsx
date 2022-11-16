@@ -3,7 +3,22 @@ import { define } from "@atomico/storybook";
 import { Icon } from "../icon/icon";
 
 export default {
-    ...define(Button),
+    ...define(Button, {
+        argTypes: {
+            color: {
+                control: "radio",
+                options: [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "info",
+                    "success",
+                    "warning",
+                    "danger",
+                ],
+            },
+        },
+    }),
     title: "Components/Button",
 };
 

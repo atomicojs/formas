@@ -39,7 +39,7 @@ component.styles = [
         @tokens "../tokens/tokens.yaml" (import: radio);
 
         :host {
-            --state-width: 0.7;
+            --state-width: 0.6;
             --radius: var(--radius-circle);
             --state-unit: calc(var(--size-height) * var(--box-height));
             --state-radius: var(--radius-circle);

@@ -66,11 +66,27 @@ button:
                 off: red
     [color=primary]:
         color:
-            fill: black
+            fill: "#222f3e"
             text: white
     [color=secondary]:
         color:
-            fill: black
+            fill: "#8395a7"
+            text: white
+    [color=info]:
+        color:
+            fill: "#54a0ff"
+            text: white
+    [color=success]:
+        color:
+            fill: "#1dd1a1"
+            text: white
+    [color=warning]:
+        color:
+            fill: "#ff9f43"
+            text: white
+    [color=danger]:
+        color:
+            fill: "#ff5547"
             text: white
 checkbox:
     border:

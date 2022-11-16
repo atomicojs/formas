@@ -12,10 +12,10 @@ export const Default = () => (
                 <Icon slot="icon-prefix" type="plus"></Icon>
                 Create
             </Button>
-            <Button outline circle>
+            <Button ghost circle>
                 <Icon slot="icon-prefix" type="config"></Icon>
                 Inbox
-                <Button badge slot="badge" circle>
+                <Button badge slot="badge" circle color="primary">
                     <strong slot="icon-prefix">1</strong>
                 </Button>
             </Button>

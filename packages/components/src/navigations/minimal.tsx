@@ -41,6 +41,7 @@ navigationMinimal.styles = [
             grid-area: content;
             align-content: start;
             padding: var(--space-safe);
+            gap: calc(var(--space-safe) / 2);
         }
         .footer {
             height: 10px;
@@ -67,7 +68,6 @@ navigationMinimal.styles = [
             display: flex;
             align-items: center;
             padding: 0px var(--space-around);
-            min-height: var(--size-height);
         }
     `,
 ];
