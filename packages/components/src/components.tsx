@@ -7,4 +7,5 @@ export * from "./radio/radio";
 export * from "./select/select";
 export * from "./switch/switch";
 export * from "./label/label";
+export * from "./avatar/avatar";
 export * from "./tokens/tokens";

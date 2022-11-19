@@ -61,7 +61,6 @@ checkbox.styles = [
             --background-state: var(--color-state);
             --color: var(--color-content);
             --border-color: var(--color-border);
-            --radius: var(--radius-rounded);
             color: var(--color);
             display: inline-block;
         }

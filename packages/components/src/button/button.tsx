@@ -130,7 +130,6 @@ button.styles = [
         @tokens "../tokens/tokens.yaml" (import: button);
         :host {
             --size-icon: calc(var(--size-height) - (var(--border-width) * 2));
-            --radius: var(--radius-rounded);
             --background: var(--color-fill);
             display: inline-block;
             height: var(--size-height);

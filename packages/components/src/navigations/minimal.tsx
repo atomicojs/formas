@@ -44,7 +44,6 @@ navigationMinimal.styles = [
             gap: calc(var(--space-safe) / 2);
         }
         .footer {
-            height: 10px;
             grid-area: footer;
             min-height: var(--size-height);
         }

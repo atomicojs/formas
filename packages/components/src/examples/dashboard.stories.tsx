@@ -1,4 +1,4 @@
-import { Input, Button, Checkbox, Icon, Label } from "../components";
+import { Button, Icon, Label, Avatar } from "../components";
 import { NavigationMinimal } from "../navigations";
 
 export default {
@@ -41,6 +41,14 @@ export const Default = () => (
                 <Icon slot="icon-prefix" type="asterisk"></Icon>
                 Folders
             </Button>
+            <Label slot="footer" reverse gap>
+                <Avatar circle slot="action" status="success">
+                    <img src="https://github.com/atomicojs.png" alt="avatar" />
+                </Avatar>
+                <strong>UpperCod</strong>
+                <br />
+                <small>Administrator</small>
+            </Label>
         </NavigationMinimal>
         <style>
             {`

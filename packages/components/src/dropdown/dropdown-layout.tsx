@@ -77,7 +77,7 @@ dropdownLayout.styles = [
 
         .dropdown-card {
             background: var(--background);
-            border-radius: var(--radius-rounded);
+            border-radius: var(--radius);
             border: var(--border-width) var(--border-style) var(--color-border);
             display: grid;
         }
