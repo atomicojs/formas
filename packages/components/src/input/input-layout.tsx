@@ -120,7 +120,7 @@ inputLayout.styles = [
         .input {
             display: flex;
             background: var(--background);
-            border-radius: var(--radius-rounded);
+            border-radius: var(--radius);
             border: var(--border-width) var(--border-style) var(--color-neutral);
             height: var(--size-height);
             box-sizing: border-box;

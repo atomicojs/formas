@@ -82,22 +82,22 @@ button:
             text: white
     [color=info]:
         color:
-            fill: "@color.info"
+            fill: "$$color.info"
             text: white
     [color=success]:
         color:
-            fill: "@color.success"
+            fill: "$$color.success"
             text: white
     [color=warning]:
         color:
-            fill: "@color.warning"
+            fill: "$$color.warning"
             text: white
     [color=danger]:
         color:
-            fill: "@color.danger"
+            fill: "$$color.danger"
             text: white
             [ghost=true]:
-                text: "@color.warning"
+                text: "$$color.warning"
 checkbox:
     border:
         width: 1px
