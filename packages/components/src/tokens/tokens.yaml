@@ -125,7 +125,7 @@ dropdown:
         size:
             height: 2rem
         radius:
-            rounded: .4rem
+            =: .4rem
             circle: 5rem
 navigation:
     space:
