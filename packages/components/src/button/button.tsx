@@ -67,6 +67,7 @@ function button({ name, href, value, type, badge }: Props<typeof button>) {
                 class="button"
                 onfocus={() => !badge && setFocused(true)}
                 onblur={() => !badge && setFocused(false)}
+                tabIndex={badge ? -1 : null}
             >
                 <div class="background">
                     <slot name="background">
