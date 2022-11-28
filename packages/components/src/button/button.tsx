@@ -56,7 +56,7 @@ function button({ name, href, value, type, badge }: Props<typeof button>) {
     return (
         <host
             shadowDom
-            onlyIconPrefix={!slotContent.length && !slotSuffix.length}
+            onlyIcon={!slotContent.length && !slotSuffix.length}
             onclick={(event) => {
                 if (refButtonActive.current?.setEvent) {
                     refButtonActive.current.setEvent(event);
@@ -87,10 +87,10 @@ function button({ name, href, value, type, badge }: Props<typeof button>) {
                             <slot ref={refPrefix} name="icon-prefix"></slot>
                         </div>
                     </div>
-                    <div class="content">
+                    <div class="only-icon content">
                         <slot ref={refContent} />
                     </div>
-                    <div class="action action-suffix">
+                    <div class="only-icon action action-suffix">
                         <div
                             class={`icon icon-suffix ${
                                 slotSuffix.length ? "" : "hide"
@@ -110,7 +110,7 @@ function button({ name, href, value, type, badge }: Props<typeof button>) {
 
 button.props = {
     ...InputGenericProps,
-    onlyIconPrefix: { type: Boolean, reflect: true },
+    onlyIcon: { type: Boolean, reflect: true },
     ghost: { type: Boolean, reflect: true },
     active: { type: Boolean, reflect: true },
     type: {
@@ -132,19 +132,25 @@ button.styles = [
         :host {
             --size-icon: calc(var(--size-height) - (var(--border-width) * 2));
             --background: var(--color-fill);
+            --size-width: 100%;
+            --opacity-content: 1;
+            --transition-content: 0.25s ease all 0.1s;
             display: inline-block;
             height: var(--size-height);
             white-space: nowrap;
             color: var(--color-text);
         }
-        :host([only-icon-prefix]) .action-suffix {
-            display: none;
+        .only-icon {
+            transition: 0.3s ease all;
         }
-
+        :host([only-icon]) {
+            --size-width: var(--size-height);
+            --opacity-content: 0;
+            --transition-content: 0.1s ease all 0s;
+        }
         :host([circle]) {
             --radius: var(--radius-circle);
         }
-
         :host([ghost]) {
             --background: transparent;
             --border-width: 0px;
@@ -152,7 +158,7 @@ button.styles = [
         .button {
             position: relative;
             padding: 0px;
-            width: 100%;
+            width: var(--size-width);
             height: var(--size-height);
             min-width: var(--size-height);
             outline: var(--outline);
@@ -170,6 +176,8 @@ button.styles = [
             flex: 0%;
             display: flex;
             align-items: center;
+            opacity: var(--opacity-content);
+            transition: var(--transition-content);
         }
         .action {
             box-sizing: border-box;
