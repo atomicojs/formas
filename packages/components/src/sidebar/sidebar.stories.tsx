@@ -1,13 +1,15 @@
-import { Button, Icon, Label, Avatar } from "../components";
-import { NavigationMinimal } from "../navigations";
+import { Button, Icon, Label, Avatar, AvatarLabel } from "../components";
+import { Siderbar } from "../sidebar/sidebar";
+import { define } from "@atomico/storybook";
 
 export default {
     title: "Example/Dashboard",
+    ...define(Siderbar),
 };
 
-export const Default = () => (
+export const Default = (props) => (
     <div class="frame">
-        <NavigationMinimal class="aside">
+        <Siderbar class="aside" {...props}>
             <Button circle color="primary">
                 <Icon slot="icon-prefix" type="plus"></Icon>
                 Create
@@ -41,15 +43,14 @@ export const Default = () => (
                 <Icon slot="icon-prefix" type="asterisk"></Icon>
                 Folders
             </Button>
-            <Label slot="footer" reverse gap>
-                <Avatar circle slot="action" status="success">
+            <AvatarLabel slot="footer" small>
+                <Avatar circle slot="avatar" status="success" small>
                     <img src="https://github.com/atomicojs.png" alt="avatar" />
                 </Avatar>
                 <strong>UpperCod</strong>
-                <br />
                 <small>Administrator</small>
-            </Label>
-        </NavigationMinimal>
+            </AvatarLabel>
+        </Siderbar>
         <style>
             {`
                 .frame{

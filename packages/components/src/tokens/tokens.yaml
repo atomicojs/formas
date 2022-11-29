@@ -4,7 +4,7 @@ generic:
     space:
         around: 1rem
         between: 1rem
-        safe: .4rem
+        safe: .5rem
     size:
         icon: .85em
         height: 2.5rem

@@ -8,4 +8,5 @@ export * from "./select/select";
 export * from "./switch/switch";
 export * from "./label/label";
 export * from "./avatar/avatar";
+export * from "./avatar/avatar-label";
 export * from "./tokens/tokens";

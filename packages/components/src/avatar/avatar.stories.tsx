@@ -1,4 +1,5 @@
 import { Avatar } from "./avatar";
+import { AvatarLabel } from "./avatar-label";
 import { define } from "@atomico/storybook";
 
 export default {
@@ -33,4 +34,12 @@ export const Default = (props) => (
     <Avatar {...props}>
         <img src="https://github.com/atomicojs.png" alt="avatar" />
     </Avatar>
+);
+
+export const Label = (props) => (
+    <AvatarLabel small={props.small}>
+        <Avatar {...props} slot="avatar" placeholder="AG"></Avatar>
+        <strong>UpperCod</strong>
+        <span>Administrator</span>
+    </AvatarLabel>
 );

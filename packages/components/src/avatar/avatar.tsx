@@ -1,7 +1,17 @@
 import { c, css, Props, Type } from "atomico";
 import { GenericTokens } from "../components";
+import { useRender } from "@atomico/hooks/use-render";
 
-function avatar({ status, statusPosition }: Props<typeof avatar>) {
+function avatar({ status, statusPosition, placeholder }: Props<typeof avatar>) {
+    useRender(
+        () =>
+            placeholder ? (
+                <host>
+                    <strong>{placeholder}</strong>
+                </host>
+            ) : null,
+        [placeholder]
+    );
     return (
         <host shadowDom>
             <svg width="100%" height="100%" viewBox="0 0 40 40" class="mask">
@@ -56,6 +66,10 @@ avatar.props = {
         value: (): "top left" | "top right" | "bottom left" | "bottom right" =>
             "bottom right",
     },
+    placeholder: {
+        type: String,
+        reflect: true,
+    },
 };
 
 avatar.styles = [
@@ -84,7 +98,13 @@ avatar.styles = [
         ::slotted(*) {
             width: 100%;
             height: 100%;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        ::slotted(strong) {
+            background: var(--color-accent);
+            color: var(--color-fill);
         }
         .mask {
             width: 100%;

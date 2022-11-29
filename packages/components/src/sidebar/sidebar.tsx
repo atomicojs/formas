@@ -1,14 +1,26 @@
-import { c, css } from "atomico";
+import { Props, c, css, useEffect, useRef } from "atomico";
 import { NavigationTokens, GenericTokens } from "../components";
+import { useSlot } from "@atomico/hooks/use-slot";
+import { Button } from "../button/button";
 
-function navigationMinimal() {
+function siderbar({ onlyIcons }: Props<typeof siderbar>) {
+    const refSlot = useRef();
+    const slots = useSlot<typeof Button>(
+        refSlot,
+        (element) => element instanceof Button
+    );
+
+    useEffect(() => {
+        slots.forEach((slot) => (slot.onlyIcon = onlyIcons));
+    }, [onlyIcons, slots]);
+
     return (
         <host shadowDom>
             <header class="header">
                 <slot name="header"></slot>
             </header>
             <div class="content">
-                <slot></slot>
+                <slot ref={refSlot}></slot>
             </div>
             <footer class="footer">
                 <slot name="footer"></slot>
@@ -17,7 +29,11 @@ function navigationMinimal() {
     );
 }
 
-navigationMinimal.styles = [
+siderbar.props = {
+    onlyIcons: { type: Boolean, reflect: true },
+};
+
+siderbar.styles = [
     GenericTokens,
     NavigationTokens,
     css`
@@ -31,6 +47,10 @@ navigationMinimal.styles = [
                 "content" 1fr
                 "footer" auto / 1fr;
             align-content: start;
+            --display: block;
+        }
+        :host([only-icons]) {
+            --display: none;
         }
         .header {
             grid-area: header;
@@ -40,14 +60,19 @@ navigationMinimal.styles = [
             display: grid;
             grid-area: content;
             align-content: start;
-            padding: var(--space-safe);
             gap: calc(var(--space-safe) / 2);
         }
         .footer {
             grid-area: footer;
             min-height: var(--size-height);
+            display: var(--display);
         }
-
+        .header,
+        .content,
+        .footer {
+            padding: var(--space-safe);
+            box-sizing: border-box;
+        }
         ::slotted(hr) {
             width: calc(100% - var(--space-around) * 2);
             height: 1px;
@@ -55,7 +80,6 @@ navigationMinimal.styles = [
             background: var(--color-divide);
             border: none;
         }
-
         ::slotted(h1),
         ::slotted(h2),
         ::slotted(h3),
@@ -67,8 +91,9 @@ navigationMinimal.styles = [
             display: flex;
             align-items: center;
             padding: 0px var(--space-around);
+            display: var(--display);
         }
     `,
 ];
 
-export const NavigationMinimal = c(navigationMinimal);
+export const Siderbar = c(siderbar);
