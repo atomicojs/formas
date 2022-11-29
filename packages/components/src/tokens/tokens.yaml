@@ -28,6 +28,7 @@ generic:
     radius:
         =: .5rem
         circle: 5rem
+        card: 1rem
         [small=true]:
             =: .4rem
     color:

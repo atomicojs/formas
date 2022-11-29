@@ -1,6 +1,6 @@
-import { Content } from "./content";
-import { Avatar } from "../components";
 import { define } from "@atomico/storybook";
+import { Avatar } from "../components";
+import { Content } from "./content";
 
 export default {
     title: "Components/Content",

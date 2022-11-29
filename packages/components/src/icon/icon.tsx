@@ -1,4 +1,4 @@
-import { Props, c, css, JSX } from "atomico";
+import { c, css, JSX, Props } from "atomico";
 import { GenericTokens } from "../components";
 import { Icons, IconsKeys } from "./icons";
 

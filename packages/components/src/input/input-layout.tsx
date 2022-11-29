@@ -1,14 +1,14 @@
+import { useListener } from "@atomico/hooks/use-listener";
 import {
-    Props,
     c,
     css,
-    useRef,
-    useProp,
-    useHost,
     Host,
+    Props,
     useEvent,
+    useHost,
+    useProp,
+    useRef,
 } from "atomico";
-import { useListener } from "@atomico/hooks/use-listener";
 import { DropdownLayout } from "../dropdown/dropdown-layout";
 import { GenericStateTokens, GenericTokens } from "../tokens/tokens";
 

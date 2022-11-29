@@ -1,6 +1,6 @@
-import { useProp, useRef } from "atomico";
-import { useRender } from "@atomico/hooks/use-render";
 import { useFormListener } from "@atomico/hooks/use-form";
+import { useRender } from "@atomico/hooks/use-render";
+import { useProp, useRef } from "atomico";
 
 export function useCheckbox(type: "checkbox" | "radio") {
     const [name] = useProp<string>("name");

@@ -1,4 +1,4 @@
-import { Input, Button, Checkbox, Icon, Label } from "../components";
+import { Button, Checkbox, Icon, Input, Label } from "../components";
 
 export default {
     title: "Example/Login",

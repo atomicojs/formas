@@ -1,6 +1,6 @@
+import { define } from "@atomico/storybook";
 import { Avatar } from "./avatar";
 import { AvatarLabel } from "./avatar-label";
-import { define } from "@atomico/storybook";
 
 export default {
     title: "Components/Avatar",

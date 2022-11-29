@@ -1,18 +1,19 @@
 import {
-    Props,
     c,
     css,
-    useRef,
-    useHost,
-    useProp,
-    useEffect,
     DOMEvent,
     DOMListener,
+    Props,
+    useEffect,
+    useHost,
+    useProp,
+    useRef,
 } from "atomico";
-import { useListener } from "@atomico/hooks/use-listener";
+
 import { useChannel } from "@atomico/hooks/use-channel";
-import { DropdownLayout } from "./dropdown-layout";
+import { useListener } from "@atomico/hooks/use-listener";
 import { useSlot } from "@atomico/hooks/use-slot";
+import { DropdownLayout } from "./dropdown-layout";
 
 function dropdown({ showWithOver }: Props<typeof dropdown>) {
     const host = useHost();
