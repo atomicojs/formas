@@ -139,6 +139,7 @@ button.styles = [
             height: var(--size-height);
             white-space: nowrap;
             color: var(--color-text);
+            font-weight: var(--font-bold);
         }
         .only-icon {
             transition: 0.3s ease all;
@@ -171,6 +172,7 @@ button.styles = [
             background: var(--background);
             transition: var(--transition-action);
             color: unset;
+            font-weight: unset;
         }
         .content {
             flex: 0%;

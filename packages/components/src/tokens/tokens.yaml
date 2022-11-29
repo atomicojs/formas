@@ -1,16 +1,35 @@
 generic:
     font:
-        size: 1rem
+        size:
+            =: 1rem
+            1: 2rem
+            2: 1.75rem
+            3: 1.25rem
+            4: 1.125rem
+            5: 1rem
+            text: 0.875rem
+            [small=true]:
+                =: .85rem
+        line: 1.25
+        light: 300
+        regular: 400
+        bold: 700
     space:
         around: 1rem
         between: 1rem
         safe: .5rem
+        [small=true]:
+            safe: .4rem
     size:
         icon: .85em
         height: 2.5rem
+        [small=true]:
+            height: 2rem
     radius:
         =: .5rem
         circle: 5rem
+        [small=true]:
+            =: .4rem
     color:
         fill: white
         neutral: rgba(0,0,0,.25)
@@ -114,19 +133,6 @@ dropdown:
     border:
         width: 0px
         style: solid
-[small=true]:
-    generic:
-        font:
-            size: .85rem
-        space:
-            around: 1rem
-            between: 1rem
-            safe: .4rem
-        size:
-            height: 2rem
-        radius:
-            =: .4rem
-            circle: 5rem
 navigation:
     space:
         safe: 1rem

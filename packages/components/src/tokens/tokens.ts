@@ -4,6 +4,7 @@ export const GenericTokens = css`
     @tokens "./tokens.yaml" (import: generic);
     :host {
         font-size: var(--font-size);
+        line-height: var(--font-line);
         --outline-color: var(--color-outline);
         --outline: var(--outline-width) var(--outline-style)
             var(--outline-color);

@@ -38,7 +38,7 @@ siderbar.styles = [
     NavigationTokens,
     css`
         :host {
-            width: auto;
+            width: 100%;
             height: 100%;
             background: var(--color-fill);
             display: grid;
@@ -48,6 +48,7 @@ siderbar.styles = [
                 "footer" auto / 1fr;
             align-content: start;
             --display: block;
+            transition: 0.5s ease all;
         }
         :host([only-icons]) {
             --display: none;
