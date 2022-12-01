@@ -2,11 +2,10 @@ import { Host, c, css, useState } from "atomico";
 import { getCoordinates } from "@atomico/hooks/use-click-coordinates";
 
 function buttonActive(): Host<{ setEvent(event: MouseEvent): void }> {
-    const [state, setState] =
-        useState<{
-            pending?: boolean;
-            offset?: { x: number; y: number };
-        }>();
+    const [state, setState] = useState<{
+        pending?: boolean;
+        offset?: { x: number; y: number };
+    }>();
 
     return (
         <host
@@ -40,7 +39,7 @@ buttonActive.styles = css`
         left: 0px;
         display: block;
         overflow: hidden;
-        --background: rgba(0, 0, 0, 0.05);
+        --background: var(--color-active);
     }
     div {
         width: 10px;

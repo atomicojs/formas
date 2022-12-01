@@ -43,3 +43,13 @@ export const WithSquare = (props) => (
         <Icon slot="icon-prefix"></Icon>
     </Button>
 );
+
+export const WithBadge = (props) => (
+    <Button {...props}>
+        <Icon slot="icon-prefix" type="file"></Icon>
+        <span>Messages</span>
+        <Button slot="badge" badge color="primary">
+            10
+        </Button>
+    </Button>
+);

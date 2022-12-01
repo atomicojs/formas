@@ -17,7 +17,7 @@ export const Default = (props) => (
             <Button ghost circle>
                 <Icon slot="icon-prefix" type="config"></Icon>
                 Inbox
-                <Button badge slot="badge" circle color="primary">
+                <Button small badge slot="badge" circle color="danger">
                     <strong slot="icon-prefix">1</strong>
                 </Button>
             </Button>

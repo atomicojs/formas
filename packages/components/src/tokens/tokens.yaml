@@ -35,12 +35,13 @@ generic:
         fill: white
         neutral: rgba(0,0,0,.25)
         divide: rgba(0,0,0,.1)
+        active: rgba(0,0,0,.05)
         accent: black
         text: currentColor
         border:
             =: $color.neutral
             on: $color.accent
-        background:
+        checkbox:
             =: $color.fill
             on: $color.fill
         content:
@@ -52,14 +53,26 @@ generic:
         outline:
             =: transparent
             on: rgba(0,0,0,.1)
+        secondary:
+            =: "#8395A7"
+            neutral: rgba(131, 149, 167, 0.35)
+            accent: "#516C86"
         info:
             =: "#54a0ff"
+            neutral: rgba(84, 161, 255, 0.35)
+            accent: "#0071FF"
         success:
             =: "#1dd1a1"
+            neutral: rgba(29, 209, 161, 0.35)
+            accent: "#00B09B"
         warning:
             =: "#ff9f43"
+            neutral: rgba(255, 159, 67, 0.35)
+            accent: "#DB8300"
         danger:
             =: "#ff5547"
+            neutral: rgba(255, 85, 71, 0.35)
+            accent: "#EC3912"
     transition:
         action: .25s ease all
     [disabled=true]:
@@ -86,38 +99,72 @@ button:
             height: 1.25rem
         space:
             around: .25rem
-    [outline=true]:
-        border:
-            width: 1px
-        color:
-            border:
-                off: red
+        [small=true]:
+            size:
+                height: 1rem
     [color=primary]:
         color:
             fill: "#222f3e"
             text: white
+            [outline=true]:
+                active: $$color.neutral
+                fill: $$color.accent
+            [ghost=true]:
+                active: $$color.neutral
+                text: $$color.accent
     [color=secondary]:
         color:
             fill: "#8395a7"
             text: white
+            [outline=true]:
+                active: $$color.secondary.neutral
+                fill: $$color.secondary.accent
+            [ghost=true]:
+                active: $$color.secondary.neutral
+                text: $$color.secondary.accent
     [color=info]:
         color:
-            fill: "$$color.info"
+            fill: $$color.info
             text: white
+            [outline=true]:
+                active: $$color.info.neutral
+                fill: $$color.info.accent
+            [ghost=true]:
+                active: $$color.info.neutral
+                text: $$color.info.accent
     [color=success]:
         color:
-            fill: "$$color.success"
+            fill: $$color.success
             text: white
+            [outline=true]:
+                active: $$color.success.neutral
+                fill: $$color.success.accent
+            [ghost=true]:
+                active: $$color.success.neutral
+                text: $$color.success.accent
     [color=warning]:
         color:
-            fill: "$$color.warning"
+            fill: $$color.warning
             text: white
+            [outline=true]:
+                active: $$color.warning.neutral
+                fill: $$color.warning.accent
+            [ghost=true]:
+                active: $$color.warning.neutral
+                text: $$color.warning.accent
     [color=danger]:
         color:
-            fill: "$$color.danger"
+            fill: $$color.danger
             text: white
+            [outline=true]:
+                active: $$color.danger.neutral
+                fill: $$color.danger.accent
             [ghost=true]:
-                text: "$$color.warning"
+                active: $$color.danger.neutral
+                text: $$color.danger.accent
+    [outline=true]:
+        border:
+            width: 1px
 checkbox:
     border:
         width: 1px

@@ -7,7 +7,15 @@ import { InputGenericProps } from "../props";
 import { GenericTokens, GenericStateTokens } from "../tokens/tokens";
 import { ButtonActive } from "./button-active";
 
-function button({ name, href, value, type, badge }: Props<typeof button>) {
+function button({
+    name,
+    href,
+    value,
+    type,
+    badge,
+    color,
+    outline,
+}: Props<typeof button>) {
     const refPrefix = useRef();
     const refSuffix = useRef();
     const refContent = useRef();
@@ -62,6 +70,7 @@ function button({ name, href, value, type, badge }: Props<typeof button>) {
                     refButtonActive.current.setEvent(event);
                 }
             }}
+            color={color ? color : outline ? "primary" : null}
         >
             <button
                 class="button"
@@ -120,6 +129,7 @@ button.props = {
     },
     href: { type: String, reflect: true },
     circle: { type: Boolean, reflect: true },
+    outline: { type: Boolean, reflect: true },
     badge: { type: Boolean, reflect: true },
     color: { type: String, reflect: true },
 };
@@ -156,6 +166,17 @@ button.styles = [
             --background: transparent;
             --border-width: 0px;
         }
+        :host([outline]) {
+            --background: transparent;
+            --color-text: var(--color-fill);
+        }
+        :host([outline]) .button-fx,
+        :host([ghost]) .button-fx {
+            --background: var(--color-active);
+        }
+        .button-fx {
+            border-radius: var(--radius);
+        }
         .button {
             position: relative;
             padding: 0px;
@@ -163,11 +184,10 @@ button.styles = [
             height: var(--size-height);
             min-width: var(--size-height);
             outline: var(--outline);
-            border: var(--border-width) var(--border-style) var(--color-border);
+            border: var(--border-width) var(--border-style) var(--color-active);
             border-radius: var(--radius);
             font-family: unset;
             font-size: unset;
-            overflow: hidden;
             cursor: pointer;
             background: var(--background);
             transition: var(--transition-action);
@@ -217,6 +237,13 @@ button.styles = [
         }
         .hide {
             display: none;
+        }
+        :host([only-icon]) .badge {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 0px;
+            height: auto;
         }
     `,
 ];

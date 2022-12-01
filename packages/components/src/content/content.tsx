@@ -8,9 +8,6 @@ function content() {
     return (
         <host shadowDom>
             <slot ref={ref} />
-            <div class="side">
-                <slot name="side"></slot>
-            </div>
             <div class="content">
                 {slots
                     .reduce<string[]>((children, element) => {
@@ -53,11 +50,6 @@ content.props = {
 content.styles = [
     GenericTokens,
     css`
-        :host {
-            display: flex;
-            align-items: center;
-            gap: var(--space-safe);
-        }
         .content {
             display: grid;
             gap: calc(var(--font-line) * var(--font-size));

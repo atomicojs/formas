@@ -57,7 +57,7 @@ checkbox.styles = [
             --state-radius: 0px;
             --state-transform: none;
             --state-transition: 0.25s;
-            --background: var(--color-background);
+            --background: var(--color-checkbox);
             --background-state: var(--color-state);
             --color: var(--color-content);
             --border-color: var(--color-border);
@@ -66,7 +66,7 @@ checkbox.styles = [
         }
 
         :host([checked]) {
-            --background: var(--color-background-on);
+            --background: var(--color-checkbox-on);
             --background-state: var(--color-state-on);
             --border-color: var(--color-border-on);
             --color: var(--color-content-on);
