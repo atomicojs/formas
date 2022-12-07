@@ -1,4 +1,4 @@
-import { useSlot, useProxySlot } from "@atomico/hooks/use-slot";
+import { useProxySlot, useSlot } from "@atomico/hooks/use-slot";
 import { c, css, useRef } from "atomico";
 import { GenericTokens } from "../components";
 

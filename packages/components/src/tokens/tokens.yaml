@@ -19,6 +19,8 @@ generic:
         between: 1rem
         safe: .5rem
         [small=true]:
+            around: .8rem
+            between: .8rem
             safe: .4rem
     size:
         icon: .85em

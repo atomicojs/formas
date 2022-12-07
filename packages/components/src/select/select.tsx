@@ -1,15 +1,15 @@
-import { c, useRef, css, useUpdate, useProp, Props } from "atomico";
-import { useSlot } from "@atomico/hooks/use-slot";
-import { useRender } from "@atomico/hooks/use-render";
 import { useDisabled } from "@atomico/hooks/use-disabled";
-import { InputGenericProps } from "../props";
+import { useRender } from "@atomico/hooks/use-render";
+import { useSlot } from "@atomico/hooks/use-slot";
+import { c, css, Props, useProp, useRef, useUpdate } from "atomico";
 import { Icon } from "../icon/icon";
+import { InputLayout } from "../input/input-layout";
+import { InputGenericProps } from "../props";
+import { GenericTokens } from "../tokens/tokens";
 import { SelectOption } from "./select-option";
 export { SelectOption } from "./select-option";
-import { InputLayout } from "../input/input-layout";
-import { GenericTokens } from "../tokens/tokens";
 
-function select({ name, placeholder, size }: Props<typeof select>) {
+function select({ name, placeholder, small }: Props<typeof select>) {
     const refSlotOption = useRef();
     const slotOption = useSlot<typeof SelectOption>(refSlotOption);
     const disabled = useDisabled();
@@ -56,7 +56,7 @@ function select({ name, placeholder, size }: Props<typeof select>) {
                 enableIconSuffix
                 class="input-layout"
                 narrowHeader
-                size={size}
+                small={small}
                 disabled={disabled}
                 focused={focused}
             >

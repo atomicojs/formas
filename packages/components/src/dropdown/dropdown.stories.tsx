@@ -1,6 +1,6 @@
 import { define } from "@atomico/storybook";
-import { Dropdown } from "./dropdown";
 import { Button } from "../button/button";
+import { Dropdown } from "./dropdown";
 
 export default {
     title: "Components/Dropdown",

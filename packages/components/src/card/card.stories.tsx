@@ -1,5 +1,5 @@
 import { define } from "@atomico/storybook";
-import { AvatarLabel, Avatar, Button, Icon, Content } from "../components";
+import { Avatar, AvatarLabel, Button, Content, Icon } from "../components";
 import { Card } from "./card";
 
 export default {

@@ -1,7 +1,7 @@
-import { Props, c, css, useHost, useProp } from "atomico";
 import { useDisabled } from "@atomico/hooks/use-disabled";
-import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { useFormInputRadio } from "@atomico/hooks/use-form";
+import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
+import { c, css, Props, useHost, useProp } from "atomico";
 import { Checkbox } from "../checkbox/checkbox";
 
 function component({ tabIndex, value }: Props<typeof component>) {

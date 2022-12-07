@@ -1,10 +1,10 @@
-import { Type, Props, c, css, useRef, useProp, useHost } from "atomico";
-import { useSlot } from "@atomico/hooks/use-slot";
-import { useRender } from "@atomico/hooks/use-render";
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
+import { useRender } from "@atomico/hooks/use-render";
+import { useSlot } from "@atomico/hooks/use-slot";
+import { c, css, Props, Type, useHost, useProp, useRef } from "atomico";
 import { InputGenericProps } from "../props";
-import { GenericTokens, GenericStateTokens } from "../tokens/tokens";
+import { GenericStateTokens, GenericTokens } from "../tokens/tokens";
 import { ButtonActive } from "./button-active";
 
 function button({

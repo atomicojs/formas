@@ -92,7 +92,7 @@ function inputLayout({
 }
 
 inputLayout.props = {
-    size: { type: String, reflect: true },
+    small: { type: Boolean, reflect: true },
     disabled: { type: Boolean, reflect: true },
     focused: { type: Boolean, reflect: true },
     showDropdown: Boolean,

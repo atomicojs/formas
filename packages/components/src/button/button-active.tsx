@@ -1,5 +1,5 @@
-import { Host, c, css, useState } from "atomico";
 import { getCoordinates } from "@atomico/hooks/use-click-coordinates";
+import { c, css, Host, useState } from "atomico";
 
 function buttonActive(): Host<{ setEvent(event: MouseEvent): void }> {
     const [state, setState] = useState<{

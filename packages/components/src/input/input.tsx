@@ -40,7 +40,7 @@ function input({ ...props }: Props<typeof input>) {
             <div>
                 <InputLayout
                     focused={focused}
-                    size={props.size}
+                    small={props.small}
                     disabled={props.disabled}
                     enableIconPrefix={!!slotIconPrefix.length}
                     enableIconSuffix={!!slotIconSuffix.length}

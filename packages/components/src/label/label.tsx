@@ -1,5 +1,5 @@
-import { c, useRef, css } from "atomico";
 import { useSlot } from "@atomico/hooks/use-slot";
+import { c, css, useRef } from "atomico";
 import { GenericTokens } from "../components";
 
 interface SlotAction extends HTMLElement {

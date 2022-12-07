@@ -1,5 +1,5 @@
-import { Props, c, css, useState, useEffect, useRef } from "atomico";
 import { computePosition, flip, shift } from "@floating-ui/dom";
+import { c, css, Props, useEffect, useRef, useState } from "atomico";
 import { GenericTokens } from "../tokens/tokens";
 
 function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {

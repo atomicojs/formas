@@ -1,5 +1,5 @@
-import { Checkbox } from "./checkbox";
 import { define } from "@atomico/storybook";
+import { Checkbox } from "./checkbox";
 
 export default {
     title: "Components/Checkbox",

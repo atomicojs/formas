@@ -1,6 +1,6 @@
-import { Button } from "./button";
 import { define } from "@atomico/storybook";
 import { Icon } from "../icon/icon";
+import { Button } from "./button";
 
 export default {
     ...define(Button, {

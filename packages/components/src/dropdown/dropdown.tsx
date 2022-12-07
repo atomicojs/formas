@@ -1,3 +1,6 @@
+import { useChannel } from "@atomico/hooks/use-channel";
+import { useListener } from "@atomico/hooks/use-listener";
+import { useSlot } from "@atomico/hooks/use-slot";
 import {
     c,
     css,
@@ -9,10 +12,6 @@ import {
     useProp,
     useRef,
 } from "atomico";
-
-import { useChannel } from "@atomico/hooks/use-channel";
-import { useListener } from "@atomico/hooks/use-listener";
-import { useSlot } from "@atomico/hooks/use-slot";
 import { DropdownLayout } from "./dropdown-layout";
 
 function dropdown({ showWithOver }: Props<typeof dropdown>) {
