@@ -6,6 +6,7 @@ export default {
     ...define(Button, {
         argTypes: {
             color: {
+                description: "XXX",
                 control: "radio",
                 options: [
                     "neutral",
