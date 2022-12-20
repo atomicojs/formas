@@ -1,12 +1,12 @@
 import { define } from "@atomico/storybook";
 import { Icon } from "../icon/icon";
+import { Loading } from "../loading/loading";
 import { Button } from "./button";
 
 export default {
     ...define(Button, {
         argTypes: {
             color: {
-                description: "XXX",
                 control: "radio",
                 options: [
                     "neutral",
@@ -17,6 +17,9 @@ export default {
                     "warning",
                     "danger",
                 ],
+            },
+            focused: {
+                category: "Internal",
             },
         },
     }),
@@ -52,5 +55,12 @@ export const WithBadge = (props) => (
         <Button slot="badge" badge color="primary">
             10
         </Button>
+    </Button>
+);
+
+export const ExampleWithLoading = (props) => (
+    <Button {...props}>
+        <Loading slot="icon-prefix"></Loading>
+        <span>Loading</span>
     </Button>
 );

@@ -77,6 +77,7 @@ function button({
                 onfocus={() => !badge && setFocused(true)}
                 onblur={() => !badge && setFocused(false)}
                 tabIndex={badge ? -1 : null}
+                ref={(node) => {}}
             >
                 <div class="background">
                     <slot name="background">
@@ -249,3 +250,16 @@ button.styles = [
 ];
 
 export const Button = c(button);
+
+function cc(props: Props<typeof cc>) {
+    return <host></host>;
+}
+
+type V = "A" | "B";
+
+cc.props = {
+    value: {
+        type: String,
+        value: (): V => "A",
+    },
+};

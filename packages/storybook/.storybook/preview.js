@@ -3,6 +3,9 @@ import { decorator } from "@atomico/storybook";
 export const decorators = [decorator];
 
 export const parameters = {
+    controls: {
+        expanded: true,
+    },
     backgrounds: {
         default: "Default",
         values: [
