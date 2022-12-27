@@ -122,7 +122,6 @@ button.props = {
     ...InputGenericProps,
     onlyIcon: { type: Boolean, reflect: true },
     ghost: { type: Boolean, reflect: true },
-    active: { type: Boolean, reflect: true },
     type: {
         type: String as Type<"submit" | "button" | "reset">,
         reflect: true,

@@ -4,26 +4,34 @@ import { Loading } from "../loading/loading";
 import { Button } from "./button";
 
 export default {
+    title: "Components/Button",
     ...define(Button, {
         argTypes: {
-            color: {
-                control: "radio",
-                options: [
-                    "neutral",
-                    "primary",
-                    "secondary",
-                    "info",
-                    "success",
-                    "warning",
-                    "danger",
-                ],
+            href: {
+                description: "Specifies the URL of the page the link goes to",
             },
-            focused: {
-                category: "Internal",
+            onlyIcon: {
+                description:
+                    "Declares that the component will only use the icon-prefix slot",
+            },
+            ghost: {
+                description:
+                    "Declares that the button has no color or solid border by default",
+            },
+            type: {
+                description:
+                    "declares the type of behavior, either `button`, `button[type=submit]`, or `a[href]`",
+            },
+            "icon-prefix": {
+                category: "Slots",
+                defaultValue: "Element",
+            },
+            "icon-suffix": {
+                category: "Slots",
+                defaultValue: "Element",
             },
         },
     }),
-    title: "Components/Button",
 };
 
 export const Default = (props) => <Button {...props}>Button</Button>;

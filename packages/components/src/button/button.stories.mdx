@@ -1,49 +1,20 @@
 import { Meta, Story, Source, Canvas, ArgsTable, StoryTable  } from '@storybook/addon-docs';
 
 
-<Meta title="Components/Button/Documentation" argTypes={{
-    status: {
-      name: 'Badge Status',
-      description: 'Available options available to the Badge',
-      options: [
-        'positive',
-        'negative',
-        'warning',
-        'error',
-        'neutral'
-      ],
-      table: {
-        defaultValue: {
-          summary: 'positive'
-        },
-        type: {
-          summary: 'Shows options to the Badge',
-          detail: 'Listing of available options'
-        },
-      },
-    },
-    label: {
-      name: 'Badge Content',
-      description: 'Text shown by Badge',
-      control: {
-        type: 'text'
-      },
-      table: {
-        type: {
-          summary: 'The label contents',
-          detail: 'Text displayed by the Badge'
-        }
-      }
-    }
-  }}/>
+<Meta title="Components/Button/Documentation"/>
 
 # Button
 
 Create a button webcomponent to dispatch events to forms or attach links.
-
 
 ## Preview
 
 <Canvas>
     <Story id="components-button--default"/>   
 </Canvas>
+
+## Usage
+
+```js
+import { Button }  from "formas/button";
+```
