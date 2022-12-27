@@ -2,7 +2,7 @@ import { define } from "@atomico/storybook";
 import { Alert } from "./alert";
 
 export default {
-    title: "Components/Alert",
+    title: "In progress/Components/Alert",
     ...define(Alert),
 };
 

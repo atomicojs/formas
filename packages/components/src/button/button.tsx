@@ -249,16 +249,3 @@ button.styles = [
 ];
 
 export const Button = c(button);
-
-function cc(props: Props<typeof cc>) {
-    return <host></host>;
-}
-
-type V = "A" | "B";
-
-cc.props = {
-    value: {
-        type: String,
-        value: (): V => "A",
-    },
-};
