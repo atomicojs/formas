@@ -16,6 +16,7 @@ export default {
                 options: ["", "info", "success", "warning", "danger"],
             },
             statusPosition: {
+                description: "Defines the position of the status property",
                 control: {
                     type: "radio",
                 },
@@ -42,4 +43,10 @@ export const Label = (props) => (
         <strong>UpperCod</strong>
         <span>Administrator</span>
     </AvatarLabel>
+);
+
+export const WithStatus = (props) => (
+    <Avatar {...props} status={props.status || "success"}>
+        <img src="https://github.com/atomicojs.png" alt="avatar" />
+    </Avatar>
 );

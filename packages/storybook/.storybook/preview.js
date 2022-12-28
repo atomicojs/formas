@@ -1,12 +1,15 @@
 import { decorator, options } from "@atomico/storybook";
 
-// options.serialize = {
-//     ignore: {
-//         icon-
-//     }
-// }
+options.serialize = {
+    ignore: {
+        "a-icon": ["icons"],
+    },
+};
 
 options.global = {
+    circle: {
+        description: "Component variation with round edges",
+    },
     small: {
         description: "Small component variation",
     },
