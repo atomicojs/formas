@@ -40,7 +40,9 @@ function card() {
     );
 }
 
-card.props = {};
+card.props = {
+    small: { type: Boolean, reflect: true },
+};
 
 card.styles = [
     GenericTokens,

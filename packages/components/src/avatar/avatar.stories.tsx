@@ -1,6 +1,8 @@
 import { define } from "@atomico/storybook";
 import { Avatar } from "./avatar";
 import { AvatarLabel } from "./avatar-label";
+import { Dropdown } from "../dropdown/dropdown";
+import { Button } from "../button/button";
 
 export default {
     title: "Components/Avatar",
@@ -45,8 +47,20 @@ export const Label = (props) => (
     </AvatarLabel>
 );
 
-export const WithStatus = (props) => (
-    <Avatar {...props} status={props.status || "success"}>
-        <img src="https://github.com/atomicojs.png" alt="avatar" />
-    </Avatar>
+export const WithStatus = (props) =>
+    Default({ ...props, status: props.status || "success" });
+
+export const WithDropdown = (props) => (
+    <Dropdown>
+        {WithStatus({ ...props, slot: "action" })}
+        <Button small={props.small} ghost>
+            Option 1
+        </Button>
+        <Button small={props.small} ghost>
+            Option 2
+        </Button>
+        <Button small={props.small} ghost>
+            Option 3
+        </Button>
+    </Dropdown>
 );
