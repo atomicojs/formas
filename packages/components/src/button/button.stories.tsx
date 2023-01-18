@@ -2,6 +2,15 @@ import { define } from "@atomico/storybook";
 import { Icon } from "../icon/icon";
 import { Loading } from "../loading/loading";
 import { Button } from "./button";
+import {
+    Meta,
+    Story,
+    Source,
+    Canvas,
+    ArgsTable,
+    StoryTable,
+    StorySources,
+} from "@storybook/addon-docs";
 
 export default {
     title: "Components/Button",
@@ -29,6 +38,14 @@ export default {
             "icon-suffix": {
                 category: "Slots",
                 defaultValue: "Element",
+            },
+            "--color-background": {
+                description: "Define el color de fondo del boton",
+                defaultValue: "Element",
+            },
+            onClick: {
+                description:
+                    "Example: `myElement.addEventListener('click',handler)`",
             },
         },
     }),

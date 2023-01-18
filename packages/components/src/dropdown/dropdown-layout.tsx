@@ -1,5 +1,5 @@
 import { computePosition, flip, shift } from "@floating-ui/dom";
-import { c, css, Props, useEffect, useRef, useState } from "atomico";
+import { c, css, Props, useEffect, useRef, useState, useHost } from "atomico";
 import { GenericTokens } from "../tokens/tokens";
 
 function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {
@@ -8,7 +8,6 @@ function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {
 
     useEffect(() => {
         if (!reference) return;
-
         computePosition(reference, ref.current, {
             middleware: [
                 flip({
@@ -70,9 +69,10 @@ dropdownLayout.styles = [
             left: var(--left);
             padding: 0.25rem 0px;
             visibility: var(--visibility);
+            opacity: var(--opacity);
             transform: var(--transform);
-            transition: var(--transition);
             box-sizing: border-box;
+            transition: var(--transition);
         }
 
         .dropdown-card {

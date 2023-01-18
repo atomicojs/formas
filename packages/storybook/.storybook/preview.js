@@ -1,10 +1,8 @@
 import { decorator, options } from "@atomico/storybook";
 
-options.serialize = {
-    ignore: {
-        "*": ["focusable"],
-        "a-icon": ["icons"],
-    },
+options.ignore = {
+    "*": ["focusable"],
+    "a-icon": ["icons"],
 };
 
 options.global = {
