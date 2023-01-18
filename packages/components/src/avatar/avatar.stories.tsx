@@ -41,11 +41,13 @@ export const Default = (props) => (
 
 export const Label = (props) => (
     <AvatarLabel small={props.small}>
-        <Avatar {...props} slot="avatar" placeholder="AG"></Avatar>
+        <Avatar {...props} slot="avatar"></Avatar>
         <strong>UpperCod</strong>
         <span>Administrator</span>
     </AvatarLabel>
 );
+
+Label.args = { placeholder: "AG" };
 
 export const WithStatus = (props) =>
     Default({ ...props, status: props.status || "success" });
