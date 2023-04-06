@@ -2,15 +2,8 @@ import { define } from "@atomico/storybook";
 import { Icon } from "../icon/icon";
 import { Loading } from "../loading/loading";
 import { Button } from "./button";
-import {
-    Meta,
-    Story,
-    Source,
-    Canvas,
-    ArgsTable,
-    StoryTable,
-    StorySources,
-} from "@storybook/addon-docs";
+
+import { Text } from "./text";
 
 export default {
     title: "Components/Button",
@@ -88,4 +81,10 @@ export const ExampleWithLoading = (props) => (
         <Loading slot="icon-prefix"></Loading>
         <span>Loading</span>
     </Button>
+);
+
+export const ExampleText = () => (
+    <Text>
+        <span>Texto normal</span>
+    </Text>
 );
