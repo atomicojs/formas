@@ -4,7 +4,11 @@
         "packages/*"
     ],
     "scripts": {
-        "storybook": "npm run storybook -w=storybook"
+        "dev": "run dev:* -p",
+        "build": "run start -w=storybook",
+        "dev:storybook": "npm run dev -w=storybook",
+        "build:storybook": "npm run build -w=storybook",
+        "create:component": "scaff component-monorepo packages/components && npm i"
     },
     "keywords": [],
     "author": "",
@@ -14,9 +18,14 @@
         "singleQuote": false
     },
     "dependencies": {
-        "@atomico/postcss-tokens": "^2.0.3",
-        "@atomico/vite": "^2.3.2",
-        "typescript": "^4.8.4",
-        "vite": "^3.1.4"
+        "@atomico/exports": "^1.7.0",
+        "@atomico/postcss-tokens": "^2.1.0",
+        "@atomico/run": "^0.10.1",
+        "@atomico/scaffold": "^2.9.5",
+        "@atomico/tsconfig": "^1.1.2",
+        "@atomico/vite": "^2.9.2",
+        "atomico": "^1.71.1",
+        "typescript": "^5.0.4",
+        "vite": "^4.3.9"
     }
 }

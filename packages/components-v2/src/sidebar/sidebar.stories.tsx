@@ -1,5 +1,5 @@
 import { Button, Icon, Label, Avatar, AvatarLabel } from "../components";
-import { Siderbar } from "../sidebar/sidebar";
+import { Siderbar } from "./sidebar";
 import { define } from "@atomico/storybook";
 
 export default {

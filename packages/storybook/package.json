@@ -5,30 +5,28 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "dev": "storybook dev -p 6006",
+        "build": "storybook build",
+        "create:component": "scaff component-storybook src"
     },
     "dependencies": {
         "atomico": "^1.68.0"
     },
     "devDependencies": {
-        "@atomico/storybook": "^1.9.4",
-        "@atomico/tsconfig": "^1.1.2",
-        "@atomico/vite": "^2.3.2",
-        "@storybook/addon-actions": "^7.0.0-alpha.48",
-        "@storybook/addon-essentials": "^7.0.0-alpha.48",
-        "@storybook/addon-links": "^7.0.0-alpha.48",
-        "@storybook/addon-storysource": "^7.0.0-alpha.48",
-        "@storybook/web-components": "^7.0.0-alpha.48",
-        "@storybook/web-components-vite": "^7.0.0-alpha.48",
-        "lit-html": "^2.4.0",
-        "storybook": "^7.0.0-alpha.48",
-        "vite": "^3.2.2"
+        "@atomico/storybook": "^2.4.3",
+        "@storybook/addon-essentials": "^7.0.13",
+        "@storybook/addon-links": "^7.0.13",
+        "@storybook/blocks": "^7.0.13",
+        "@storybook/web-components": "^7.0.13",
+        "@storybook/web-components-vite": "^7.0.13",
+        "lit": "^2.7.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "storybook": "^7.0.13"
     },
     "postcss": {
         "plugins": {
             "@atomico/postcss-tokens": {
-                "prefix": "a",
                 "defaultValue": true
             }
         }
