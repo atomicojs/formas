@@ -1,7 +1,8 @@
 {
     "type": "module",
     "workspaces": [
-        "packages/*"
+        "packages/storybook",
+        "packages/components/*"
     ],
     "scripts": {
         "dev": "run dev:* -p",
