@@ -1,5 +1,5 @@
 {
-        "name": "@atomico/ui-radio",
+        "name": "@atomico/ui-switch",
         "version": "1.0.0",
         "type": "module",
         "publishConfig": {
@@ -15,21 +15,5 @@
                 "dev:exports": "exports src/**/* --watch",
                 "build": "npm run build:types && npm run build:compile && npm run build:exports",
                 "prepublishOnly": "npm run build"
-        },
-        "types": "src/index.tsx",
-        "exports": {
-                "./element": "./src/element.tsx",
-                ".": "./src/index.tsx",
-                "./stories/index.stories": "./src/stories/index.stories.tsx"
-        },
-        "typesVersions": {
-                "*": {
-                        "element": [
-                                "src/element.tsx"
-                        ],
-                        "stories/index.stories": [
-                                "src/stories/index.stories.tsx"
-                        ]
-                }
         }
 }
