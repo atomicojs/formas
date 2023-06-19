@@ -4,7 +4,7 @@ import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
 import { InputGenericProps } from "@atomico/ui-props";
 import { GenericTokens, InputTokens } from "@atomico/ui-tokens";
-import { Props, c, css, useProp, useRef } from "atomico";
+import { Props, c, useProp, useRef } from "atomico";
 import { InputLayout } from "./layout";
 
 function input({ ...props }: Props<typeof input>) {
