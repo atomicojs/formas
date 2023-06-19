@@ -33,3 +33,11 @@ export const ButtonTokens = css`
 export const DropdownTokens = css`
     @tokens "./tokens.yaml" (import: dropdown);
 `;
+
+export const CheckboxTokens = css`
+    @tokens "./tokens.yaml" (import: checkbox);
+`;
+
+export const RadioTokens = css`
+    @tokens "./tokens.yaml" (import: radio);
+`;
