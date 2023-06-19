@@ -1,6 +1,6 @@
 import { computePosition, flip, shift } from "@floating-ui/dom";
-import { c, css, Props, useEffect, useRef, useState, useHost } from "atomico";
-import { GenericTokens } from "@atomico/ui-tokens";
+import { c, css, Props, useEffect, useRef, useState } from "atomico";
+import { GenericTokens, DropdownTokens } from "@atomico/ui-tokens";
 
 function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {
     const [style, setStyle] = useState<string>();
@@ -8,7 +8,7 @@ function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {
 
     useEffect(() => {
         if (!reference) return;
-        computePosition(reference, ref.current, {
+        computePosition(reference as Element, ref.current, {
             middleware: [
                 flip({
                     fallbackPlacements: ["top", "bottom"],
@@ -42,8 +42,8 @@ dropdownLayout.props = {
 
 dropdownLayout.styles = [
     GenericTokens,
+    DropdownTokens,
     css`
-        @tokens "../tokens/tokens.yaml" (import: dropdown);
         :host {
             display: inline-block;
             position: relative;

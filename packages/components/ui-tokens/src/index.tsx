@@ -29,3 +29,7 @@ export const NavigationTokens = css`
 export const ButtonTokens = css`
     @tokens "./tokens.yaml" (import: button);
 `;
+
+export const DropdownTokens = css`
+    @tokens "./tokens.yaml" (import: dropdown);
+`;
