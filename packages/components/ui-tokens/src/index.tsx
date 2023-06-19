@@ -45,3 +45,7 @@ export const RadioTokens = css`
 export const SwitchTokens = css`
     @tokens "./tokens.yaml" (import: switch);
 `;
+
+export const InputTokens = css`
+    @tokens "./tokens.yaml" (import: input);
+`;
