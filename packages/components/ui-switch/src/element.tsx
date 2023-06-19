@@ -3,6 +3,7 @@ import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { c, css, Props, useHost, useProp } from "atomico";
 import { Checkbox } from "@atomico/ui-checkbox";
 import { useCheckbox } from "@atomico/ui-checkbox/hooks";
+import { SwitchTokens } from "@atomico/ui-tokens";
 
 function component({ tabIndex }: Props<typeof component>) {
     const host = useHost();
@@ -35,9 +36,8 @@ component.props = {
 
 component.styles = [
     Checkbox.styles,
+    SwitchTokens,
     css`
-        @tokens "../tokens/tokens.yaml" (import: switch);
-
         :host {
             --box-width: 0.9;
             --box-height: 0.48;

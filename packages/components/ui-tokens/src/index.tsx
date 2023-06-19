@@ -41,3 +41,7 @@ export const CheckboxTokens = css`
 export const RadioTokens = css`
     @tokens "./tokens.yaml" (import: radio);
 `;
+
+export const SwitchTokens = css`
+    @tokens "./tokens.yaml" (import: switch);
+`;

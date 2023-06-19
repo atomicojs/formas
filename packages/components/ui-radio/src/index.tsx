@@ -1,4 +1,4 @@
-import { UiRadio } from "./element";
-export { UiRadio } from "./element";
+import { Radio } from "./element";
+export { Radio } from "./element";
 
-customElements.define("atomico-ui-radio", UiRadio);
+customElements.define("atomico-ui-radio", Radio);
