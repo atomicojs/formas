@@ -1,5 +1,5 @@
 {
-        "name": "@atomico/ui-alert",
+        "name": "@atomico/ui-props",
         "version": "1.0.0",
         "type": "module",
         "publishConfig": {
@@ -16,20 +16,11 @@
                 "build": "npm run build:types && npm run build:compile && npm run build:exports",
                 "prepublishOnly": "npm run build"
         },
-        "types": "src/index.tsx",
+        "types": "src/index.ts",
         "exports": {
-                "./element": "./src/element.tsx",
-                ".": "./src/index.tsx",
-                "./stories/index.stories": "./src/stories/index.stories.tsx"
+                ".": "./src/index.ts"
         },
         "typesVersions": {
-                "*": {
-                        "element": [
-                                "src/element.tsx"
-                        ],
-                        "stories/index.stories": [
-                                "src/stories/index.stories.tsx"
-                        ]
-                }
+                "*": {}
         }
 }

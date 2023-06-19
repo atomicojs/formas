@@ -1,5 +1,5 @@
 {
-        "name": "@atomico/ui-alert",
+        "name": "@atomico/ui-avatar",
         "version": "1.0.0",
         "type": "module",
         "publishConfig": {
@@ -20,15 +20,23 @@
         "exports": {
                 "./element": "./src/element.tsx",
                 ".": "./src/index.tsx",
-                "./stories/index.stories": "./src/stories/index.stories.tsx"
+                "./label": "./src/label.tsx",
+                "./stories/index.stories": "./src/stories/index.stories.tsx",
+                "./avatar": "./src/avatar.tsx"
         },
         "typesVersions": {
                 "*": {
                         "element": [
                                 "src/element.tsx"
                         ],
+                        "label": [
+                                "src/label.tsx"
+                        ],
                         "stories/index.stories": [
                                 "src/stories/index.stories.tsx"
+                        ],
+                        "avatar": [
+                                "src/avatar.tsx"
                         ]
                 }
         }

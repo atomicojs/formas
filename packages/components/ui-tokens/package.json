@@ -22,5 +22,12 @@
                 "defaultValue": "true"
             }
         }
+    },
+    "types": "src/index.tsx",
+    "exports": {
+        ".": "./src/index.tsx"
+    },
+    "typesVersions": {
+        "*": {}
     }
 }

@@ -10,6 +10,7 @@
         "create:component": "scaff component-storybook src"
     },
     "dependencies": {
+        "@storybook/cli": "^7.0.17",
         "atomico": "^1.68.0"
     },
     "devDependencies": {
@@ -27,7 +28,8 @@
     "postcss": {
         "plugins": {
             "@atomico/postcss-tokens": {
-                "defaultValue": true
+                "defaultValue": true,
+                "prefix": "ui"
             }
         }
     }

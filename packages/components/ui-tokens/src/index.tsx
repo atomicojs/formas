@@ -1,7 +1,7 @@
 import { css } from "atomico";
 
 export const GenericTokens = css`
-    @tokens "./tokens.yaml" (import: generic);
+    @tokens "./tokens.yaml" (import: generic) (values: true);
     :host {
         font-size: var(--font-size);
         line-height: var(--font-line);
@@ -24,4 +24,8 @@ export const GenericStateTokens = css`
 
 export const NavigationTokens = css`
     @tokens "./tokens.yaml" (import: navigation);
+`;
+
+export const ButtonTokens = css`
+    @tokens "./tokens.yaml" (import: button);
 `;

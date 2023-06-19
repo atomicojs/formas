@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@atomico/exports": "^1.7.0",
+        "@atomico/hooks": "^3.49.1",
         "@atomico/postcss-tokens": "^2.1.0",
         "@atomico/run": "^0.10.1",
         "@atomico/scaffold": "^2.9.5",

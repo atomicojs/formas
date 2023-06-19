@@ -1,5 +1,5 @@
 {
-        "name": "@atomico/ui-alert",
+        "name": "@atomico/ui-loading",
         "version": "1.0.0",
         "type": "module",
         "publishConfig": {

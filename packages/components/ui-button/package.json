@@ -1,5 +1,5 @@
 {
-        "name": "@atomico/ui-alert",
+        "name": "@atomico/ui-button",
         "version": "1.0.0",
         "type": "module",
         "publishConfig": {
@@ -18,14 +18,18 @@
         },
         "types": "src/index.tsx",
         "exports": {
-                "./element": "./src/element.tsx",
+                "./button-active": "./src/button-active.tsx",
+                "./button": "./src/button.tsx",
                 ".": "./src/index.tsx",
                 "./stories/index.stories": "./src/stories/index.stories.tsx"
         },
         "typesVersions": {
                 "*": {
-                        "element": [
-                                "src/element.tsx"
+                        "button-active": [
+                                "src/button-active.tsx"
+                        ],
+                        "button": [
+                                "src/button.tsx"
                         ],
                         "stories/index.stories": [
                                 "src/stories/index.stories.tsx"
