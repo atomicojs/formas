@@ -11,7 +11,8 @@ export { SelectOption } from "./select-option";
 
 function select({ name, placeholder, small }: Props<typeof select>) {
     const refSlotOption = useRef();
-    const slotOption = useSlot<typeof SelectOption>(refSlotOption);
+    const slotOption =
+        useSlot<InstanceType<typeof SelectOption>>(refSlotOption);
     const disabled = useDisabled();
     const update = useUpdate();
     const [value, setValue] = useProp("value");

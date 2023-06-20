@@ -1,5 +1,5 @@
 import { useSlot } from "@atomico/hooks/use-slot";
-import { Host, c, useRef, DOMEvent } from "atomico";
+import { Type, Host, c, useRef } from "atomico";
 
 function selectOption(): Host<{ onOptionChange: Event }> {
     const refSlotOption = useRef();
@@ -32,6 +32,7 @@ selectOption.props = {
         event: eventOptionChange,
     },
     selected: Boolean,
+    change: String as Type<"A" | "B">,
 };
 
 export const SelectOption = c(selectOption);
