@@ -1,11 +1,11 @@
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
-import { c, css, Props, useProp, useRef, useUpdate } from "atomico";
 import { Icon } from "@atomico/ui-icon";
-import { InputLayout } from "@atomico/ui-input/layout";
+import { InputLayout } from "@atomico/ui-input";
 import { InputGenericProps } from "@atomico/ui-props";
 import { GenericTokens } from "@atomico/ui-tokens";
+import { c, css, Props, useProp, useRef, useUpdate } from "atomico";
 import { SelectOption } from "./option";
 export { SelectOption } from "./option";
 

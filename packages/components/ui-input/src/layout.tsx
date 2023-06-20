@@ -1,5 +1,5 @@
 import { useListener } from "@atomico/hooks/use-listener";
-import { DropdownLayout } from "@atomico/ui-dropdown/layout";
+import { DropdownLayout } from "@atomico/ui-dropdown";
 import {
     GenericStateTokens,
     GenericTokens,

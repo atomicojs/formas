@@ -1,18 +1,15 @@
-import { UiSelect } from "@atomico/ui-select";
+import { Select, SelectOption } from "@atomico/ui-select";
 import { define } from "@atomico/storybook";
 
 export default {
-    title: "components/ui-select",
-    ...define(
-        UiSelect,
-        { // Optional
-            argTypes: {
-                color: {
-                    description: "Description..."
-                }
-            }
-        }
-)
+    title: "Components/Select",
+    ...define(Select),
 };
 
-export const Story = (props) =><UiSelect {...props}>Atomico!</UiSelect>;
+export const Default = (props) => (
+    <Select {...props}>
+        <SelectOption value="1" label="Option 1"></SelectOption>
+        <SelectOption value="2" label="Option 2"></SelectOption>
+        <SelectOption value="3" label="Option 3"></SelectOption>
+    </Select>
+);
