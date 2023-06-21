@@ -1,8 +1,7 @@
 import { define } from "@atomico/storybook";
 import { Avatar, AvatarLabel } from "@formas/avatar";
-// import { AvatarLabel } from "./avatar-label";
-// import { Dropdown } from "../dropdown/dropdown";
-// import { Button } from "../button/button";
+import { Dropdown } from "@formas/dropdown";
+import { Button } from "@formas/button";
 
 export default {
     title: "Components/Avatar",
@@ -33,6 +32,10 @@ export default {
     }),
 };
 
+/**
+ * Avatar is used for showing a thumbnail representation of a single
+ * user or entity. Default avatar illustration is displayed when no src is specified.
+ */
 export const Default = (props) => (
     <Avatar {...props}>
         <img src="https://github.com/atomicojs.png" alt="avatar" />
@@ -52,17 +55,17 @@ Label.args = { placeholder: "AG" };
 export const WithStatus = (props) =>
     Default({ ...props, status: props.status || "success" });
 
-// export const WithDropdown = (props) => (
-//     <Dropdown>
-//         {WithStatus({ ...props, slot: "action" })}
-//         <Button small={props.small} ghost>
-//             Option 1
-//         </Button>
-//         <Button small={props.small} ghost>
-//             Option 2
-//         </Button>
-//         <Button small={props.small} ghost>
-//             Option 3
-//         </Button>
-//     </Dropdown>
-// );
+export const WithDropdown = (props) => (
+    <Dropdown>
+        {WithStatus({ ...props, slot: "action" })}
+        <Button small={props.small} ghost>
+            Option 1
+        </Button>
+        <Button small={props.small} ghost>
+            Option 2
+        </Button>
+        <Button small={props.small} ghost>
+            Option 3
+        </Button>
+    </Dropdown>
+);

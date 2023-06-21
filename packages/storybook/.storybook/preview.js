@@ -1,4 +1,4 @@
-import { decorator, options } from "@atomico/storybook";
+import { decorator } from "@atomico/storybook";
 
 export const parameters = {
     actions: { argTypesRegex: "^on.*" },
@@ -9,4 +9,4 @@ export const parameters = {
     },
 };
 
-export const decorators = [decorator];
+export const decorators = [decorator()];
