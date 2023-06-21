@@ -1,5 +1,5 @@
 import { c, css, JSX, Props } from "atomico";
-import { GenericTokens } from "@atomico/ui-tokens";
+import { GenericTokens } from "@formas/tokens";
 import { Icons, IconsKeys } from "./icons";
 
 function icon({ type, size, icons, color }: Props<typeof icon>) {

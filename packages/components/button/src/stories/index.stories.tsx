@@ -1,7 +1,7 @@
 import { define } from "@atomico/storybook";
-import { Icon } from "@atomico/ui-icon";
-import { Loading } from "@atomico/ui-loading";
-import { Button } from "@atomico/ui-button";
+import { Icon } from "@formas/icon";
+import { Loading } from "@formas/loading";
+import { Button } from "@formas/button";
 
 export default {
     title: "Components/Button",

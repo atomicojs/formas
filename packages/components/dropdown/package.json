@@ -1,5 +1,5 @@
 {
-    "name": "@atomico/ui-dropdown",
+    "name": "@formas/dropdown",
     "version": "1.0.0",
     "type": "module",
     "publishConfig": {

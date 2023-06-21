@@ -1,5 +1,5 @@
 import { define } from "@atomico/storybook";
-import { Avatar, AvatarLabel } from "@atomico/ui-avatar";
+import { Avatar, AvatarLabel } from "@formas/avatar";
 // import { AvatarLabel } from "./avatar-label";
 // import { Dropdown } from "../dropdown/dropdown";
 // import { Button } from "../button/button";

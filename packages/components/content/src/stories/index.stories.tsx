@@ -1,6 +1,6 @@
 import { define } from "@atomico/storybook";
-import { Avatar } from "@atomico/ui-avatar";
-import { Content } from "@atomico/ui-content";
+import { Avatar } from "@formas/avatar";
+import { Content } from "@formas/content";
 
 export default {
     title: "Components/Content",

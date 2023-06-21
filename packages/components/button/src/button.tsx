@@ -3,12 +3,12 @@ import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
 import { c, css, Props, Type, useHost, useProp, useRef } from "atomico";
-import { InputGenericProps } from "@atomico/ui-props";
+import { InputGenericProps } from "@formas/props";
 import {
     GenericStateTokens,
     GenericTokens,
     ButtonTokens,
-} from "@atomico/ui-tokens";
+} from "@formas/tokens";
 import { ButtonActive } from "./button-active";
 
 function button({

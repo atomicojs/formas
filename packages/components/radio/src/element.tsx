@@ -2,8 +2,8 @@ import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useFormInputRadio } from "@atomico/hooks/use-form";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { c, css, Props, useHost, useProp } from "atomico";
-import { Checkbox } from "@atomico/ui-checkbox";
-import { RadioTokens } from "@atomico/ui-tokens";
+import { Checkbox } from "@formas/checkbox";
+import { RadioTokens } from "@formas/tokens";
 
 function component({ tabIndex, value }: Props<typeof component>) {
     const host = useHost();

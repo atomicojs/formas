@@ -1,5 +1,5 @@
 import { define } from "@atomico/storybook";
-import { Alert } from "@atomico/ui-alert";
+import { Alert } from "@formas/alert";
 
 export default {
     title: "In progress/Components/Alert",

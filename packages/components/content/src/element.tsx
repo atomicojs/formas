@@ -1,6 +1,6 @@
 import { useProxySlot } from "@atomico/hooks/use-slot";
 import { c, css, useRef } from "atomico";
-import { GenericTokens } from "@atomico/ui-tokens";
+import { GenericTokens } from "@formas/tokens";
 
 function content() {
     const ref = useRef();

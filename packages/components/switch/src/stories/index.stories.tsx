@@ -1,4 +1,4 @@
-import { Switch } from "@atomico/ui-switch";
+import { Switch } from "@formas/switch";
 import { define } from "@atomico/storybook";
 
 export default {

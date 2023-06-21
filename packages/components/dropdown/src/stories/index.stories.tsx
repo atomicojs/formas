@@ -1,6 +1,6 @@
 import { define } from "@atomico/storybook";
-import { Button } from "@atomico/ui-button";
-import { Dropdown } from "@atomico/ui-dropdown";
+import { Button } from "@formas/button";
+import { Dropdown } from "@formas/dropdown";
 
 export default {
     title: "Components/Dropdown",

@@ -1,7 +1,7 @@
 import { useSlot } from "@atomico/hooks/use-slot";
 import { c, css, Props, useEffect, useRef } from "atomico";
-import { Button } from "@atomico/ui-button";
-import { GenericTokens, NavigationTokens } from "@atomico/ui-tokens";
+import { Button } from "@formas/button";
+import { GenericTokens, NavigationTokens } from "@formas/tokens";
 
 function sidebar({ onlyIcons }: Props<typeof sidebar>) {
     const refSlot = useRef();

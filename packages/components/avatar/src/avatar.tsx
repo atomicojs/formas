@@ -1,5 +1,5 @@
 import { useRender } from "@atomico/hooks/use-render";
-import { GenericTokens } from "@atomico/ui-tokens";
+import { GenericTokens } from "@formas/tokens";
 import { c, css, Props, Type } from "atomico";
 
 function avatar({ status, statusPosition, placeholder }: Props<typeof avatar>) {

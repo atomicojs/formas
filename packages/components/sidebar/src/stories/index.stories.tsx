@@ -1,8 +1,8 @@
 import { define } from "@atomico/storybook";
-import { Avatar, AvatarLabel } from "@atomico/ui-avatar";
-import { Button } from "@atomico/ui-button";
-import { Icon } from "@atomico/ui-icon";
-import { Sidebar } from "@atomico/ui-sidebar";
+import { Avatar, AvatarLabel } from "@formas/avatar";
+import { Button } from "@formas/button";
+import { Icon } from "@formas/icon";
+import { Sidebar } from "@formas/sidebar";
 
 export default {
     title: "Example/Dashboard",

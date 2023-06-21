@@ -1,6 +1,6 @@
 import { define } from "@atomico/storybook";
-import { Input } from "@atomico/ui-input";
-import { Icon } from "@atomico/ui-icon";
+import { Input } from "@formas/input";
+import { Icon } from "@formas/icon";
 
 export default {
     title: "components/Input",

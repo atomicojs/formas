@@ -1,9 +1,9 @@
 import { define } from "@atomico/storybook";
-import { Avatar, AvatarLabel } from "@atomico/ui-avatar";
-import { Button } from "@atomico/ui-button";
-import { Content } from "@atomico/ui-content";
-import { Icon } from "@atomico/ui-icon";
-import { Card } from "@atomico/ui-card";
+import { Avatar, AvatarLabel } from "@formas/avatar";
+import { Button } from "@formas/button";
+import { Content } from "@formas/content";
+import { Icon } from "@formas/icon";
+import { Card } from "@formas/card";
 
 export default {
     title: "Components/Card",

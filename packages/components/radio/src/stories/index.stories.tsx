@@ -1,4 +1,4 @@
-import { Radio } from "@atomico/ui-radio";
+import { Radio } from "@formas/radio";
 import { define } from "@atomico/storybook";
 
 export default {

@@ -1,6 +1,6 @@
 import { computePosition, flip, shift } from "@floating-ui/dom";
 import { c, css, Props, useEffect, useRef, useState } from "atomico";
-import { GenericTokens, DropdownTokens } from "@atomico/ui-tokens";
+import { GenericTokens, DropdownTokens } from "@formas/tokens";
 
 function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {
     const [style, setStyle] = useState<string>();

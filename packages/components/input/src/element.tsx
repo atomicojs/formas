@@ -2,8 +2,8 @@ import { useDisabled } from "@atomico/hooks/use-disabled";
 import { usePropProxy } from "@atomico/hooks/use-prop-proxy";
 import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
-import { InputGenericProps } from "@atomico/ui-props";
-import { GenericTokens, InputTokens } from "@atomico/ui-tokens";
+import { InputGenericProps } from "@formas/props";
+import { GenericTokens, InputTokens } from "@formas/tokens";
 import { Props, c, useProp, useRef } from "atomico";
 import { InputLayout } from "./layout";
 

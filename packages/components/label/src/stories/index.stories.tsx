@@ -1,8 +1,8 @@
 import { define } from "@atomico/storybook";
-import { Checkbox } from "@atomico/ui-checkbox";
-import { Label } from "@atomico/ui-label";
-import { Radio } from "@atomico/ui-radio";
-import { Switch } from "@atomico/ui-switch";
+import { Checkbox } from "@formas/checkbox";
+import { Label } from "@formas/label";
+import { Radio } from "@formas/radio";
+import { Switch } from "@formas/switch";
 
 export default {
     title: "components/Label",

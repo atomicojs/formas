@@ -1,10 +1,6 @@
 import { useListener } from "@atomico/hooks/use-listener";
-import { DropdownLayout } from "@atomico/ui-dropdown";
-import {
-    GenericStateTokens,
-    GenericTokens,
-    InputTokens,
-} from "@atomico/ui-tokens";
+import { DropdownLayout } from "@formas/dropdown";
+import { GenericStateTokens, GenericTokens, InputTokens } from "@formas/tokens";
 import {
     Host,
     Props,

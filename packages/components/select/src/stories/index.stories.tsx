@@ -1,4 +1,4 @@
-import { Select, SelectOption } from "@atomico/ui-select";
+import { Select, SelectOption } from "@formas/select";
 import { define } from "@atomico/storybook";
 
 export default {

@@ -1,4 +1,4 @@
-import { Loading } from "@atomico/ui-loading";
+import { Loading } from "@formas/loading";
 import { define } from "@atomico/storybook";
 
 export default {

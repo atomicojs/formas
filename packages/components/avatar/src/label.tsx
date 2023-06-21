@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { GenericTokens } from "@atomico/ui-tokens";
+import { GenericTokens } from "@formas/tokens";
 
 function avatarLabel() {
     return (

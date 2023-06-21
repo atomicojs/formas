@@ -1,9 +1,9 @@
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { c, css, Props, useHost, useProp } from "atomico";
-import { Checkbox } from "@atomico/ui-checkbox";
-import { useCheckbox } from "@atomico/ui-checkbox/hooks";
-import { SwitchTokens } from "@atomico/ui-tokens";
+import { Checkbox } from "@formas/checkbox";
+import { useCheckbox } from "@formas/checkbox/hooks";
+import { SwitchTokens } from "@formas/tokens";
 
 function component({ tabIndex }: Props<typeof component>) {
     const host = useHost();

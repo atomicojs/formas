@@ -1,39 +1,39 @@
 {
-        "name": "@atomico/ui-icon",
-        "version": "1.0.0",
-        "type": "module",
-        "publishConfig": {
-                "access": "public"
-        },
-        "peerDependencies": {
-                "atomico": "*"
-        },
-        "scripts": {
-                "build:types": "tsc",
-                "build:compile": "library src/**/*",
-                "build:exports": "exports lib/**/* types/**/* --wrappers",
-                "dev:exports": "exports src/**/* --watch",
-                "build": "npm run build:types && npm run build:compile && npm run build:exports",
-                "prepublishOnly": "npm run build"
-        },
-        "types": "src/index.tsx",
-        "exports": {
-                "./icon": "./src/icon.tsx",
-                "./icons": "./src/icons.tsx",
-                ".": "./src/index.tsx",
-                "./stories/index.stories": "./src/stories/index.stories.tsx"
-        },
-        "typesVersions": {
-                "*": {
-                        "icon": [
-                                "src/icon.tsx"
-                        ],
-                        "icons": [
-                                "src/icons.tsx"
-                        ],
-                        "stories/index.stories": [
-                                "src/stories/index.stories.tsx"
-                        ]
-                }
+    "name": "@formas/icon",
+    "version": "1.0.0",
+    "type": "module",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "atomico": "*"
+    },
+    "scripts": {
+        "build:types": "tsc",
+        "build:compile": "library src/**/*",
+        "build:exports": "exports lib/**/* types/**/* --wrappers",
+        "dev:exports": "exports src/**/* --watch",
+        "build": "npm run build:types && npm run build:compile && npm run build:exports",
+        "prepublishOnly": "npm run build"
+    },
+    "types": "src/index.tsx",
+    "exports": {
+        "./icon": "./src/icon.tsx",
+        "./icons": "./src/icons.tsx",
+        ".": "./src/index.tsx",
+        "./stories/index.stories": "./src/stories/index.stories.tsx"
+    },
+    "typesVersions": {
+        "*": {
+            "icon": [
+                "src/icon.tsx"
+            ],
+            "icons": [
+                "src/icons.tsx"
+            ],
+            "stories/index.stories": [
+                "src/stories/index.stories.tsx"
+            ]
         }
+    }
 }

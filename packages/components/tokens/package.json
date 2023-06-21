@@ -1,5 +1,5 @@
 {
-    "name": "@atomico/ui-tokens",
+    "name": "@formas/tokens",
     "version": "1.0.0",
     "type": "module",
     "publishConfig": {

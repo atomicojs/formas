@@ -1,35 +1,35 @@
 {
-        "name": "@atomico/ui-card",
-        "version": "1.0.0",
-        "type": "module",
-        "publishConfig": {
-                "access": "public"
-        },
-        "peerDependencies": {
-                "atomico": "*"
-        },
-        "scripts": {
-                "build:types": "tsc",
-                "build:compile": "library src/**/*",
-                "build:exports": "exports lib/**/* types/**/* --wrappers",
-                "dev:exports": "exports src/**/* --watch",
-                "build": "npm run build:types && npm run build:compile && npm run build:exports",
-                "prepublishOnly": "npm run build"
-        },
-        "types": "src/index.tsx",
-        "exports": {
-                "./element": "./src/element.tsx",
-                ".": "./src/index.tsx",
-                "./stories/index.stories": "./src/stories/index.stories.tsx"
-        },
-        "typesVersions": {
-                "*": {
-                        "element": [
-                                "src/element.tsx"
-                        ],
-                        "stories/index.stories": [
-                                "src/stories/index.stories.tsx"
-                        ]
-                }
+    "name": "@formas/card",
+    "version": "1.0.0",
+    "type": "module",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "atomico": "*"
+    },
+    "scripts": {
+        "build:types": "tsc",
+        "build:compile": "library src/**/*",
+        "build:exports": "exports lib/**/* types/**/* --wrappers",
+        "dev:exports": "exports src/**/* --watch",
+        "build": "npm run build:types && npm run build:compile && npm run build:exports",
+        "prepublishOnly": "npm run build"
+    },
+    "types": "src/index.tsx",
+    "exports": {
+        "./element": "./src/element.tsx",
+        ".": "./src/index.tsx",
+        "./stories/index.stories": "./src/stories/index.stories.tsx"
+    },
+    "typesVersions": {
+        "*": {
+            "element": [
+                "src/element.tsx"
+            ],
+            "stories/index.stories": [
+                "src/stories/index.stories.tsx"
+            ]
         }
+    }
 }

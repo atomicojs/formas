@@ -1,5 +1,5 @@
 import { define } from "@atomico/storybook";
-import { Checkbox } from "@atomico/ui-checkbox";
+import { Checkbox } from "@formas/checkbox";
 
 export default {
     title: "Components/Checkbox",

@@ -1,6 +1,6 @@
 import { useSlot } from "@atomico/hooks/use-slot";
 import { c, css, useRef } from "atomico";
-import { GenericTokens } from "@atomico/ui-tokens";
+import { GenericTokens } from "@formas/tokens";
 
 interface SlotAction extends HTMLElement {
     click(): void;

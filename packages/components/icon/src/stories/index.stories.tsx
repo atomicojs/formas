@@ -1,4 +1,4 @@
-import { Icon, Icons, IconsKeys } from "@atomico/ui-icon";
+import { Icon, Icons, IconsKeys } from "@formas/icon";
 import { define } from "@atomico/storybook";
 
 export default {
