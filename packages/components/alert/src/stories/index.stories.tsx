@@ -6,6 +6,13 @@ export default {
     ...define(Alert),
 };
 
+/**
+ * Define **algo!**
+ *
+ * ```tsx
+ * <demo/>
+ * ```
+ */
 export const Default = (props) => (
     <Alert {...props}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, ullam!
