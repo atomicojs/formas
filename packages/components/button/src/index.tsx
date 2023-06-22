@@ -3,5 +3,5 @@ export { Button } from "./button";
 import { ButtonActive } from "./button-active";
 export { ButtonActive } from "./button-active";
 
-customElements.define("ui-button-active", ButtonActive);
-customElements.define("ui-button", Button);
+customElements.define("forma-button-active", ButtonActive);
+customElements.define("forma-button", Button);

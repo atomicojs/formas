@@ -1,4 +1,4 @@
 import { Content } from "./element";
 export { Content } from "./element";
 
-customElements.define("ui-content", Content);
+customElements.define("forma-content", Content);
