@@ -15,6 +15,11 @@ export const parameters = {
             },
         ],
     },
+    options: {
+        storySort: {
+            order: ["introduction", "components", ["*"]],
+        },
+    },
     // docs: {
     //     source: {
     //         // language: "jsx",

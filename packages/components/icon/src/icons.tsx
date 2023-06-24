@@ -1,31 +1,16 @@
 import { template } from "atomico";
 
 export const Icons = {
-    formilk: template(
-        <svg
-            viewBox="0 0 16 16"
-            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
-        >
-            <path
-                d="M.8 16a3.999 3.999 0 0 0 4-4v4h-4Zm4-7.6h3.199v4.4A3.2 3.2 0 0 1 4.8 16V8.4Z"
-                style="fill:#02d365;fill-rule:nonzero"
-                transform="translate(2)"
-            />
-            <path
-                d="M1.6 14.4a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Z"
-                style="fill:#02d365;fill-rule:nonzero"
-                transform="translate(2)"
-            />
-            <path
-                d="M8.4 8.4H4.8V12a3.6 3.6 0 0 1 3.6-3.6ZM12 4.8H8.4a3.6 3.6 0 0 0-3.6 3.6h3.6A3.6 3.6 0 0 0 12 4.8Z"
-                style="fill:#333"
-                transform="translate(2)"
-            />
-            <path
-                d="M4 4v4c0-1.061.421-2.078 1.171-2.829A4.003 4.003 0 0 1 8 4a4.006 4.006 0 0 0 3.695-2.469A4.006 4.006 0 0 0 12 0H8a4 4 0 0 0-4 4Z"
-                style="fill:#333"
-                transform="translate(2)"
-            />
+    logo: template(
+        <svg viewBox="0 0 16 16">
+            <g id="icon" transform="translate(-492 -270)">
+                <path
+                    id="Path_26"
+                    data-name="Path 26"
+                    d="M-45.825,17.48A4.48,4.48,0,0,1-41.345,13v9.52A4.48,4.48,0,0,1-45.825,27Zm5.18,2.52a2.8,2.8,0,0,1,2.8-2.8,2.8,2.8,0,0,1,2.8,2.8,2.8,2.8,0,0,1-2.8,2.8A2.8,2.8,0,0,1-40.645,20Zm2.733-4.2a2.716,2.716,0,0,1-1.933-.8,2.716,2.716,0,0,1-.8-1.933c0-.022,0-.044,0-.067h5.6c0,.025,0,.047,0,.067a2.715,2.715,0,0,1-.8,1.933,2.716,2.716,0,0,1-1.933.8Z"
+                    transform="translate(540.325 258)"
+                />
+            </g>
         </svg>
     ),
     check: template(

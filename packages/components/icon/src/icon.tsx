@@ -19,7 +19,7 @@ icon.props = {
     type: {
         type: String,
         reflect: true,
-        value: (): IconsKeys => "formilk",
+        value: (): IconsKeys => "logo",
     },
     size: {
         type: String,
