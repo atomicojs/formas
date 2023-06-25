@@ -19,7 +19,7 @@
         "singleQuote": false
     },
     "dependencies": {
-        "@atomico/exports": "^1.7.0",
+        "@atomico/exports": "^1.8.1",
         "@atomico/hooks": "^3.49.1",
         "@atomico/postcss-tokens": "^2.1.0",
         "@atomico/run": "^0.10.1",
