@@ -1,6 +1,6 @@
 {
     "name": "@atomico/components",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "type": "module",
     "publishConfig": {
         "access": "public"
@@ -12,7 +12,7 @@
     },
     "scripts": {
         "dev:exports": "exports ../** --centralize-packages --wrappers",
-        "build:pkg": "exports ../** --centralize-packages"
+        "centralize": "exports ../** --centralize-packages"
     },
     "dependencies": {
         "@formas/avatar": "^1.0.0",
