@@ -12,8 +12,7 @@
     },
     "scripts": {
         "dev:exports": "exports ../** --centralize-packages --wrappers",
-        "build": "exports ../** --centralize-packages",
-        "prepublishOnly": "npm run build"
+        "build:pkg": "exports ../** --centralize-packages"
     },
     "dependencies": {
         "@formas/avatar": "^1.0.0",
