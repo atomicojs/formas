@@ -12,7 +12,7 @@
     },
     "scripts": {
         "dev:exports": "npm run centralize",
-        "centralize": "exports ../** --centralize-packages --wrappers"
+        "centralize": "exports \"../**\" --centralize-packages --wrappers"
     },
     "dependencies": {
         "@formas/avatar": "^0.0.1",
