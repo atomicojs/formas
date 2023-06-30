@@ -1,6 +1,6 @@
 {
     "name": "@formas/components",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "type": "module",
     "publishConfig": {
         "access": "public"
@@ -15,23 +15,23 @@
         "centralize": "exports \"../**\" --centralize-packages --wrappers"
     },
     "dependencies": {
-        "@formas/avatar": "^0.0.1",
-        "@formas/button": "^0.0.1",
-        "@formas/alert": "^0.0.1",
-        "@formas/card": "^0.0.1",
-        "@formas/checkbox": "^0.0.1",
-        "@formas/dropdown": "^0.0.1",
-        "@formas/content": "^0.0.1",
-        "@formas/icon": "^0.0.1",
-        "@formas/label": "^0.0.1",
-        "@formas/input": "^0.0.1",
-        "@formas/loading": "^0.0.1",
-        "@formas/props": "^0.0.1",
-        "@formas/radio": "^0.0.1",
-        "@formas/select": "^0.0.1",
-        "@formas/sidebar": "^0.0.1",
-        "@formas/switch": "^0.0.1",
-        "@formas/tokens": "^0.0.1"
+        "@formas/avatar": "^0.0.4",
+        "@formas/button": "^0.0.4",
+        "@formas/alert": "^0.0.4",
+        "@formas/card": "^0.0.4",
+        "@formas/checkbox": "^0.0.4",
+        "@formas/dropdown": "^0.0.4",
+        "@formas/content": "^0.0.4",
+        "@formas/icon": "^0.0.4",
+        "@formas/label": "^0.0.4",
+        "@formas/input": "^0.0.4",
+        "@formas/loading": "^0.0.4",
+        "@formas/props": "^0.0.4",
+        "@formas/radio": "^0.0.4",
+        "@formas/select": "^0.0.4",
+        "@formas/sidebar": "^0.0.4",
+        "@formas/switch": "^0.0.4",
+        "@formas/tokens": "^0.0.4"
     },
     "peerDependenciesMeta": {
         "@atomico/react": {
@@ -43,10 +43,23 @@
     },
     "types": "wrapper/index.d.ts",
     "exports": {
-        ".": "./wrapper/index.js"
+        ".": "./wrapper/index.js",
+        "./react": "./wrapper/react.js",
+        "./preact": "./wrapper/preact.js",
+        "./vue": "./wrapper/vue.js"
     },
     "typesVersions": {
-        "*": {}
+        "*": {
+            "react": [
+                "wrapper/react.d.ts"
+            ],
+            "preact": [
+                "wrapper/preact.d.ts"
+            ],
+            "vue": [
+                "wrapper/vue.d.ts"
+            ]
+        }
     },
     "main": "wrapper/index.js",
     "module": "wrapper/index.js"
