@@ -22,7 +22,7 @@
         "@atomico/exports": "^1.8.1",
         "@atomico/hooks": "^3.49.1",
         "@atomico/postcss-tokens": "^2.1.0",
-        "@atomico/run": "^0.10.1",
+        "@atomico/run": "^0.11.0",
         "@atomico/scaffold": "^2.9.5",
         "@atomico/tsconfig": "^1.1.2",
         "@atomico/vite": "^2.10.0",
