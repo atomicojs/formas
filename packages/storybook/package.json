@@ -29,7 +29,7 @@
         "plugins": {
             "@atomico/postcss-tokens": {
                 "defaultValue": true,
-                "prefix": "ui"
+                "prefix": "formas"
             }
         }
     }
