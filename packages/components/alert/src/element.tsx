@@ -18,8 +18,6 @@ alert.props = {
     small: { type: Boolean, reflect: true },
 };
 
-console.log(GenericTokens);
-
 alert.styles = [
     GenericTokens,
     css`
