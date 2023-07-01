@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "run dev:* -p",
         "build": "run build:* centralize publish -s",
-        "dev:storybook": "npm run dev -w=storybook",
+        "dev:storybook": "npm run dev -w=st",
         "build:storybook": "npm run build -w=storybook",
         "create:component": "scaff component-monorepo packages/components && npm i"
     },
