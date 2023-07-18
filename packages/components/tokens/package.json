@@ -12,7 +12,7 @@
         "build:types": "tsc",
         "build:compile": "library \"src/**/*\" --all-external",
         "build:exports": "exports \"lib/**/*\" \"types/**/*\" --wrappers",
-        "dev:exports": "exports src/**/* --watch"
+        "dev:exports": "exports \"src/**/*\" --watch"
     },
     "postcss": {
         "plugins": {

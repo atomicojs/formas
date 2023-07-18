@@ -1,5 +1,19 @@
 import { css } from "atomico";
 
+export const PrimitiveTokens = css`
+    @tokens "./tokens.yaml" (import: primitive) (values: true);
+`;
+
+export const ActionTokens = css`
+    @tokens "./tokens.yaml" (import: action) (values: true);
+
+    :host {
+        font-size: var(--font-size);
+        font-weight: var(--font-weight);
+        color: var(--font-color);
+    }
+`;
+
 export const GenericTokens = css`
     @tokens "./tokens.yaml" (import: generic) (values: true);
     :host {

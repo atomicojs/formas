@@ -2,13 +2,9 @@ import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
 import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
-import { c, css, Props, Type, useHost, useProp, useRef } from "atomico";
 import { InputGenericProps } from "@formas/props";
-import {
-    GenericStateTokens,
-    GenericTokens,
-    ButtonTokens,
-} from "@formas/tokens";
+import { ActionTokens, ButtonTokens, PrimitiveTokens } from "@formas/tokens";
+import { c, css, Props, Type, useHost, useProp, useRef } from "atomico";
 import { ButtonActive } from "./button-active";
 
 function button({
@@ -77,7 +73,7 @@ function button({
             color={color ? color : outline ? "primary" : null}
         >
             <button
-                class="button"
+                class="container"
                 onfocus={() => !badge && setFocused(true)}
                 onblur={() => !badge && setFocused(false)}
                 tabIndex={badge ? -1 : null}
@@ -87,33 +83,25 @@ function button({
                     <slot name="background">
                         <ButtonActive
                             ref={refButtonActive}
-                            class="button-fx"
+                            class="effect"
                         ></ButtonActive>
                     </slot>
                 </div>
                 <div class="row">
-                    <div class="action action-prefix">
-                        <div
-                            class={`icon icon-prefix ${
-                                slotPrefix.length ? "" : "hide"
-                            }`}
-                        >
-                            <slot ref={refPrefix} name="icon-prefix"></slot>
+                    <div class="action prefix">
+                        <div class={`icon ${slotPrefix.length ? "" : "hide"}`}>
+                            <slot ref={refPrefix} name="prefix" />
                         </div>
                     </div>
-                    <div class="only-icon content">
+                    <div class={`content ${slotContent.length ? "" : "hide"}`}>
                         <slot ref={refContent} />
                     </div>
-                    <div class="only-icon action action-suffix">
-                        <div
-                            class={`icon icon-suffix ${
-                                slotSuffix.length ? "" : "hide"
-                            }`}
-                        >
-                            <slot ref={refSuffix} name="icon-suffix"></slot>
+                    <div class="action suffix">
+                        <div class={`icon ${slotSuffix.length ? "" : "hide"}`}>
+                            <slot ref={refSuffix} name="suffix" />
                         </div>
                         <div class={`badge ${slotBadge.length ? "" : "hide"}`}>
-                            <slot ref={refBadge} name="badge"></slot>
+                            <slot ref={refBadge} name="badge" />
                         </div>
                     </div>
                 </div>
@@ -139,71 +127,49 @@ button.props = {
 };
 
 button.styles = [
-    GenericTokens,
-    GenericStateTokens,
+    PrimitiveTokens,
+    ActionTokens,
     ButtonTokens,
     css`
         :host {
-            --size-icon: calc(var(--size-height) - (var(--border-width) * 2));
-            --background: var(--color-fill);
-            --size-width: 100%;
-            --opacity-content: 1;
-            --transition-content: 0.25s ease all 0.1s;
             display: inline-block;
-            height: var(--size-height);
             white-space: nowrap;
-            color: var(--color-text);
-            font-weight: var(--font-bold);
-        }
-        .only-icon {
-            transition: 0.3s ease all;
-        }
-        :host([only-icon]) {
-            --size-width: var(--size-height);
-            --opacity-content: 0;
-            --transition-content: 0.1s ease all 0s;
-        }
-        :host([circle]) {
-            --radius: var(--radius-circle);
-        }
-        :host([ghost]) {
-            --background: transparent;
-            --border-width: 0px;
+            line-height: 0;
+            ---border: none;
+            ---color: var(--color);
+            ---outline: none;
+            ---radius: var(--radius);
         }
         :host([outline]) {
-            --background: transparent;
-            --color-text: var(--color-fill);
+            ---border: var(--border);
+            ---color: transparent;
         }
-        :host([outline]) .button-fx,
-        :host([ghost]) .button-fx {
-            --background: var(--color-active);
+        :host([focused]) {
+            ---outline: var(--outline);
         }
-        .button-fx {
-            border-radius: var(--radius);
+        :host([circle]) {
+            ---radius: var(--radius-circle);
         }
-        .button {
+        .container {
+            all: unset;
             position: relative;
-            padding: 0px;
-            width: var(--size-width);
-            height: var(--size-height);
-            min-width: var(--size-height);
-            outline: var(--outline);
-            border: var(--border-width) var(--border-style) var(--color-active);
-            border-radius: var(--radius);
-            font-family: unset;
-            font-size: unset;
+            height: var(--size);
+            min-width: var(--size);
             cursor: pointer;
-            background: var(--background);
-            transition: var(--transition-action);
-            color: unset;
-            font-weight: unset;
+            border: var(---border);
+            border-radius: var(---radius);
+            background: var(---color);
+            outline: var(---outline);
+            transition: var(--transition);
+            box-sizing: border-box;
         }
         .content {
             flex: 0%;
             display: flex;
+            gap: var(--space);
             align-items: center;
-            opacity: var(--opacity-content);
-            transition: var(--transition-content);
+            transition: var(--transition);
+            padding: 0 var(--space);
         }
         .action {
             box-sizing: border-box;
@@ -213,9 +179,10 @@ button.styles = [
         .row {
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             z-index: 1;
-            height: 100%;
+            padding: 0 var(--space);
         }
         .background {
             width: 100%;
@@ -232,22 +199,13 @@ button.styles = [
             width: var(--size-icon);
             height: var(--size-icon);
         }
-        .badge {
-            height: 100%;
-            padding: var(--space-safe);
-            display: flex;
-            align-items: center;
-            box-sizing: border-box;
-        }
         .hide {
             display: none;
         }
-        :host([only-icon]) .badge {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            padding: 0px;
-            height: auto;
+        .background {
+            --color-active: var(--color-contrast-15);
+            border-radius: var(---radius);
+            overflow: hidden;
         }
     `,
 ];

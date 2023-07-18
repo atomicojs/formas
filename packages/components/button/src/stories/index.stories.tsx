@@ -1,7 +1,7 @@
 import { define } from "@atomico/storybook";
+import { Button } from "@formas/button";
 import { Icon } from "@formas/icon";
 import { Loading } from "@formas/loading";
-import { Button } from "@formas/button";
 
 export default {
     title: "Components/Button",
@@ -12,7 +12,7 @@ export default {
             },
             onlyIcon: {
                 description:
-                    "Declares that the component will only use the icon-prefix slot",
+                    "Declares that the component will only use the prefix slot",
             },
             ghost: {
                 description:
@@ -22,11 +22,11 @@ export default {
                 description:
                     "declares the type of behavior, either `button`, `button[type=submit]`, or `a[href]`",
             },
-            "icon-prefix": {
+            prefix: {
                 category: "Slots",
                 defaultValue: "Element",
             },
-            "icon-suffix": {
+            suffix: {
                 category: "Slots",
                 defaultValue: "Element",
             },
@@ -46,37 +46,27 @@ export const Default = (props) => <Button {...props}>Button</Button>;
 
 export const WithIconPrefix = (props) => (
     <Button {...props}>
-        <Icon slot="icon-prefix"></Icon>
+        <Icon></Icon>
         <span>Button</span>
     </Button>
 );
 
 export const WithIconSuffix = (props) => (
     <Button {...props}>
-        <Icon slot="icon-suffix"></Icon>
+        <Icon></Icon>
         <span>Button</span>
     </Button>
 );
 
 export const WithSquare = (props) => (
     <Button {...props}>
-        <Icon slot="icon-prefix"></Icon>
-    </Button>
-);
-
-export const WithBadge = (props) => (
-    <Button {...props}>
-        <Icon slot="icon-prefix" type="file"></Icon>
-        <span>Messages</span>
-        <Button slot="badge" badge color="primary">
-            10
-        </Button>
+        <Icon slot="prefix"></Icon>
     </Button>
 );
 
 export const ExampleWithLoading = (props) => (
     <Button {...props}>
-        <Loading slot="icon-prefix"></Loading>
+        <Loading></Loading>
         <span>Loading</span>
     </Button>
 );

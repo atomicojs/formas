@@ -9,7 +9,7 @@ export default {
 export const Default = (props) => (
     <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(50px, 1fr))">
         {Object.keys(Icons).map((type: IconsKeys) => (
-            <Icon {...props} type={type}></Icon>
+            <Icon title={type} {...props} type={type}></Icon>
         ))}
     </div>
 );

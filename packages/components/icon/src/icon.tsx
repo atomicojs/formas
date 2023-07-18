@@ -9,7 +9,7 @@ function icon({ type, size, icons, color }: Props<typeof icon>) {
             <Element cloneNode staticNode />
             <style>
                 {size && `:host{--width: ${size};}`}
-                {color && `:host{--color: ${color};}`}
+                {color && `:host{color: ${color};}`}
             </style>
         </host>
     );
@@ -40,7 +40,7 @@ icon.styles = [
     css`
         :host {
             width: var(--width, var(--size-icon));
-            color: var(--color, currentColor);
+            color: currentColor;
             display: inline-flex;
             align-items: center;
             justify-items: center;

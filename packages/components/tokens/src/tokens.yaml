@@ -1,3 +1,77 @@
+primitive:
+    size:
+        4xs: 0.125rem # 2
+        3xs: 0.25rem # 4
+        xxs: 0.5rem # 8
+        xs: 0.625rem # 10
+        s: 0.75rem # 12
+        m: 0.875rem # 14
+        l: 1rem # 16
+        xl: 1.25rem # 20
+        xxl: 1.875rem # 30
+        3xl: 2.5rem # 40
+        # configurable
+    color:
+        primary: "#C9C2D2"
+        secondary: "#C9D0DB"
+        tertiary: "#E2D4C5"
+        neutral:
+            =: "#F0F0F0"
+            50: "#F8F8F8"
+        invert: "#FFFFFF"
+        contrast:
+            100: "rgba(0,0,0,.75)"
+            75: "rgba(0,0,0,.75)"
+            50: "rgba(0,0,0,.5)"
+            30: "rgba(0,0,0,.3)"
+            15: "rgba(0,0,0,.15)"
+            10: "rgba(0,0,0,.1)"
+            5: "rgba(0,0,0,.05)"
+action:
+    font:
+        size:
+            =: $$size.m
+            [small=true]:
+                =: $$size.s
+        weight: 500
+        color: $$primitive.contrast.100
+    size:
+        =: $$size.3xl
+        [small=true]:
+            =: $$size.xxl
+    space:
+        =: $$size.xs
+        [small=true]:
+            =: $$size.xxs
+    radius:
+        =: $$size.xxs
+        circle: 100vw
+        [small=true]:
+            =: $$size.3xs
+    transition:
+        =: .3s ease eall
+    border:
+        =: $action.border.size $action.border.style $action.border.color
+        size: 1px
+        style: solid
+        color: currentColor
+    outline:
+        =: $action.outline.size $action.outline.style $action.outline.color
+        size: 2px
+        style: solid
+        color: $$color.contrast.15
+button:
+    color:
+        =: $$color.primary
+        text: unset
+        [color=secondary]:
+            =: $$color.secondary
+        [color=tertiary]:
+            =: $$color.tertiary
+        [color=neutral]:
+            =: $$color.neutral
+        [color=invert]:
+            =: $$color.invert
 generic:
     font:
         size:
@@ -90,94 +164,17 @@ input:
     border:
         width: 1px
         style: solid
-button:
-    border:
-        width: 0px
-        style: solid
-    [badge=true]:
-        font:
-            size: .625rem
-        size:
-            height: 1.25rem
-        space:
-            around: .25rem
-        [small=true]:
-            size:
-                height: 1rem
-    [color=primary]:
-        color:
-            fill: "#222f3e"
-            text: white
-            [outline=true]:
-                active: $color.neutral
-                fill: $color.accent
-            [ghost=true]:
-                active: $color.neutral
-                text: $color.accent
-    [color=secondary]:
-        color:
-            fill: "#8395a7"
-            text: white
-            [outline=true]:
-                active: $color.secondary.neutral
-                fill: $color.secondary.accent
-            [ghost=true]:
-                active: $color.secondary.neutral
-                text: $color.secondary.accent
-    [color=info]:
-        color:
-            fill: $color.info
-            text: white
-            [outline=true]:
-                active: $color.info.neutral
-                fill: $color.info.accent
-            [ghost=true]:
-                active: $color.info.neutral
-                text: $color.info.accent
-    [color=success]:
-        color:
-            fill: $color.success
-            text: white
-            [outline=true]:
-                active: $color.success.neutral
-                fill: $color.success.accent
-            [ghost=true]:
-                active: $color.success.neutral
-                text: $color.success.accent
-    [color=warning]:
-        color:
-            fill: $color.warning
-            text: white
-            [outline=true]:
-                active: $color.warning.neutral
-                fill: $color.warning.accent
-            [ghost=true]:
-                active: $color.warning.neutral
-                text: $color.warning.accent
-    [color=danger]:
-        color:
-            fill: $color.danger
-            text: white
-            [outline=true]:
-                active: $color.danger.neutral
-                fill: $color.danger.accent
-            [ghost=true]:
-                active: $color.danger.neutral
-                text: $color.danger.accent
-    [outline=true]:
-        border:
-            width: 1px
 checkbox:
     border:
-        width: 1px
+        width: 2px
         style: solid
 switch:
     border:
-        width: 1px
+        width: 2px
         style: solid
 radio:
     border:
-        width: 1px
+        width: 2px
         style: solid
 dropdown:
     border:

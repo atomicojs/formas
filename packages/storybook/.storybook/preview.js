@@ -17,15 +17,9 @@ export const parameters = {
     },
     options: {
         storySort: {
-            order: ["introduction", "components", ["*"]],
+            order: ["Welcome", "index", "components", ["*"]],
         },
     },
-    // docs: {
-    //     source: {
-    //         // language: "jsx",
-    //         dark: true,
-    //     },
-    // },
 };
 
 export const decorators = [decorator()];
