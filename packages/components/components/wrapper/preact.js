@@ -1,6 +1,6 @@
 export * from "@formas/alert/preact";
-export * from "@formas/card/preact";
 export * from "@formas/avatar/preact";
+export * from "@formas/card/preact";
 export * from "@formas/checkbox/preact";
 export * from "@formas/button/preact";
 export * from "@formas/content/preact";

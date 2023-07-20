@@ -160,6 +160,7 @@ button.styles = [
             border-radius: var(---radius);
             background: var(---color);
             outline: var(---outline);
+            outline-offset: var(--outline-offset);
             transition: var(--transition);
             box-sizing: border-box;
         }

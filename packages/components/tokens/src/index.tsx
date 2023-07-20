@@ -49,7 +49,7 @@ export const DropdownTokens = css`
 `;
 
 export const CheckboxTokens = css`
-    @tokens "./tokens.yaml" (import: checkbox);
+    @tokens "./tokens.yaml" (import: checkbox)  (values: true);
 `;
 
 export const RadioTokens = css`

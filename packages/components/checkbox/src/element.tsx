@@ -4,7 +4,12 @@ import { c, css, Props, useHost, useProp } from "atomico";
 import { useCheckbox } from "./hooks";
 import { Icon } from "@formas/icon";
 import { InputGenericProps } from "@formas/props";
-import { GenericTokens, CheckboxTokens } from "@formas/tokens";
+import {
+    PrimitiveTokens,
+    GenericTokens,
+    CheckboxTokens,
+    ActionTokens,
+} from "@formas/tokens";
 
 function checkbox({ tabIndex }: Props<typeof checkbox>) {
     const host = useHost();
@@ -17,17 +22,22 @@ function checkbox({ tabIndex }: Props<typeof checkbox>) {
     return (
         <host shadowDom>
             <button
-                class="checkbox"
+                class="container"
                 disabled={disabled}
                 tabIndex={disabled ? -1 : tabIndex}
                 onfocus={() => setFocused(true)}
                 onblur={() => setFocused(false)}
             >
-                <div class="checkbox-box">
-                    <div class="checkbox-state">
-                        <Icon type="check"></Icon>
-                    </div>
-                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20">
+                    <rect class="rect-1"></rect>
+                    <rect class="rect-2"></rect>
+                    <rect class="rect-3"></rect>
+                    <foreignObject x={0} y={0} width="20" height="20">
+                        <div class="icon">
+                            <Icon type="check"></Icon>
+                        </div>
+                    </foreignObject>
+                </svg>
             </button>
         </host>
     );
@@ -44,68 +54,85 @@ checkbox.props = {
 };
 
 checkbox.styles = [
-    GenericTokens,
+    PrimitiveTokens,
+    ActionTokens,
     CheckboxTokens,
     css`
         :host {
-            --box-width: 0.6;
-            --box-height: var(--box-width);
-            --state-unit: 100%;
-            --state-width: 1;
-            --state-height: var(--state-width);
-            --state-radius: 0px;
-            --state-transform: none;
-            --state-transition: 0.25s;
-            --background: var(--color-checkbox);
-            --background-state: var(--color-state);
-            --color: var(--color-content);
-            --border-color: var(--color-border);
-            color: var(--color);
-            display: inline-block;
+            ---size-width: var(--size-box);
+            ---size-height: var(--size-box);
+            ---stroke-color: var(--color-contrast-30);
+            ---fill: transparent;
+            ---color: var(--color-invert);
+            ---icon-color: var(--color-invert);
+            ---outline: none;
+            ---stroke-offset: 70;
+        }
+
+        :host([focused]) {
+            ---outline: var(--outline);
         }
 
         :host([checked]) {
-            --background: var(--color-checkbox-on);
-            --background-state: var(--color-state-on);
-            --border-color: var(--color-border-on);
-            --color: var(--color-content-on);
+            ---stroke-color: var(--color-contrast-100);
+            ---color: var(--color-contrast-100);
+            ---icon-color: var(--color-invert);
+            ---fill: var(--color-contrast-100);
+            ---stroke-offset: 0;
         }
 
-        .checkbox {
-            width: var(--size-height);
-            height: var(--size-height);
-            background: transparent;
-            border: none;
-            padding: 0;
+        .container {
+            all: unset;
+            height: var(--size);
+            width: var(--size);
+            display: grid;
+            place-content: center;
             cursor: pointer;
-            display: flex;
-            outline: none;
         }
 
-        .checkbox-box {
-            width: calc(100% * var(--box-width));
-            height: calc(100% * var(--box-height));
-            margin: auto;
+        svg {
+            outline: var(---outline);
             border-radius: var(--radius);
-            border: var(--border-width) var(--border-style) var(--border-color);
-            background: var(--background);
-            overflow: hidden;
-            box-sizing: border-box;
-            display: flex;
-            outline: var(--outline);
+            outline-offset: var(--outline-offset);
         }
 
-        .checkbox-state {
-            width: calc(var(--state-unit) * var(--state-width));
-            height: calc(var(--state-unit) * var(--state-height));
-            border-radius: var(--state-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--background-state);
-            margin: auto;
-            transform: var(--state-transform);
-            transition: var(--state-transition);
+        rect {
+            width: 18px;
+            height: 18px;
+            rx: var(--radius);
+            fill: transparent;
+            x: calc(var(--stroke-size) / 2);
+            y: calc(var(--stroke-size) / 2);
+            stroke-linecap: round;
+        }
+
+        .rect-1 {
+            width: 20px;
+            height: 20px;
+            x: 0;
+            y: 0;
+            rx: calc(var(--radius) + 1px);
+            fill: var(--color-invert);
+        }
+        .rect-2 {
+            stroke: var(---stroke-color);
+            stroke-width: var(--stroke-size);
+        }
+        .rect-3 {
+            fill: var(---fill);
+            transition: var(--transition-medium);
+            stroke: var(---stroke-color);
+            stroke-width: var(--stroke-size);
+            stroke-dasharray: 70;
+            stroke-dashoffset: var(---stroke-offset);
+        }
+        .icon {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-content: center;
+            color: var(---icon-color);
+            transition: var(--transition);
         }
     `,
 ];
