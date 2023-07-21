@@ -46,7 +46,7 @@ export const Default = (props) => <Button {...props}>Button</Button>;
 
 export const WithIconPrefix = (props) => (
     <Button {...props}>
-        <Icon></Icon>
+        <Icon slot="prefix"></Icon>
         <span>Button</span>
     </Button>
 );

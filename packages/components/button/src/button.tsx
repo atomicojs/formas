@@ -5,6 +5,7 @@ import { useSlot } from "@atomico/hooks/use-slot";
 import { InputGenericProps } from "@formas/props";
 import { ActionTokens, ButtonTokens, PrimitiveTokens } from "@formas/tokens";
 import { c, css, Props, Type, useHost, useProp, useRef } from "atomico";
+import { serialize } from "atomico/utils";
 import { ButtonActive } from "./button-active";
 
 function button({
@@ -64,20 +65,24 @@ function button({
     return (
         <host
             shadowDom
-            onlyIcon={!slotContent.length && !slotSuffix.length}
             onclick={(event) => {
                 if (refButtonActive.current?.setEvent) {
                     refButtonActive.current.setEvent(event);
                 }
             }}
             color={color ? color : outline ? "primary" : null}
+            layout={serialize(
+                slotPrefix.length && "prefix",
+                slotContent.length && "content",
+                slotSuffix.length && "suffix"
+            )}
         >
             <button
                 class="container"
                 onfocus={() => !badge && setFocused(true)}
                 onblur={() => !badge && setFocused(false)}
                 tabIndex={badge ? -1 : null}
-                ref={(node) => {}}
+                staticNode
             >
                 <div class="background">
                     <slot name="background">
@@ -89,19 +94,16 @@ function button({
                 </div>
                 <div class="row">
                     <div class="action prefix">
-                        <div class={`icon ${slotPrefix.length ? "" : "hide"}`}>
+                        <div class="icon">
                             <slot ref={refPrefix} name="prefix" />
                         </div>
                     </div>
-                    <div class={`content ${slotContent.length ? "" : "hide"}`}>
+                    <div class="content">
                         <slot ref={refContent} />
                     </div>
                     <div class="action suffix">
-                        <div class={`icon ${slotSuffix.length ? "" : "hide"}`}>
+                        <div class="icon">
                             <slot ref={refSuffix} name="suffix" />
-                        </div>
-                        <div class={`badge ${slotBadge.length ? "" : "hide"}`}>
-                            <slot ref={refBadge} name="badge" />
                         </div>
                     </div>
                 </div>
@@ -112,7 +114,6 @@ function button({
 
 button.props = {
     ...InputGenericProps,
-    onlyIcon: { type: Boolean, reflect: true },
     ghost: { type: Boolean, reflect: true },
     type: {
         type: String as Type<"submit" | "button" | "reset">,
@@ -134,11 +135,14 @@ button.styles = [
         :host {
             display: inline-block;
             white-space: nowrap;
-            line-height: 0;
             ---border: none;
             ---color: var(--color);
             ---outline: none;
             ---radius: var(--radius);
+            ---row: auto auto auto;
+            ---prefix-display: block;
+            ---content-display: flex;
+            ---suffix-display: block;
         }
         :host([outline]) {
             ---border: var(--border);
@@ -149,6 +153,29 @@ button.styles = [
         }
         :host([circle]) {
             ---radius: var(--radius-circle);
+        }
+        :host([layout="prefix"]) {
+            ---content-display: none;
+            ---suffix-display: none;
+            ---row: auto;
+        }
+        :host([layout="content"]) {
+            ---suffix-display: none;
+            ---prefix-display: none;
+            ---row: auto;
+        }
+        :host([layout="suffix"]) {
+            ---row: auto;
+            ---content-display: none;
+            ---prefix-display: none;
+        }
+        :host([layout="prefix content"]) {
+            ---row: auto auto;
+            ---suffix-display: none;
+        }
+        :host([layout="prefix"]),
+        :host([layout="suffix"]) {
+            --space: 0;
         }
         .container {
             all: unset;
@@ -165,25 +192,24 @@ button.styles = [
             box-sizing: border-box;
         }
         .content {
-            flex: 0%;
-            display: flex;
+            display: var(---content-display);
             gap: var(--space);
             align-items: center;
-            transition: var(--transition);
-            padding: 0 var(--space);
         }
-        .action {
-            box-sizing: border-box;
-            min-width: var(--space-around);
-            height: 100%;
+        .prefix {
+            display: var(---prefix-display);
+        }
+        .suffix {
+            display: var(---suffix-display);
         }
         .row {
-            display: flex;
+            display: grid;
             align-items: center;
-            justify-content: center;
             position: relative;
             z-index: 1;
-            padding: 0 var(--space);
+            gap: var(--space);
+            padding: 0 calc(var(--space) * 2);
+            grid-template-columns: var(---row);
         }
         .background {
             width: 100%;
@@ -194,14 +220,8 @@ button.styles = [
             box-sizing: border-box;
         }
         .icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: var(--size-icon);
-            height: var(--size-icon);
-        }
-        .hide {
-            display: none;
+            display: grid;
+            place-content: center;
         }
         .background {
             --color-active: var(--color-contrast-15);

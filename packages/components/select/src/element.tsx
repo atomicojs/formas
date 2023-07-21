@@ -4,7 +4,7 @@ import { useSlot } from "@atomico/hooks/use-slot";
 import { Icon } from "@formas/icon";
 import { InputLayout } from "@formas/input";
 import { InputGenericProps } from "@formas/props";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 import { c, css, Props, useProp, useRef, useUpdate } from "atomico";
 import { SelectOption } from "./option";
 export { SelectOption } from "./option";
@@ -81,7 +81,7 @@ select.props = {
 };
 
 select.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         ::slotted([slot="input"]) {
             border: none;
@@ -91,7 +91,7 @@ select.styles = [
             left: 0px;
             top: 0px;
             position: absolute;
-            padding: 0px var(--space-around);
+            padding: 0px var(--space);
         }
     `,
 ];

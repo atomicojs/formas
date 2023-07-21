@@ -41,9 +41,7 @@ action:
         [small=true]:
             =: $$size.xxl
     space:
-        =: $$size.xs
-        [small=true]:
-            =: $$size.xxs
+        =: $$size.xxs
     radius:
         =: $$size.xxs
         circle: 100vw
@@ -64,6 +62,9 @@ action:
         style: solid
         offset: 1px
         color: $$color.contrast.15
+    [disabled=true]:
+        opacity: .75
+
 button:
     color:
         =: $$color.primary

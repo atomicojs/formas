@@ -1,6 +1,11 @@
 import { useListener } from "@atomico/hooks/use-listener";
 import { DropdownLayout } from "@formas/dropdown";
-import { GenericStateTokens, GenericTokens, InputTokens } from "@formas/tokens";
+import {
+    ActionTokens,
+    PrimitiveTokens,
+    GenericTokens,
+    InputTokens,
+} from "@formas/tokens";
 import {
     Host,
     Props,
@@ -102,34 +107,37 @@ inputLayout.props = {
 };
 
 inputLayout.styles = [
-    GenericTokens,
-    GenericStateTokens,
+    PrimitiveTokens,
+    ActionTokens,
     InputTokens,
     css`
         :host {
-            --background: var(--color-fill);
-            --size-icon-box: calc(
-                var(--size-height) - (var(--border-width) * 2)
-            );
+            --background: var(--color-invert);
+            --size-icon-box: calc(var(--size) - (var(--border-width) * 2));
         }
-
         :host([disabled]) {
             pointer-events: none;
-            opacity: var(--state-disabled-opacity);
+            opacity: var(--opacity);
+        }
+        :host([focused]) {
+            ---outline: var(--outline);
         }
         .input {
             display: flex;
             background: var(--background);
             border-radius: var(--radius);
-            border: var(--border-width) var(--border-style) var(--color-neutral);
-            height: var(--size-height);
+            border: var(--border-width) var(--border-style)
+                var(--color-contrast-30);
+            height: var(--size);
             box-sizing: border-box;
             position: relative;
-            outline: var(--outline);
+            outline: var(---outline);
+            outline-offset: var(--outline-offset);
+            transition: var(--transition);
         }
         .action-row {
             box-sizing: border-box;
-            min-width: var(--space-around);
+            min-width: var(--space);
             height: 100%;
         }
         .icon {
