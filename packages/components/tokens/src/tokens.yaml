@@ -38,6 +38,7 @@ action:
         color: $$primitive.contrast.100
     size:
         =: $$size.3xl
+        icon: $$size.s
         [small=true]:
             =: $$size.xxl
     space:
@@ -64,7 +65,6 @@ action:
         color: $$color.contrast.15
     [disabled=true]:
         opacity: .75
-
 button:
     color:
         =: $$color.primary
@@ -84,113 +84,3 @@ checkbox:
         =: $$size.3xs
     stroke:
         size: 2
-generic:
-    font:
-        size:
-            =: 1rem
-            1: 2rem
-            2: 1.75rem
-            3: 1.25rem
-            4: 1.125rem
-            5: 1rem
-            text: 0.875rem
-            [small=true]:
-                =: .85rem
-        line: 1.25
-        light: 300
-        regular: 400
-        bold: 700
-    space:
-        around: 1rem
-        between: 1rem
-        safe: .5rem
-        [small=true]:
-            around: .8rem
-            between: .8rem
-            safe: .4rem
-    size:
-        icon: .85em
-        height: 2.5rem
-        [small=true]:
-            height: 2rem
-    radius:
-        =: .5rem
-        circle: 5rem
-        card: 1rem
-        [small=true]:
-            =: .4rem
-    color:
-        fill: white
-        neutral: rgba(0,0,0,.25)
-        divide: rgba(0,0,0,.1)
-        active: rgba(0,0,0,.05)
-        accent: black
-        text: currentColor
-        border:
-            =: $color.neutral
-            on: $color.accent
-        checkbox:
-            =: $color.fill
-            on: $color.fill
-        content:
-            =: transparent
-            on: $color.fill
-        state:
-            =: transparent
-            on: $color.accent
-        outline:
-            =: transparent
-            on: rgba(0,0,0,.1)
-        secondary:
-            =: "#8395A7"
-            neutral: rgba(131, 149, 167, 0.35)
-            accent: "#516C86"
-        info:
-            =: "#54a0ff"
-            neutral: rgba(84, 161, 255, 0.35)
-            accent: "#0071FF"
-        success:
-            =: "#1dd1a1"
-            neutral: rgba(29, 209, 161, 0.35)
-            accent: "#00B09B"
-        warning:
-            =: "#ff9f43"
-            neutral: rgba(255, 159, 67, 0.35)
-            accent: "#DB8300"
-        danger:
-            =: "#ff5547"
-            neutral: rgba(255, 85, 71, 0.35)
-            accent: "#EC3912"
-    transition:
-        action: .25s ease all
-    [disabled=true]:
-        opacity: .5
-    outline:
-        width: 2px
-        style: solid
-    [focused=true]:
-        outline:
-            width: 2px
-            style: solid
-input:
-    border:
-        width: 1px
-        style: solid
-
-switch:
-    border:
-        width: 2px
-        style: solid
-radio:
-    border:
-        width: 2px
-        style: solid
-dropdown:
-    border:
-        width: 0px
-        style: solid
-navigation:
-    space:
-        safe: 1rem
-    color:
-        fill: "#f3f6fc"

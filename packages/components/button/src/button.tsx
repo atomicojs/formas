@@ -195,6 +195,7 @@ button.styles = [
             display: var(---content-display);
             gap: var(--space);
             align-items: center;
+            line-height: 0;
         }
         .prefix {
             display: var(---prefix-display);

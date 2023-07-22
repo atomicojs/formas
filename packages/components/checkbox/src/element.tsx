@@ -1,15 +1,10 @@
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { useReflectEvent } from "@atomico/hooks/use-reflect-event";
-import { c, css, Props, useHost, useProp } from "atomico";
-import { useCheckbox } from "./hooks";
 import { Icon } from "@formas/icon";
 import { InputGenericProps } from "@formas/props";
-import {
-    PrimitiveTokens,
-    GenericTokens,
-    CheckboxTokens,
-    ActionTokens,
-} from "@formas/tokens";
+import { ActionTokens, CheckboxTokens, PrimitiveTokens } from "@formas/tokens";
+import { c, css, Props, useHost, useProp } from "atomico";
+import { useCheckbox } from "./hooks";
 
 function checkbox({ tabIndex }: Props<typeof checkbox>) {
     const host = useHost();
@@ -27,6 +22,7 @@ function checkbox({ tabIndex }: Props<typeof checkbox>) {
                 tabIndex={disabled ? -1 : tabIndex}
                 onfocus={() => setFocused(true)}
                 onblur={() => setFocused(false)}
+                staticNode
             >
                 <svg width="20" height="20" viewBox="0 0 20 20">
                     <rect class="rect-1"></rect>
@@ -59,8 +55,6 @@ checkbox.styles = [
     CheckboxTokens,
     css`
         :host {
-            ---size-width: var(--size-box);
-            ---size-height: var(--size-box);
             ---stroke-color: var(--color-contrast-30);
             ---fill: transparent;
             ---color: var(--color-invert);
@@ -101,9 +95,10 @@ checkbox.styles = [
             height: 18px;
             rx: var(--radius);
             fill: transparent;
-            x: calc(var(--stroke-size) / 2);
-            y: calc(var(--stroke-size) / 2);
+            x: 1;
+            y: 1;
             stroke-linecap: round;
+            stroke-width: 2;
         }
 
         .rect-1 {
