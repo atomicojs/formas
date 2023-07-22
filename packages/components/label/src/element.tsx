@@ -1,6 +1,6 @@
 import { useSlot } from "@atomico/hooks/use-slot";
 import { c, css, useRef } from "atomico";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 
 interface SlotAction extends HTMLElement {
     click(): void;
@@ -38,7 +38,7 @@ label.props = {
 };
 
 label.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         :host {
             display: flex;

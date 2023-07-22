@@ -1,6 +1,6 @@
 import { useProxySlot } from "@atomico/hooks/use-slot";
 import { c, css, useRef } from "atomico";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 
 function content() {
     const ref = useRef();
@@ -48,7 +48,7 @@ content.props = {
 };
 
 content.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         .content {
             display: grid;

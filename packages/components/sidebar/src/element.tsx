@@ -1,7 +1,7 @@
 import { useSlot } from "@atomico/hooks/use-slot";
 import { c, css, Props, useEffect, useRef } from "atomico";
 import { Button } from "@formas/button";
-import { GenericTokens, NavigationTokens } from "@formas/tokens";
+import { PrimitiveTokens, NavigationTokens } from "@formas/tokens";
 
 function sidebar({ onlyIcons }: Props<typeof sidebar>) {
     const refSlot = useRef();
@@ -34,7 +34,7 @@ sidebar.props = {
 };
 
 sidebar.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     NavigationTokens,
     css`
         :host {

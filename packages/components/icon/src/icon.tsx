@@ -1,5 +1,5 @@
 import { c, css, JSX, Props } from "atomico";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 import { Icons, IconsKeys } from "./icons";
 
 function icon({ type, size, icons, color }: Props<typeof icon>) {
@@ -36,7 +36,7 @@ icon.props = {
 };
 
 icon.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         :host {
             width: var(--width, var(--size-icon));

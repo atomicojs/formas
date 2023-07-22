@@ -1,6 +1,6 @@
 import { useProxySlot, useSlot } from "@atomico/hooks/use-slot";
 import { c, css, useRef } from "atomico";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 
 function card() {
     const ref = useRef();
@@ -45,7 +45,7 @@ card.props = {
 };
 
 card.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         :host {
             background: #fff;

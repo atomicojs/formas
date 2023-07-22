@@ -1,6 +1,6 @@
 import { css } from "atomico";
 
-const GenericTokens = css`
+const PrimitiveTokens = css`
     :host {
         --font-size-1: var(--formas--generic-font-size-1, 2rem);
         --font-size-2: var(--formas--generic-font-size-2, 1.75rem);
@@ -359,7 +359,7 @@ export {
     CheckboxTokens,
     DropdownTokens,
     GenericStateTokens,
-    GenericTokens,
+    PrimitiveTokens,
     InputTokens,
     NavigationTokens,
     RadioTokens,

@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 
 function avatarLabel() {
     return (
@@ -22,7 +22,7 @@ avatarLabel.props = {
 };
 
 avatarLabel.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         :host {
             width: 100%;

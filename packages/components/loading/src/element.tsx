@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 
 function loading() {
     return (
@@ -29,7 +29,7 @@ loading.props = {
 };
 
 loading.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         :host {
             width: var(--font-size);

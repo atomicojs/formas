@@ -1,5 +1,5 @@
+import { PrimitiveTokens } from "@formas/tokens";
 import { c, css } from "atomico";
-import { GenericTokens } from "@formas/tokens";
 
 function alert() {
     return (
@@ -19,7 +19,7 @@ alert.props = {
 };
 
 alert.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         :host {
             display: flex;

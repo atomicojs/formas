@@ -1,5 +1,5 @@
 import { useRender } from "@atomico/hooks/use-render";
-import { GenericTokens } from "@formas/tokens";
+import { PrimitiveTokens } from "@formas/tokens";
 import { c, css, Props, Type } from "atomico";
 
 function avatar({ status, statusPosition, placeholder }: Props<typeof avatar>) {
@@ -73,7 +73,7 @@ avatar.props = {
 };
 
 avatar.styles = [
-    GenericTokens,
+    PrimitiveTokens,
     css`
         :host {
             --size: var(--size-height);
