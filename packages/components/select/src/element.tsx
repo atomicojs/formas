@@ -4,7 +4,7 @@ import { useSlot } from "@atomico/hooks/use-slot";
 import { Icon } from "@formas/icon";
 import { InputLayout } from "@formas/input";
 import { InputGenericProps } from "@formas/props";
-import { PrimitiveTokens } from "@formas/tokens";
+import { ActionTokens, PrimitiveTokens } from "@formas/tokens";
 import { c, css, Props, useProp, useRef, useUpdate } from "atomico";
 import { SelectOption } from "./option";
 export { SelectOption } from "./option";
@@ -53,12 +53,12 @@ function select({ name, placeholder, small }: Props<typeof select>) {
         <host shadowDom onOptionChange={update}>
             <slot name="option" ref={refSlotOption}></slot>
             <InputLayout
-                enableIconSuffix
                 class="input-layout"
                 narrowHeader
                 small={small}
                 disabled={disabled}
                 focused={focused}
+                layout="suffix"
             >
                 <slot slot="input" name="input"></slot>
                 <Icon class="input-icon" type="down" slot="icon-suffix"></Icon>
@@ -82,6 +82,7 @@ select.props = {
 
 select.styles = [
     PrimitiveTokens,
+    ActionTokens,
     css`
         ::slotted([slot="input"]) {
             border: none;
@@ -91,7 +92,7 @@ select.styles = [
             left: 0px;
             top: 0px;
             position: absolute;
-            padding: 0px var(--space);
+            padding: 0px calc(var(--space) * 2);
         }
     `,
 ];

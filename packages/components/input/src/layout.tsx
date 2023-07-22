@@ -1,11 +1,6 @@
 import { useListener } from "@atomico/hooks/use-listener";
 import { DropdownLayout } from "@formas/dropdown";
-import {
-    ActionTokens,
-    PrimitiveTokens,
-    GenericTokens,
-    InputTokens,
-} from "@formas/tokens";
+import { ActionTokens, InputTokens, PrimitiveTokens } from "@formas/tokens";
 import {
     Host,
     Props,
@@ -51,14 +46,15 @@ function inputLayout({
 
     return (
         <host shadowDom>
-            <div class="input">
-                <div class="action" onclick={() => dispatch("action")}>
+            <div class="input" staticNode>
+                <div
+                    class="action action-prefix"
+                    onclick={() => dispatch("action")}
+                >
                     <div class="action-row">
                         <div
                             onclick={() => dispatch("icon-prefix")}
-                            class={`icon icon-prefix ${
-                                enableIconPrefix ? "" : "hide"
-                            }`}
+                            class="icon icon-prefix"
                         >
                             <slot name="icon-prefix"></slot>
                         </div>
@@ -66,21 +62,22 @@ function inputLayout({
                     </div>
                 </div>
                 <div
-                    class="inputs"
+                    class="input-slot"
                     onclick={() => {
                         dispatch("input");
                     }}
                 >
                     <slot name="input"></slot>
                 </div>
-                <div class="action" onclick={() => dispatch("action")}>
+                <div
+                    class="action action-suffix"
+                    onclick={() => dispatch("action")}
+                >
                     <div class="action-row">
                         <slot name="suffix"></slot>
                         <div
                             onclick={() => dispatch("icon-suffix")}
-                            class={`icon icon-suffix ${
-                                enableIconSuffix ? "" : "hide"
-                            }`}
+                            class="icon icon-suffixs"
                         >
                             <slot name="icon-suffix"></slot>
                         </div>
@@ -114,6 +111,8 @@ inputLayout.styles = [
         :host {
             --background: var(--color-invert);
             --size-icon-box: calc(var(--size) - (var(--border-width) * 2));
+            --prefix-display: none;
+            --suffix-display: none;
         }
         :host([disabled]) {
             pointer-events: none;
@@ -121,6 +120,14 @@ inputLayout.styles = [
         }
         :host([focused]) {
             ---outline: var(--outline);
+        }
+        :host([layout="prefix"]),
+        :host([layout="prefix suffix"]) {
+            --prefix-display: block;
+        }
+        :host([layout="suffix"]),
+        :host([layout="prefix suffix"]) {
+            --suffix-display: block;
         }
         .input {
             display: flex;
@@ -134,6 +141,18 @@ inputLayout.styles = [
             outline: var(---outline);
             outline-offset: var(--outline-offset);
             transition: var(--transition);
+            padding: 0 calc(var(--space) * 2);
+            align-items: center;
+            gap: var(--space);
+        }
+        .input-slot {
+            flex: 0%;
+        }
+        .action-prefix {
+            display: var(--prefix-display);
+        }
+        .action-suffix {
+            display: var(--suffix-display);
         }
         .action-row {
             box-sizing: border-box;
@@ -144,8 +163,6 @@ inputLayout.styles = [
             display: flex;
             align-items: center;
             justify-content: center;
-            width: var(--size-icon-box);
-            height: var(--size-icon-box);
         }
         ::slotted([slot="input"]) {
             width: 100%;
@@ -156,9 +173,6 @@ inputLayout.styles = [
             background: transparent;
             font-size: unset;
             font-family: unset;
-        }
-        .hide {
-            display: none;
         }
         .inputs {
             display: flex;

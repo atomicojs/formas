@@ -5,6 +5,7 @@ import { useSlot } from "@atomico/hooks/use-slot";
 import { InputGenericProps } from "@formas/props";
 import { GenericTokens, InputTokens } from "@formas/tokens";
 import { Props, c, useProp, useRef } from "atomico";
+import { serialize } from "atomico/utils";
 import { InputLayout } from "./layout";
 
 function input({ ...props }: Props<typeof input>) {
@@ -42,8 +43,10 @@ function input({ ...props }: Props<typeof input>) {
                     focused={focused}
                     small={props.small}
                     disabled={props.disabled}
-                    enableIconPrefix={!!slotIconPrefix.length}
-                    enableIconSuffix={!!slotIconSuffix.length}
+                    layout={serialize(
+                        slotIconPrefix.length && "prefix",
+                        slotIconSuffix.length && "suffix"
+                    )}
                 >
                     <slot slot="prefix" name="prefix"></slot>
                     <slot
@@ -76,7 +79,5 @@ input.props = {
     placeholder: String,
     step: Number,
 };
-
-input.styles = [GenericTokens, InputTokens];
 
 export const Input = c(input);
