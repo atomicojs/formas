@@ -177,10 +177,14 @@ button.styles = [
         :host([layout="suffix"]) {
             --space: 0;
         }
+        :host([ghost]) {
+            ---color: transparent;
+        }
         .container {
             all: unset;
             position: relative;
             height: var(--size);
+            width: 100%;
             min-width: var(--size);
             cursor: pointer;
             border: var(---border);

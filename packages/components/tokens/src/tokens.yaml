@@ -20,6 +20,12 @@ primitive:
             =: "#F0F0F0"
             50: "#F8F8F8"
         invert: "#FFFFFF"
+        surface: "#FFFFFF"
+        status:
+            success: "#18D47C"
+            warning: "#F9AA33"
+            info: "#0080FF"
+            danger: "#FF5B5B"
         contrast:
             100: "rgba(0,0,0)"
             75: "rgba(0,0,0,.75)"
@@ -84,3 +90,16 @@ checkbox:
         =: $$size.3xs
     stroke:
         size: 2
+card:
+    space:
+        =: $$size.xxs
+    radius:
+        =: $$size.xxs
+        [small=true]:
+            =: $$size.3xs
+    border:
+        =: $action.border.size $action.border.style $action.border.color
+        size: 1px
+        style: solid
+        color: currentColor
+    transition: .25s ease all

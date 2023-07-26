@@ -15,30 +15,14 @@ export const ActionTokens = css`
     }
 `;
 
-export const NavigationTokens = css`
-    @tokens "./tokens.yaml" (import: navigation);
-`;
-
 export const ButtonTokens = css`
     @tokens "./tokens.yaml" (import: button);
-`;
-
-export const DropdownTokens = css`
-    @tokens "./tokens.yaml" (import: dropdown);
 `;
 
 export const CheckboxTokens = css`
     @tokens "./tokens.yaml" (import: checkbox)  (values: true);
 `;
 
-export const RadioTokens = css`
-    @tokens "./tokens.yaml" (import: radio);
-`;
-
-export const SwitchTokens = css`
-    @tokens "./tokens.yaml" (import: switch);
-`;
-
-export const InputTokens = css`
-    @tokens "./tokens.yaml" (import: input);
+export const CardTokens = css`
+    @tokens "./tokens.yaml" (import: card);
 `;

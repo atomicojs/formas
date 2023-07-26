@@ -1,6 +1,6 @@
 import { useListener } from "@atomico/hooks/use-listener";
 import { DropdownLayout } from "@formas/dropdown";
-import { ActionTokens, InputTokens, PrimitiveTokens } from "@formas/tokens";
+import { ActionTokens, PrimitiveTokens } from "@formas/tokens";
 import {
     Host,
     Props,
@@ -106,11 +106,10 @@ inputLayout.props = {
 inputLayout.styles = [
     PrimitiveTokens,
     ActionTokens,
-    InputTokens,
     css`
         :host {
             --background: var(--color-invert);
-            --size-icon-box: calc(var(--size) - (var(--border-width) * 2));
+            --size-icon-box: calc(var(--size) - (var(--border-size) * 2));
             --prefix-display: none;
             --suffix-display: none;
         }
@@ -133,7 +132,7 @@ inputLayout.styles = [
             display: flex;
             background: var(--background);
             border-radius: var(--radius);
-            border: var(--border-width) var(--border-style)
+            border: var(--border-size) var(--border-style)
                 var(--color-contrast-30);
             height: var(--size);
             box-sizing: border-box;

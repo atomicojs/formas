@@ -1,5 +1,5 @@
 import { useRender } from "@atomico/hooks/use-render";
-import { PrimitiveTokens } from "@formas/tokens";
+import { ActionTokens, PrimitiveTokens } from "@formas/tokens";
 import { c, css, Props, Type } from "atomico";
 
 function avatar({ status, statusPosition, placeholder }: Props<typeof avatar>) {
@@ -74,26 +74,26 @@ avatar.props = {
 
 avatar.styles = [
     PrimitiveTokens,
+    ActionTokens,
     css`
         :host {
-            --size: var(--size-height);
             width: var(--size);
             height: var(--size);
             display: inline-block;
             position: relative;
-            --color: var(--color-success);
+            --color: var(--color-status-success);
         }
         :host([circle]) {
             --radius: var(--radius-circle);
         }
         :host([status="info"]) {
-            --color: var(--color-info);
+            --color: var(--color-status-info);
         }
         :host([status="warning"]) {
-            --color: var(--color-warning);
+            --color: var(--color-status-warning);
         }
         :host([status="danger"]) {
-            --color: var(--color-danger);
+            --color: var(--color-status-danger);
         }
         ::slotted(*) {
             width: 100%;
@@ -101,10 +101,6 @@ avatar.styles = [
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        ::slotted(strong) {
-            background: var(--color-accent);
-            color: var(--color-fill);
         }
         .mask {
             width: 100%;

@@ -3,7 +3,6 @@ import { usePropProxy } from "@atomico/hooks/use-prop-proxy";
 import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
 import { InputGenericProps } from "@formas/props";
-import { PrimitiveTokens, InputTokens } from "@formas/tokens";
 import { Props, c, useProp, useRef } from "atomico";
 import { serialize } from "atomico/utils";
 import { InputLayout } from "./layout";

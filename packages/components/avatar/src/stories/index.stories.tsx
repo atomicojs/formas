@@ -1,5 +1,5 @@
 import { define } from "@atomico/storybook";
-import { Avatar, AvatarLabel } from "@formas/avatar";
+import { Avatar } from "@formas/avatar";
 import { Dropdown } from "@formas/dropdown";
 import { Button } from "@formas/button";
 
@@ -41,16 +41,6 @@ export const Default = (props) => (
         <img src="https://github.com/atomicojs.png" alt="avatar" />
     </Avatar>
 );
-
-export const Label = (props) => (
-    <AvatarLabel small={props.small}>
-        <Avatar {...props} slot="avatar"></Avatar>
-        <strong>UpperCod</strong>
-        <span>Administrator</span>
-    </AvatarLabel>
-);
-
-Label.args = { placeholder: "AG" };
 
 export const WithStatus = (props) =>
     Default({ ...props, status: props.status || "success" });

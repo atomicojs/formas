@@ -32,8 +32,8 @@ loading.styles = [
     PrimitiveTokens,
     css`
         :host {
-            width: var(--font-size);
-            height: var(--font-size);
+            width: 1em;
+            height: 1em;
             display: inline-block;
         }
         .gradient {
@@ -41,7 +41,7 @@ loading.styles = [
             height: 100%;
             background: conic-gradient(
                 transparent 0deg,
-                var(--color-accent) 360deg
+                var(--color-contrast-100) 360deg
             );
         }
         svg {
