@@ -139,7 +139,7 @@ button.styles = [
             ---color: var(--color);
             ---outline: none;
             ---radius: var(--radius);
-            ---row: auto auto auto;
+            ---row: max-content auto max-content;
             ---prefix-display: block;
             ---content-display: flex;
             ---suffix-display: block;
@@ -170,7 +170,16 @@ button.styles = [
             ---prefix-display: none;
         }
         :host([layout="prefix content"]) {
-            ---row: auto auto;
+            ---row: max-content auto;
+            ---suffix-display: none;
+        }
+        :host([layout="content suffix"]) {
+            ---row: auto max-content;
+            ---prefix-display: none;
+        }
+        :host([layout="content"]) {
+            ---row: auto;
+            ---prefix-display: none;
             ---suffix-display: none;
         }
         :host([layout="prefix"]),

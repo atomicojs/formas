@@ -1,6 +1,7 @@
 import { define } from "@atomico/storybook";
 import { Button } from "@formas/button";
 import { Dropdown } from "@formas/dropdown";
+import { Icon } from "@formas/icon";
 
 export default {
     title: "Components/Dropdown",
@@ -10,16 +11,30 @@ export default {
 export const Default = (props) => (
     <Dropdown {...props}>
         <Button small slot="action">
-            Click!
+            Show options
+            <Icon slot="suffix" type="down"></Icon>
         </Button>
         <Button small ghost>
-            Option 1
+            <Icon slot="prefix" type="home"></Icon>
+            Home
         </Button>
         <Button small ghost>
-            Option 2
+            <Icon slot="prefix" type="profile"></Icon>
+            Account
         </Button>
-        <Button small ghost>
-            Option 3
-        </Button>
+        <Dropdown {...props}>
+            <Button small ghost slot="action">
+                <Icon slot="prefix" type="config"></Icon>
+                Option 3<Icon slot="suffix" type="right"></Icon>
+            </Button>
+            <Button small ghost>
+                <Icon slot="prefix" type="lock"></Icon>
+                Security
+            </Button>
+            <Button small ghost>
+                <Icon slot="prefix" type="options"></Icon>
+                Options
+            </Button>
+        </Dropdown>
     </Dropdown>
 );

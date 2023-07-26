@@ -61,11 +61,11 @@ dropdownLayout.styles = [
         }
 
         .dropdown {
-            min-width: 100%;
+            min-width: var(--min-width, 100%);
             position: absolute;
             top: var(--top);
             left: var(--left);
-            padding: var(--space);
+            padding: var(--space) 0;
             visibility: var(---visibility);
             opacity: var(---opacity);
             transform: var(--transform);

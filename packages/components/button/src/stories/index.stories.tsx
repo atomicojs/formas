@@ -53,7 +53,7 @@ export const WithIconPrefix = (props) => (
 
 export const WithIconSuffix = (props) => (
     <Button {...props}>
-        <Icon></Icon>
+        <Icon slot="suffix"></Icon>
         <span>Button</span>
     </Button>
 );
@@ -68,5 +68,13 @@ export const ExampleWithLoading = (props) => (
     <Button {...props}>
         <Loading></Loading>
         <span>Loading</span>
+    </Button>
+);
+
+export const ExampleRightSuffix = () => (
+    <Button>
+        <Icon slot="prefix"></Icon>
+        <span>Loading</span>
+        <Icon slot="suffix" type="right"></Icon>
     </Button>
 );

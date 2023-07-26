@@ -1,6 +1,7 @@
 import { useChannel } from "@atomico/hooks/use-channel";
 import { useListener } from "@atomico/hooks/use-listener";
 import { useSlot } from "@atomico/hooks/use-slot";
+import { useResizeObserverState } from "@atomico/hooks/use-resize-observer";
 import {
     c,
     css,
@@ -19,6 +20,9 @@ function dropdown({ showWithOver }: Props<typeof dropdown>) {
     const refSlotAction = useRef();
     const slotAction = useSlot<Element>(refSlotAction);
     const [show, setShow] = useProp<boolean>("show");
+    const refAction = useRef();
+
+    refAction.current = slotAction.at(0);
 
     useListener({ current: window }, "click", (event) => {
         if (!event.composedPath().includes(host.current)) {
@@ -41,6 +45,8 @@ function dropdown({ showWithOver }: Props<typeof dropdown>) {
 
     listenerShow.capture = true;
 
+    const state = useResizeObserverState(refAction);
+
     return (
         <host
             shadowDom
@@ -54,7 +60,11 @@ function dropdown({ showWithOver }: Props<typeof dropdown>) {
                 ref={refSlotAction}
                 name="action"
             ></slot>
-            <DropdownLayout show={show} reference={slotAction[0]}>
+            <DropdownLayout
+                show={show}
+                reference={slotAction[0]}
+                style={state?.width ? `--min-width: ${state.width}px;` : null}
+            >
                 <slot />
             </DropdownLayout>
         </host>
