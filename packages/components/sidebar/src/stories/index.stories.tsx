@@ -1,5 +1,5 @@
 import { define } from "@atomico/storybook";
-import { Avatar, AvatarLabel } from "@formas/avatar";
+import { Avatar } from "@formas/avatar";
 import { Button } from "@formas/button";
 import { Icon } from "@formas/icon";
 import { Sidebar } from "@formas/sidebar";
@@ -45,13 +45,6 @@ export const Default = (props) => (
                 <Icon slot="icon-prefix" type="asterisk"></Icon>
                 Folders
             </Button>
-            <AvatarLabel slot="footer" small>
-                <Avatar circle slot="avatar" status="success" small>
-                    <img src="https://github.com/atomicojs.png" alt="avatar" />
-                </Avatar>
-                <strong>UpperCod</strong>
-                <small>Administrator</small>
-            </AvatarLabel>
         </Sidebar>
         <style>
             {`
