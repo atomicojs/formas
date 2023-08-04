@@ -16,7 +16,8 @@
     "license": "ISC",
     "prettier": {
         "tabWidth": 4,
-        "singleQuote": false
+        "singleQuote": false,
+        "endOfLine":"lf"
     },
     "dependencies": {
         "@atomico/exports": "^1.8.1",
