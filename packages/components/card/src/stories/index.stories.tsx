@@ -1,5 +1,5 @@
 import { define } from "@atomico/storybook";
-import { Avatar, AvatarLabel } from "@formas/avatar";
+import { Avatar } from "@formas/avatar";
 import { Button } from "@formas/button";
 import { Content } from "@formas/content";
 import { Icon } from "@formas/icon";
@@ -12,11 +12,6 @@ export default {
 
 export const Default = (props) => (
     <Card {...props} style="width: 320px">
-        <AvatarLabel slot="header" small={props.small}>
-            <Avatar {...props} slot="avatar" placeholder="AG"></Avatar>
-            <strong>UpperCod</strong>
-            <span>Administrator</span>
-        </AvatarLabel>
         <Button slot="header">
             <Icon size="1.2rem" slot="icon-prefix" type="options"></Icon>
         </Button>

@@ -45,6 +45,9 @@ export const Default = (props) => (
 export const WithStatus = (props) =>
     Default({ ...props, status: props.status || "success" });
 
+export const WithLabel = (props) =>
+    Default({ ...props, status: props.status || "success" });
+
 export const WithDropdown = (props) => (
     <Dropdown>
         {WithStatus({ ...props, slot: "action" })}

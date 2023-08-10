@@ -14,7 +14,7 @@
         "atomico": "^1.68.0"
     },
     "devDependencies": {
-        "@atomico/storybook": "^2.5.0",
+        "@atomico/storybook": "^2.5.1",
         "@storybook/addon-essentials": "^7.0.24",
         "@storybook/addon-links": "^7.0.24",
         "@storybook/blocks": "^7.0.24",
