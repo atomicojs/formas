@@ -1,5 +1,6 @@
 import { mergeConfig } from "vite";
 import atomico from "@atomico/vite";
+import ViteYaml from "@modyfi/vite-plugin-yaml";
 
 /** @type { import('@storybook/web-components-vite').StorybookConfig } */
 const config = {
@@ -19,11 +20,14 @@ const config = {
     },
     async viteFinal(config) {
         return mergeConfig(config, {
-            plugins: atomico({
-                cssLiterals: {
-                    postcss: true,
-                },
-            }),
+            plugins: [
+                ViteYaml(),
+                atomico({
+                    cssLiterals: {
+                        postcss: true,
+                    },
+                }),
+            ],
         });
     },
 };

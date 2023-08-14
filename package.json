@@ -20,13 +20,13 @@
         "endOfLine": "crlf"
     },
     "dependencies": {
-        "@atomico/exports": "^1.8.1",
+        "@atomico/exports": "^1.9.0",
         "@atomico/hooks": "^3.49.1",
         "@atomico/postcss-tokens": "^2.1.0",
         "@atomico/run": "^0.11.0",
         "@atomico/scaffold": "^2.9.5",
         "@atomico/tsconfig": "^1.1.2",
-        "@atomico/vite": "^2.10.0",
+        "@atomico/vite": "^2.11.2",
         "atomico": "^1.72.0",
         "typescript": "^5.0.4",
         "vite": "^4.3.9"
