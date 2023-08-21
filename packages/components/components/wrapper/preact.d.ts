@@ -3,7 +3,7 @@ export * from "@formas/avatar/preact";
 export * from "@formas/button/preact";
 export * from "@formas/card/preact";
 export * from "@formas/checkbox/preact";
-export * from "@atomico/container/preact";
+export * from "@formas/container/preact";
 export * from "@formas/content/preact";
 export * from "@formas/dropdown/preact";
 export * from "@formas/icon/preact";

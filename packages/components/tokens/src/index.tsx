@@ -14,25 +14,16 @@ export const Sizes = [
     "3xl",
 ];
 
-export const Colors = [
+export const ColorsBackground = [
     "primary",
     "secondary",
     "tertiary",
     "neutral",
-    "neutral-50",
+    "container",
     "surface",
-    "status-success",
-    "status-warning",
-    "status-info",
-    "status-danger",
-    "contrast-100",
-    "contrast-75",
-    "contrast-50",
-    "contrast-30",
-    "contrast-15",
-    "contrast-10",
-    "contrast-5",
 ];
+
+export const ShadowDeep = [1, 2, 3, 4];
 
 export const PrimitiveTokens = css`
     @tokens "./tokens.yaml" (import: primitive) (values: true);
@@ -40,7 +31,6 @@ export const PrimitiveTokens = css`
 
 export const ActionTokens = css`
     @tokens "./tokens.yaml" (import: action) (values: true);
-
     :host {
         font-size: var(--font-size);
         font-weight: var(--font-weight);
@@ -58,5 +48,5 @@ export const CheckboxTokens = css`
 `;
 
 export const CardTokens = css`
-    @tokens "./tokens.yaml" (import: card);
+    @tokens "./tokens.yaml" (import: card) (values: true);
 `;

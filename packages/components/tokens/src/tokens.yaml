@@ -16,11 +16,10 @@ primitive:
         primary: "#C9C2D2"
         secondary: "#C9D0DB"
         tertiary: "#E2D4C5"
-        neutral:
-            =: "#F0F0F0"
-            50: "#F8F8F8"
+        neutral: "#F0F0F0"
+        container: "#FFFFFF"
+        surface: "#F8F8F8"
         invert: "#FFFFFF"
-        surface: "#FFFFFF"
         status:
             success: "#18D47C"
             warning: "#F9AA33"
@@ -50,10 +49,10 @@ action:
     space:
         =: $$size.xxs
     radius:
-        =: $$size.xxs
+        =: $$size.xs
         circle: 100vw
         [small=true]:
-            =: $$size.3xs
+            =: $$size.xxs
     transition:
         =: .25s ease all
         medium: .5s ease all
@@ -92,14 +91,19 @@ checkbox:
         size: 2
 card:
     space:
-        =: $$size.xxs
+        =: $$size.xs
     radius:
-        =: $$size.xxs
+        =: $$size.xl
         [small=true]:
-            =: $$size.3xs
+            =: $$size.xs
     border:
-        =: $action.border.size $action.border.style $action.border.color
+        =: $card.border.size $card.border.style $card.border.color
         size: 1px
         style: solid
-        color: currentColor
+        color: $color.contrast.5
     transition: .25s ease all
+    shadow:
+        1: "0px 5px 10px $color.contrast.10"
+        2: "0px 10px 20px $color.contrast.10"
+        3: "0px 15px 30px $color.contrast.10"
+        4: "0px 20px 40px $color.contrast.10"

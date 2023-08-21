@@ -46,6 +46,7 @@ component.styles = [
             ---stroke-color: var(--color-contrast-30);
             ---stroke-offset: 90;
             ---x: 0;
+            display: inline-block;
         }
         :host([checked]) {
             ---stroke-color: var(--color-contrast-100);
@@ -54,6 +55,10 @@ component.styles = [
         }
         :host([focused]) {
             ---outline: var(--outline);
+        }
+        :host([disabled]) {
+            opacity: var(--opacity);
+            pointer-events: none;
         }
         .container {
             all: unset;
@@ -74,7 +79,6 @@ component.styles = [
             rx: 9;
             fill: transparent;
         }
-
         circle {
             fill: var(---stroke-color);
             transition: var(--transition-medium);

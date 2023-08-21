@@ -49,6 +49,7 @@ component.styles = [
             ---outline: none;
             ---offset: 60;
             ---scale: 0.75;
+            display: inline-block;
         }
         :host([checked]) {
             ---opacity: 1;
@@ -58,6 +59,10 @@ component.styles = [
         }
         :host([focused]) {
             ---outline: var(--outline);
+        }
+        :host([disabled]) {
+            opacity: var(--opacity);
+            pointer-events: none;
         }
         .container {
             all: unset;

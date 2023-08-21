@@ -3,7 +3,7 @@ export * from "@formas/avatar/vue";
 export * from "@formas/button/vue";
 export * from "@formas/card/vue";
 export * from "@formas/checkbox/vue";
-export * from "@atomico/container/vue";
+export * from "@formas/container/vue";
 export * from "@formas/content/vue";
 export * from "@formas/dropdown/vue";
 export * from "@formas/icon/vue";

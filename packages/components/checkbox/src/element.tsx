@@ -61,12 +61,15 @@ checkbox.styles = [
             ---icon-color: var(--color-invert);
             ---outline: none;
             ---stroke-offset: 70;
+            display: inline-block;
         }
-
         :host([focused]) {
             ---outline: var(--outline);
         }
-
+        :host([disabled]) {
+            opacity: var(--opacity);
+            pointer-events: none;
+        }
         :host([checked]) {
             ---stroke-color: var(--color-contrast-100);
             ---color: var(--color-contrast-100);
@@ -74,7 +77,6 @@ checkbox.styles = [
             ---fill: var(--color-contrast-100);
             ---stroke-offset: 0;
         }
-
         .container {
             all: unset;
             height: var(--size);
@@ -83,13 +85,11 @@ checkbox.styles = [
             place-content: center;
             cursor: pointer;
         }
-
         svg {
             outline: var(---outline);
             border-radius: var(--radius);
             outline-offset: var(--outline-offset);
         }
-
         rect {
             width: 18px;
             height: 18px;
@@ -100,7 +100,6 @@ checkbox.styles = [
             stroke-linecap: round;
             stroke-width: 2;
         }
-
         .rect-1 {
             width: 20px;
             height: 20px;

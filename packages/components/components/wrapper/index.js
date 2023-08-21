@@ -3,7 +3,7 @@ export * from "@formas/avatar";
 export * from "@formas/button";
 export * from "@formas/card";
 export * from "@formas/checkbox";
-export * from "@atomico/container";
+export * from "@formas/container";
 export * from "@formas/content";
 export * from "@formas/dropdown";
 export * from "@formas/icon";

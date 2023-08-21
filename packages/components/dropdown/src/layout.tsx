@@ -1,6 +1,7 @@
 import { computePosition, flip, shift } from "@floating-ui/dom";
-import { c, css, Props, useEffect, useRef, useState } from "atomico";
-import { PrimitiveTokens, CardTokens } from "@formas/tokens";
+import { Container } from "@formas/container";
+import { CardTokens, PrimitiveTokens } from "@formas/tokens";
+import { Props, c, css, useEffect, useRef, useState } from "atomico";
 
 function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {
     const [style, setStyle] = useState<string>();
@@ -23,9 +24,9 @@ function dropdownLayout({ show, reference }: Props<typeof dropdownLayout>) {
     return (
         <host shadowDom>
             <div class="dropdown" ref={ref}>
-                <div class="dropdown-card">
+                <Container class="dropdown-card" small shadow={1}>
                     <slot></slot>
-                </div>
+                </Container>
             </div>
             <style>{style && `:host{${style}}`}</style>
         </host>
@@ -71,13 +72,6 @@ dropdownLayout.styles = [
             transform: var(--transform);
             box-sizing: border-box;
             transition: var(--transition);
-        }
-
-        .dropdown-card {
-            background: var(--color-surface);
-            border-radius: var(--radius);
-            border: var(--border-width) var(--border-style) var(--color-border);
-            display: grid;
         }
     `,
 ];

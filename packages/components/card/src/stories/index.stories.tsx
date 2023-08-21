@@ -11,13 +11,17 @@ export default {
 };
 
 export const Default = (props) => (
-    <Card {...props} style="width: 320px">
-        <Button slot="header">
-            <Icon size="1.2rem" slot="icon-prefix" type="options"></Icon>
+    <Card {...props} class="layout " style="width: 320px">
+        <Avatar slot="header">
+            <img src="https://github.com/atomicojs.png" alt="avatar" />
+        </Avatar>
+        <Button slot="header" ghost>
+            <Icon size="1.2rem" slot="prefix" type="options"></Icon>
         </Button>
         <img
             src="https://images.unsplash.com/photo-1501862700950-18382cd41497?w=420&q=80"
             alt="Image"
+            width="100%"
         />
         <Content>
             <h5>Title</h5>
@@ -29,7 +33,7 @@ export const Default = (props) => (
                 tempor quis
             </p>
         </Content>
-        <Button slot="footer" small circle outline>
+        <Button slot="footer" small outline>
             Create
         </Button>
     </Card>
@@ -51,10 +55,10 @@ export const ContentAndFooter = (props) => (
                 tempor quis
             </p>
         </Content>
-        <Button slot="footer" small circle outline>
+        <Button slot="footer" small outline>
             Create
         </Button>
-        <Button slot="footer" small color="danger" circle ghost>
+        <Button slot="footer" small color="danger" ghost>
             Remove
         </Button>
     </Card>

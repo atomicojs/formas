@@ -1,8 +1,10 @@
 import { useProxySlot, useSlot } from "@atomico/hooks/use-slot";
-import { c, css, useRef } from "atomico";
+import { Container } from "@formas/container";
 import { PrimitiveTokens } from "@formas/tokens";
+import { Props, c, css, useRef } from "atomico";
+import { serialize } from "atomico/utils";
 
-function card() {
+function card(props: Props<typeof card>) {
     const ref = useRef();
     const refHeader = useRef();
     const refFooter = useRef();
@@ -13,88 +15,92 @@ function card() {
         (element) => element instanceof Element
     );
     return (
-        <host shadowDom>
-            <div class={`header ${slotsHeader.length ? "" : "hide"}`}>
-                <slot ref={refHeader} name="header"></slot>
-            </div>
-            <slot ref={ref}></slot>
-            <div class="content">
-                {slots.map((element, i) => (
-                    <div
-                        class={
-                            element instanceof HTMLImageElement ||
-                            element instanceof HTMLVideoElement ||
-                            element instanceof HTMLIFrameElement
-                                ? "embed"
-                                : "item"
-                        }
-                    >
-                        <slot name={(element.slot = `slot-${i}`)}></slot>
+        <host
+            shadowDom
+            layout={serialize(
+                !!slotsHeader.length && "header",
+                !!slots.length && "content",
+                !!slotsFooter.length && "footer"
+            )}
+        >
+            <Container {...props}>
+                <div class="layout">
+                    <div class="header">
+                        <slot ref={refHeader} name="header"></slot>
                     </div>
-                ))}
-            </div>
-            <div class={`footer ${slotsFooter.length ? "" : "hide"}`}>
-                <slot ref={refFooter} name="footer"></slot>
-            </div>
+                    <slot ref={ref}></slot>
+                    <div class="content">
+                        {slots.map((element, i) => (
+                            <div
+                                class={
+                                    element instanceof HTMLImageElement ||
+                                    element instanceof HTMLVideoElement ||
+                                    element instanceof HTMLIFrameElement
+                                        ? "embed"
+                                        : "item"
+                                }
+                            >
+                                <slot
+                                    name={(element.slot = `slot-${i}`)}
+                                ></slot>
+                            </div>
+                        ))}
+                    </div>
+                    <div class="footer ">
+                        <slot ref={refFooter} name="footer"></slot>
+                    </div>
+                </div>
+            </Container>
         </host>
     );
 }
 
 card.props = {
     small: { type: Boolean, reflect: true },
+    ...Container.props,
 };
 
 card.styles = [
     PrimitiveTokens,
     css`
         :host {
-            background: #fff;
             display: block;
-            border-radius: var(--radius-card);
-            --space-x: calc(var(--space-around) * var(--font-line));
-            --space-gap: calc(var(--space-around) * (var(--font-line) / 2));
+            --display-header: none;
+            --display-footer: none;
         }
-        .content {
+        :host([layout*="header"]) {
+            --display-header: flex;
+        }
+        :host([layout*="content"]) {
+        }
+        :host([layout*="footer"]) {
+            --display-footer: flex;
+        }
+        :host([layout^="content"]) .content .embed:first-child {
+            border-radius: var(--radius) var(--radius) 0 0;
+            overflow: hidden;
+        }
+        .layout {
             display: grid;
         }
-        .embed {
-            width: 100%;
-        }
-        .item {
-            padding: var(--space-gap) var(--space-x);
-            box-sizing: border-box;
-        }
-        .header,
-        .footer {
-            display: flex;
-            gap: var(--space-gap);
-        }
         .header {
-            padding: var(--space-around) var(--space-x) var(--space-gap);
+            padding: var(--space);
+            display: var(--display-header);
             justify-content: space-between;
             align-items: center;
         }
-        .footer {
-            padding: 0 var(--space-x) var(--space-x);
-        }
-        .hide {
-            display: none;
-        }
-        ::slotted(img),
-        ::slotted(iframe),
-        ::slotted(video) {
-            width: 100%;
+        ::slotted(img) {
             display: block;
+            max-width: 100%;
         }
-        .content > *:last-child {
-            padding-bottom: var(--space-x);
+        .embed {
         }
-        .header.hide ~ .content > .embed:first-child {
-            border-radius: var(--radius-card) var(--radius-card) 0 0;
-            overflow: hidden;
+        .item {
+            padding: var(--space);
         }
-        .embed + .item {
-            padding-top: var(--space-x);
+        .footer {
+            display: var(--display-footer);
+            padding: var(--space);
         }
     `,
 ];

@@ -6,7 +6,7 @@ import { InputGenericProps } from "@formas/props";
 import { ActionTokens, ButtonTokens, PrimitiveTokens } from "@formas/tokens";
 import { c, css, Props, Type, useHost, useProp, useRef } from "atomico";
 import { serialize } from "atomico/utils";
-import { ButtonActive } from "./button-active";
+import { ButtonActive } from "./button-active.js";
 
 function button({
     name,
