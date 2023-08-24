@@ -9,7 +9,7 @@ export default {
 };
 
 export const Default = (props) => (
-    <Dropdown {...props}>
+    <Dropdown {...props} width="140px">
         <Button small slot="action">
             Show options
             <Icon slot="suffix" type="down"></Icon>

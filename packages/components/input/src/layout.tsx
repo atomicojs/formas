@@ -1,16 +1,7 @@
 import { useListener } from "@atomico/hooks/use-listener";
 import { DropdownLayout } from "@formas/dropdown";
 import { ActionTokens, PrimitiveTokens } from "@formas/tokens";
-import {
-    Host,
-    Props,
-    c,
-    css,
-    useEvent,
-    useHost,
-    useProp,
-    useRef,
-} from "atomico";
+import { Host, c, css, useEvent, useHost, useProp, useRef } from "atomico";
 
 type CLickIn =
     | "input"
@@ -19,17 +10,17 @@ type CLickIn =
     | "icon-prefix"
     | "icon-suffix"
     | "action"
+    | "action"
+    | "container"
     | "dropdown";
 
-function inputLayout({
-    enableIconPrefix,
-    enableIconSuffix,
-}: Props<typeof inputLayout>): Host<{
+function inputLayout(): Host<{
     toggleDropdown(): void;
     onClickIn: CustomEvent<CLickIn>;
 }> {
     const refWindow = useRef(window);
     const refHost = useHost();
+    const refInputSlot = useRef();
 
     const dispatch = useEvent<CLickIn>("ClickIn");
 
@@ -46,7 +37,14 @@ function inputLayout({
 
     return (
         <host shadowDom>
-            <div class="input" staticNode>
+            <div
+                class="input"
+                staticNode
+                onclick={(event) => {
+                    if (!event.composedPath().includes(refInputSlot.current))
+                        dispatch("container");
+                }}
+            >
                 <div
                     class="action action-prefix"
                     onclick={() => dispatch("action")}
@@ -62,6 +60,7 @@ function inputLayout({
                     </div>
                 </div>
                 <div
+                    ref={refInputSlot}
                     class="input-slot"
                     onclick={() => {
                         dispatch("input");
@@ -112,6 +111,9 @@ inputLayout.styles = [
             --size-icon-box: calc(var(--size) - (var(--border-size) * 2));
             --prefix-display: none;
             --suffix-display: none;
+            --padding-between: calc(var(--space) * 2);
+            --padding-left: var(--padding-between);
+            --padding-right: var(--padding-between);
         }
         :host([disabled]) {
             pointer-events: none;
@@ -140,7 +142,7 @@ inputLayout.styles = [
             outline: var(---outline);
             outline-offset: var(--outline-offset);
             transition: var(--transition);
-            padding: 0 calc(var(--space) * 2);
+            padding: 0 var(--padding-right) 0 var(--padding-left);
             align-items: center;
             gap: var(--space);
         }

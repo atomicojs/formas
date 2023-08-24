@@ -14,6 +14,7 @@ import {
     useRef,
 } from "atomico";
 import { DropdownLayout } from "./layout";
+import { useParent } from "@atomico/hooks/use-parent";
 
 function dropdown({ showWithOver }: Props<typeof dropdown>) {
     const host = useHost();
@@ -46,6 +47,10 @@ function dropdown({ showWithOver }: Props<typeof dropdown>) {
     listenerShow.capture = true;
 
     const state = useResizeObserverState(refAction);
+
+    const withIntDropdown = useParent(host.current.localName);
+
+    console.log({ withIntDropdown });
 
     return (
         <host

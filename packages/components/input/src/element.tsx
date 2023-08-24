@@ -1,11 +1,29 @@
+import { useCssLightDom } from "@atomico/hooks/use-css-light-dom";
 import { useDisabled } from "@atomico/hooks/use-disabled";
 import { usePropProxy } from "@atomico/hooks/use-prop-proxy";
 import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
+import { Icon } from "@formas/icon";
 import { InputGenericProps } from "@formas/props";
-import { Props, c, useProp, useRef } from "atomico";
+import { Props, c, css, useProp, useRef } from "atomico";
 import { serialize } from "atomico/utils";
 import { InputLayout } from "./layout";
+import { Button } from "@formas/button";
+
+const cssLightdom = css`
+    input[type="file"]::file-selector-button,
+    input[type="file"]::-webkit-file-selector-button {
+        display: none;
+    }
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+    }
+`;
 
 function input({ ...props }: Props<typeof input>) {
     const refInput = useRef<HTMLInputElement>();
@@ -35,17 +53,42 @@ function input({ ...props }: Props<typeof input>) {
     const refIconSuffix = useRef();
     const slotIconSuffix = useSlot(refIconSuffix);
 
+    useCssLightDom(cssLightdom);
+
     return (
-        <host shadowDom>
+        <host
+            shadowDom
+            ondrop={(event) => {
+                alert();
+            }}
+            ondragover={() => {
+                if (props.type === "file") {
+                    setFocused(true);
+                }
+            }}
+            ondragend={() => {
+                setFocused(false);
+            }}
+        >
             <div>
                 <InputLayout
+                    class="layout"
                     focused={focused}
                     small={props.small}
                     disabled={props.disabled}
                     layout={serialize(
                         slotIconPrefix.length && "prefix",
-                        slotIconSuffix.length && "suffix"
+                        (slotIconSuffix.length ||
+                            props.type === "file" ||
+                            props.type === "date") &&
+                            "suffix"
                     )}
+                    onClickIn={(event) => {
+                        if (event.detail === "container") {
+                            refInput.current?.focus();
+                            refInput.current?.click();
+                        }
+                    }}
                 >
                     <slot slot="prefix" name="prefix"></slot>
                     <slot
@@ -59,7 +102,20 @@ function input({ ...props }: Props<typeof input>) {
                         ref={refIconSuffix}
                         slot="icon-suffix"
                         name="icon-suffix"
-                    ></slot>
+                    >
+                        {props.type === "file" ? (
+                            <Icon type="attachment"></Icon>
+                        ) : props.type === "date" ? (
+                            <Button
+                                ghost
+                                onclick={() => {
+                                    refInput.current?.showPicker();
+                                }}
+                            >
+                                <Icon type="calendar"></Icon>
+                            </Button>
+                        ) : null}
+                    </slot>
                 </InputLayout>
             </div>
         </host>
@@ -78,5 +134,14 @@ input.props = {
     placeholder: String,
     step: Number,
 };
+
+input.styles = css`
+    :host([type="date"]) .layout {
+        --padding-right: 0;
+    }
+    :host([type="file"]) .layout {
+        --border-style: dashed;
+    }
+`;
 
 export const Input = c(input);
