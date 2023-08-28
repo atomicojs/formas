@@ -55,22 +55,40 @@ function input({ ...props }: Props<typeof input>) {
 
     useCssLightDom(cssLightdom);
 
+    const isTypeFile = props.type === "file";
+
+    const handlerDragOver =
+        isTypeFile &&
+        ((event: DragEvent) => {
+            event.preventDefault();
+        });
+
+    const handlerDrop =
+        isTypeFile &&
+        ((event: DragEvent) => {
+            event.preventDefault();
+
+            const data = new DataTransfer();
+
+            [...event.dataTransfer.files]
+                .slice(0, props.multiple ? event.dataTransfer.files.length : 1)
+                .forEach((file) => data.items.add(file));
+
+            refInput.current.files = data.files;
+        });
+
     return (
-        <host
-            shadowDom
-            ondrop={(event) => {
-                alert();
-            }}
-            ondragover={() => {
-                if (props.type === "file") {
-                    setFocused(true);
-                }
-            }}
-            ondragend={() => {
-                setFocused(false);
-            }}
-        >
-            <div>
+        <host shadowDom>
+            <div
+                ondragover={() => {
+                    if (props.type === "file") {
+                        setFocused(true);
+                    }
+                }}
+                ondragend={() => {
+                    setFocused(false);
+                }}
+            >
                 <InputLayout
                     class="layout"
                     focused={focused}
@@ -89,6 +107,8 @@ function input({ ...props }: Props<typeof input>) {
                             refInput.current?.click();
                         }
                     }}
+                    ondragover={handlerDragOver}
+                    ondrop={handlerDrop}
                 >
                     <slot slot="prefix" name="prefix"></slot>
                     <slot
@@ -103,7 +123,7 @@ function input({ ...props }: Props<typeof input>) {
                         slot="icon-suffix"
                         name="icon-suffix"
                     >
-                        {props.type === "file" ? (
+                        {isTypeFile ? (
                             <Icon type="attachment"></Icon>
                         ) : props.type === "date" ? (
                             <Button
@@ -133,6 +153,7 @@ input.props = {
     maxLength: Number,
     placeholder: String,
     step: Number,
+    multiple: Boolean,
 };
 
 input.styles = css`

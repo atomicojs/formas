@@ -1,7 +1,17 @@
 import { useListener } from "@atomico/hooks/use-listener";
 import { DropdownLayout } from "@formas/dropdown";
 import { ActionTokens, PrimitiveTokens } from "@formas/tokens";
-import { Host, c, css, useEvent, useHost, useProp, useRef } from "atomico";
+import {
+    Host,
+    Props,
+    Type,
+    c,
+    css,
+    useEvent,
+    useHost,
+    useProp,
+    useRef,
+} from "atomico";
 
 type CLickIn =
     | "input"
@@ -14,7 +24,7 @@ type CLickIn =
     | "container"
     | "dropdown";
 
-function inputLayout(): Host<{
+function inputLayout({ enableDropdown }: Props<typeof inputLayout>): Host<{
     toggleDropdown(): void;
     onClickIn: CustomEvent<CLickIn>;
 }> {
@@ -83,11 +93,16 @@ function inputLayout(): Host<{
                     </div>
                 </div>
             </div>
-            <div class="dropdown" onclick={() => dispatch("dropdown")}>
-                <DropdownLayout show={showDropdown} reference={refHost.current}>
-                    <slot name="dropdown"></slot>
-                </DropdownLayout>
-            </div>
+            {enableDropdown && (
+                <div class="dropdown" onclick={() => dispatch("dropdown")}>
+                    <DropdownLayout
+                        show={showDropdown}
+                        reference={refHost.current}
+                    >
+                        <slot name="dropdown"></slot>
+                    </DropdownLayout>
+                </div>
+            )}
         </host>
     );
 }
