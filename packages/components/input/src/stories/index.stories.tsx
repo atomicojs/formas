@@ -14,7 +14,12 @@ export const DefaultDate = (props) => <Input {...props} type="date"></Input>;
 export const DefaultNumber = (props) => (
     <Input {...props} type="number"></Input>
 );
+
 export const DefaultFile = (props) => <Input {...props} type="file"></Input>;
+
+export const DefaultSearch = (props) => (
+    <Input {...props} type="search" loading></Input>
+);
 
 export const IconPrefixInput = (props) => (
     <Input {...props}>

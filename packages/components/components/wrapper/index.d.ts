@@ -1,6 +1,7 @@
 export * from "@formas/alert";
 export * from "@formas/avatar";
 export * from "@formas/button";
+export * from "@formas/badge";
 export * from "@formas/card";
 export * from "@formas/checkbox";
 export * from "@formas/container";
@@ -8,6 +9,7 @@ export * from "@formas/content";
 export * from "@formas/dropdown";
 export * from "@formas/icon";
 export * from "@formas/input";
+export * from "@formas/input-list";
 export * from "@formas/label";
 export * from "@formas/loading";
 export * from "@formas/props";

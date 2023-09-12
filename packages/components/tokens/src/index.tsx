@@ -50,3 +50,7 @@ export const CheckboxTokens = css`
 export const CardTokens = css`
     @tokens "./tokens.yaml" (import: card) (values: true);
 `;
+
+export const BadgeTokens = css`
+    @tokens "./tokens.yaml" (import: badge) (values: true);
+`;

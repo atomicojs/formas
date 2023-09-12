@@ -143,6 +143,7 @@ button.styles = [
             ---prefix-display: block;
             ---content-display: flex;
             ---suffix-display: block;
+            ---size: var(--size);
         }
         :host([outline]) {
             ---border: var(--border);
@@ -189,12 +190,16 @@ button.styles = [
         :host([ghost]) {
             ---color: transparent;
         }
+        :host-context(.action-suffix),
+        :host-context(.action-prefix) {
+            ---size: calc(var(--size) - (var(--border-size) * 2));
+        }
         .container {
             all: unset;
             position: relative;
-            height: var(--size);
+            height: var(---size);
             width: 100%;
-            min-width: var(--size);
+            min-width: var(---size);
             cursor: pointer;
             border: var(---border);
             border-radius: var(---radius);

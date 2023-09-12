@@ -4,7 +4,6 @@ import { ActionTokens, PrimitiveTokens } from "@formas/tokens";
 import {
     Host,
     Props,
-    Type,
     c,
     css,
     useEvent,
@@ -53,6 +52,7 @@ function inputLayout({ enableDropdown }: Props<typeof inputLayout>): Host<{
                 onclick={(event) => {
                     if (!event.composedPath().includes(refInputSlot.current))
                         dispatch("container");
+                    if (enableDropdown) setShowDropdown((value) => !value);
                 }}
             >
                 <div
@@ -98,6 +98,7 @@ function inputLayout({ enableDropdown }: Props<typeof inputLayout>): Host<{
                     <DropdownLayout
                         show={showDropdown}
                         reference={refHost.current}
+                        class="dropdown-component"
                     >
                         <slot name="dropdown"></slot>
                     </DropdownLayout>
@@ -149,9 +150,8 @@ inputLayout.styles = [
             display: flex;
             background: var(--background);
             border-radius: var(--radius);
-            border: var(--border-size) var(--border-style)
-                var(--color-contrast-30);
-            height: var(--size);
+            border: var(--border);
+            min-height: var(--size);
             box-sizing: border-box;
             position: relative;
             outline: var(---outline);
@@ -171,6 +171,7 @@ inputLayout.styles = [
             display: var(--suffix-display);
         }
         .action-row {
+            display: flex;
             box-sizing: border-box;
             min-width: var(--space);
             height: 100%;
@@ -193,6 +194,14 @@ inputLayout.styles = [
         .inputs {
             display: flex;
             flex: 0%;
+        }
+        .dropdown {
+            width: 100%;
+            height: 1px;
+            position: relative;
+        }
+        .dropdown-component {
+            width: 100%;
         }
     `,
 ];

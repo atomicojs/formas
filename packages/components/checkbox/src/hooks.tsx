@@ -1,6 +1,6 @@
 import { useFormListener } from "@atomico/hooks/use-form";
 import { useRender } from "@atomico/hooks/use-render";
-import { useProp, useRef } from "atomico";
+import { useProp, useRef, useEvent } from "atomico";
 
 export function useCheckbox(type: "checkbox" | "radio") {
     const [name] = useProp<string>("name");
@@ -11,7 +11,16 @@ export function useCheckbox(type: "checkbox" | "radio") {
 
     const refInput = useRef<HTMLInputElement>();
 
-    useFormListener("reset", () => setChecked(false));
+    const dispatchChange = useEvent("change", {
+        bubbles: true,
+        composed: true,
+        base: Event,
+    });
+
+    useFormListener("reset", () => {
+        setChecked(false);
+        dispatchChange();
+    });
 
     useRender(() => {
         return (
@@ -21,7 +30,13 @@ export function useCheckbox(type: "checkbox" | "radio") {
                 value={value}
                 ref={refInput}
                 checked={checked}
-                onclick={() => setChecked(!checked)}
+                onchange={(event) => {
+                    event.stopPropagation();
+                }}
+                onclick={() => {
+                    setChecked(!checked);
+                    dispatchChange();
+                }}
             />
         );
     }, [checked, name, type]);

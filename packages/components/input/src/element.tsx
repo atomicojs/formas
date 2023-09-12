@@ -9,6 +9,7 @@ import { Props, c, css, useProp, useRef } from "atomico";
 import { serialize } from "atomico/utils";
 import { InputLayout } from "./layout";
 import { Button } from "@formas/button";
+import { Loading } from "@formas/loading";
 
 const cssLightdom = css`
     input[type="file"]::file-selector-button,
@@ -16,12 +17,18 @@ const cssLightdom = css`
         display: none;
     }
     input[type="date"]::-webkit-inner-spin-button,
-    input[type="date"]::-webkit-calendar-picker-indicator {
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="search"]::-webkit-search-cancel-button {
         display: none;
         -webkit-appearance: none;
         -moz-appearance: none;
         -o-appearance: none;
         appearance: none;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
     }
 `;
 
@@ -98,6 +105,8 @@ function input({ ...props }: Props<typeof input>) {
                         slotIconPrefix.length && "prefix",
                         (slotIconSuffix.length ||
                             props.type === "file" ||
+                            props.type === "search" ||
+                            props.type === "number" ||
                             props.type === "date") &&
                             "suffix"
                     )}
@@ -124,16 +133,58 @@ function input({ ...props }: Props<typeof input>) {
                         name="icon-suffix"
                     >
                         {isTypeFile ? (
-                            <Icon type="attachment"></Icon>
+                            <Button
+                                ghost
+                                small={props.small}
+                                onclick={(event) => {
+                                    event.stopPropagation();
+                                    event.preventDefault();
+                                    refInput.current?.click();
+                                }}
+                            >
+                                <Icon slot="prefix" type="attachment"></Icon>
+                            </Button>
                         ) : props.type === "date" ? (
                             <Button
                                 ghost
+                                small={props.small}
                                 onclick={() => {
                                     refInput.current?.showPicker();
                                 }}
                             >
-                                <Icon type="calendar"></Icon>
+                                <Icon slot="prefix" type="calendar"></Icon>
                             </Button>
+                        ) : props.type === "search" ? (
+                            <Button
+                                ghost
+                                small={props.small}
+                                onclick={() => {
+                                    refInput.current?.showPicker();
+                                }}
+                            >
+                                <Icon slot="prefix" type="search"></Icon>
+                            </Button>
+                        ) : props.type === "number" ? (
+                            <>
+                                <Button
+                                    ghost
+                                    small={props.small}
+                                    onclick={() => {
+                                        refInput.current?.showPicker();
+                                    }}
+                                >
+                                    <Icon slot="prefix" type="search"></Icon>
+                                </Button>
+                                <Button
+                                    ghost
+                                    small={props.small}
+                                    onclick={() => {
+                                        refInput.current?.showPicker();
+                                    }}
+                                >
+                                    <Icon slot="prefix" type="search"></Icon>
+                                </Button>
+                            </>
                         ) : null}
                     </slot>
                 </InputLayout>
@@ -154,10 +205,17 @@ input.props = {
     placeholder: String,
     step: Number,
     multiple: Boolean,
+    loading: {
+        type: Boolean,
+        reflect: true,
+    },
 };
 
 input.styles = css`
-    :host([type="date"]) .layout {
+    :host([type="date"]) .layout,
+    :host([type="search"]) .layout,
+    :host([type="file"]) .layout,
+    :host([type="number"]) .layout {
         --padding-right: 0;
     }
     :host([type="file"]) .layout {

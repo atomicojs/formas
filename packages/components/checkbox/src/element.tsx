@@ -46,7 +46,10 @@ checkbox.props = {
         value: "on",
     },
     tabIndex: { type: Number },
-    checked: { type: Boolean, reflect: true },
+    checked: {
+        type: Boolean,
+        reflect: true,
+    },
 };
 
 checkbox.styles = [
