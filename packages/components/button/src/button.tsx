@@ -108,6 +108,7 @@ function button({
                     </div>
                 </div>
             </button>
+            <style>{`:host{--color: var(--color-${color}, var(--color-status-${color}-container))!important;}`}</style>
         </host>
     );
 }
@@ -124,7 +125,7 @@ button.props = {
     circle: { type: Boolean, reflect: true },
     outline: { type: Boolean, reflect: true },
     badge: { type: Boolean, reflect: true },
-    color: { type: String, reflect: true },
+    color: { type: String, value: "primary" },
 };
 
 button.styles = [

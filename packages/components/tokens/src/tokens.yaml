@@ -21,10 +21,18 @@ primitive:
         surface: "#F8F8F8"
         invert: "#FFFFFF"
         status:
-            success: "#18D47C"
-            warning: "#F9AA33"
-            info: "#0080FF"
-            danger: "#FF5B5B"
+            success:
+                =: "#18D47C"
+                container: "#a8ffbf"
+            warning:
+                =: "#F9AA33"
+                container: "#ffb971"
+            info:
+                =: "#0080FF"
+                container: "#9dc4ff"
+            danger:
+                =: "#FF5B5B"
+                container: "#ff9595"
         contrast:
             100: "rgba(0,0,0)"
             75: "rgba(0,0,0,.75)"
@@ -72,16 +80,7 @@ action:
         opacity: .75
 button:
     color:
-        =: $color.primary
         text: unset
-        [color=secondary]:
-            =: $color.secondary
-        [color=tertiary]:
-            =: $color.tertiary
-        [color=neutral]:
-            =: $color.neutral
-        [color=invert]:
-            =: $color.invert
 badge:
     font:
         size:
@@ -100,20 +99,12 @@ badge:
             container: $size.l
         [small=true]:
             =: $size.l
+            icon:
+                =: $size.xxs
+                container: $size.s
     radius:
         =: $size.3xs
         circle: 100vw
-    color:
-        =: $color.primary
-        text: unset
-        [color=secondary]:
-            =: $color.secondary
-        [color=tertiary]:
-            =: $color.tertiary
-        [color=neutral]:
-            =: $color.neutral
-        [color=invert]:
-            =: $color.invert
 checkbox:
     size:
         switch: $size.xl

@@ -3,7 +3,7 @@ import { serialize } from "atomico/utils";
 import { PrimitiveTokens, BadgeTokens } from "@formas/tokens";
 import { useSlot } from "@atomico/hooks/use-slot";
 
-function badge({ action }: Props<typeof badge>) {
+function badge({ action, color }: Props<typeof badge>) {
     const refPrefix = useRef();
     const refSuffix = useRef();
     const slotPrefix = useSlot(refPrefix);
@@ -26,6 +26,9 @@ function badge({ action }: Props<typeof badge>) {
                     <slot name="suffix" ref={refSuffix}></slot>
                 </div>
             </button>
+            {color && (
+                <style>{`:host{---color: var(--color-${color}, var(--color-status-${color}-container) )}`}</style>
+            )}
         </host>
     );
 }
@@ -34,6 +37,7 @@ badge.props = {
     small: { type: Boolean, reflect: true },
     circle: { type: Boolean, reflect: true },
     action: { type: Boolean, reflect: true },
+    color: { type: String, value: "primary" },
 };
 
 badge.styles = [
@@ -67,7 +71,6 @@ badge.styles = [
         }
         .badge {
             height: var(--size);
-            background: red;
             border: none;
             display: flex;
             align-items: center;
@@ -75,7 +78,7 @@ badge.styles = [
             padding: var(---space);
             box-sizing: border-box;
             border-radius: var(---radius);
-            background: var(--color);
+            background: var(---color, var(--color));
             font-size: var(--font-size);
             color: var(--font-color);
             font-weight: var(--font-weight);
