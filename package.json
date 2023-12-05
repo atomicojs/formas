@@ -17,7 +17,7 @@
     "prettier": {
         "tabWidth": 4,
         "singleQuote": false,
-        "endOfLine": "crlf"
+        "endOfLine": "lf"
     },
     "dependencies": {
         "@atomico/exports": "^1.9.0",
