@@ -26,11 +26,11 @@ export const ColorsBackground = [
 export const ShadowDeep = [1, 2, 3, 4];
 
 export const PrimitiveTokens = css`
-    @tokens "./tokens.yaml" (import: primitive) (values: true);
+    @tokens "./tokens.yaml" use(primitive);
 `;
 
 export const ActionTokens = css`
-    @tokens "./tokens.yaml" (import: action) (values: true);
+    @tokens "./tokens.yaml" use(action);
     :host {
         font-size: var(--font-size);
         font-weight: var(--font-weight);
@@ -40,17 +40,26 @@ export const ActionTokens = css`
 `;
 
 export const ButtonTokens = css`
-    @tokens "./tokens.yaml" (import: button);
+    @tokens "./tokens.yaml" use(button);
 `;
 
 export const CheckboxTokens = css`
-    @tokens "./tokens.yaml" (import: checkbox)  (values: true);
+    @tokens "./tokens.yaml" use(checkbox);
 `;
 
 export const CardTokens = css`
-    @tokens "./tokens.yaml" (import: card) (values: true);
+    @tokens "./tokens.yaml" use(card);
 `;
 
 export const BadgeTokens = css`
-    @tokens "./tokens.yaml" (import: badge) (values: true);
+    @tokens "./tokens.yaml" use(badge);
 `;
+
+export const tokens = css`
+    @tokens "./tokens.yaml" scope(:root);
+`;
+
+document.adoptedStyleSheets = [
+    tokens as CSSStyleSheet,
+    ...document.adoptedStyleSheets,
+];

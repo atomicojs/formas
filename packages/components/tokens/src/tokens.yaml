@@ -44,39 +44,39 @@ primitive:
 action:
     font:
         size:
-            =: $size.m
-            [small=true]:
-                =: $size.s
+            =: $$size-m
+            (small):
+                =: $$size-s
         weight: 500
-        color: $primitive.contrast.100
+        color: $primitive-contrast-100
     size:
-        =: $size.3xl
-        icon: $size.s
-        [small=true]:
-            =: $size.xxl
+        =: $$size-3xl
+        icon: $$size-s
+        (small):
+            =: $$size-xxl
     space:
-        =: $size.xxs
+        =: $$size-xxs
     radius:
-        =: $size.xs
+        =: $$size-xs
         circle: 100vw
-        [small=true]:
-            =: $size.xxs
+        (small):
+            =: $$size-xxs
     transition:
         =: .25s ease all
         medium: .5s ease all
         slow: .75s ease all
     border:
-        =: $$action.border.size $$action.border.style $$action.border.color
+        =: $action-border-size $action-border-style $action-border-color
         size: 1px
         style: solid
-        color: $color.contrast.30
+        color: $$color-contrast-30
     outline:
-        =: $$action.outline.size $$action.outline.style $$action.outline.color
+        =: $action-outline-size $action-outline-style $action-outline-color
         size: 2px
         style: solid
         offset: 1px
-        color: $color.contrast.15
-    [disabled=true]:
+        color: $$color-contrast-15
+    (disabled):
         opacity: .75
 button:
     color:
@@ -84,52 +84,52 @@ button:
 badge:
     font:
         size:
-            =: $size.s
-            [small=true]:
-                =: $size.xs
+            =: $size-s
+            (small):
+                =: $size-xs
         weight: 700
-        color: $primitive.contrast.100
+        color: $primitive-contrast-100
     space:
-        =: $size.xxs
-        icon: $size.5xs
+        =: $size-xxs
+        icon: $size-5xs
     size:
-        =: $size.xl
+        =: $size-xl
         icon:
-            =: $size.xs
-            container: $size.l
-        [small=true]:
-            =: $size.l
+            =: $size-xs
+            container: $size-l
+        (small):
+            =: $size-l
             icon:
-                =: $size.xxs
-                container: $size.s
+                =: $size-xxs
+                container: $size-s
     radius:
-        =: $size.3xs
+        =: $size-3xs
         circle: 100vw
 checkbox:
     size:
-        switch: $size.xl
+        switch: $size-xl
     radius:
-        =: $size.3xs
+        =: $size-3xs
     stroke:
         size: 2
 card:
     space:
-        =: $size.xs
+        =: $size-xs
     radius:
-        =: $size.xl
-        [small=true]:
-            =: $size.xs
+        =: $size-xl
+        (small):
+            =: $size-xs
     border:
-        =: $$card.border.size $$card.border.style $$card.border.color
+        =: $card-border-size $card-border-style $card-border-color
         size: 1px
         style: solid
-        color: $color.contrast.5
+        color: $color-contrast-5
         split:
-            =: $$card.border.size $$card.border.style $$card.border.split.color
-            color: $color.contrast.15
+            =: $card-border-size $card-border-style $card-border-split-color
+            color: $color-contrast-15
     transition: .25s ease all
     shadow:
-        1: "0px 5px 10px $color.contrast.10"
-        2: "0px 10px 20px $color.contrast.10"
-        3: "0px 15px 30px $color.contrast.10"
-        4: "0px 20px 40px $color.contrast.10"
+        1: "0px 5px 10px $color-contrast-10"
+        2: "0px 10px 20px $color-contrast-10"
+        3: "0px 15px 30px $color-contrast-10"
+        4: "0px 20px 40px $color-contrast-10"

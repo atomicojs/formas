@@ -28,7 +28,6 @@
     "postcss": {
         "plugins": {
             "@atomico/postcss-tokens": {
-                "defaultValue": true,
                 "prefix": "formas"
             }
         }
