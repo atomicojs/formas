@@ -32,7 +32,6 @@
         "@formas/sidebar": "^0.0.4",
         "@formas/switch": "^0.0.4",
         "@formas/tokens": "^0.0.4",
-        "@atomico/container": "^1.0.0",
         "@formas/container": "^1.0.0",
         "@formas/input-list": "^1.0.0",
         "@formas/badge": "^1.0.0"
