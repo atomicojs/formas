@@ -15,6 +15,5 @@ export * from "@formas/loading/vue";
 export * from "@formas/props/vue";
 export * from "@formas/radio/vue";
 export * from "@formas/select/vue";
-export * from "@formas/sidebar/vue";
 export * from "@formas/switch/vue";
 export * from "@formas/tokens/vue";

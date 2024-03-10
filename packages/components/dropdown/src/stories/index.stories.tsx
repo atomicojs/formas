@@ -9,8 +9,32 @@ export default {
 };
 
 export const Default = (props) => (
-    <Button small ghost>
-        <Icon slot="prefix" type="home"></Icon>
-        Home
-    </Button>
+    <Dropdown>
+        <Button small ghost slot="action">
+            <Icon slot="prefix" type="home"></Icon>
+            Home
+        </Button>
+        <Button small ghost>
+            <Icon slot="prefix" type="home"></Icon>
+            Home
+        </Button>
+        <Button small ghost>
+            <Icon slot="prefix" type="home"></Icon>
+            Config
+        </Button>
+        <Dropdown>
+            <Button small ghost slot="action">
+                <Icon slot="prefix" type="home"></Icon>
+                Options
+            </Button>
+            <Button small ghost>
+                <Icon slot="prefix" type="home"></Icon>
+                Home
+            </Button>
+            <Button small ghost>
+                <Icon slot="prefix" type="home"></Icon>
+                Config
+            </Button>
+        </Dropdown>
+    </Dropdown>
 );

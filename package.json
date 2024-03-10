@@ -21,13 +21,15 @@
     },
     "dependencies": {
         "@atomico/exports": "^1.9.0",
-        "@atomico/hooks": "^3.49.1",
+        "@atomico/hooks": "^4.1.1",
         "@atomico/postcss-tokens": "^3.4.5",
         "@atomico/run": "^0.11.0",
         "@atomico/scaffold": "^2.9.5",
+        "@atomico/storybook": "^2.6.0",
         "@atomico/tsconfig": "^1.1.2",
+        "@atomico/use-disabled": "^2.0.0",
         "@atomico/vite": "^2.11.2",
-        "atomico": "^1.73.0",
+        "atomico": "^1.77.1",
         "typescript": "^5.0.4",
         "vite": "^4.3.9"
     },

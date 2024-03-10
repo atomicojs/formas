@@ -23,7 +23,16 @@
     },
     "types": "src/index.tsx",
     "exports": {
-        ".": "./src/index.tsx"
+        ".": {
+            "types": "./src/index.tsx",
+            "default": "./src/index.tsx"
+        },
+        "./tokens.yaml": {
+            "default": "./src/tokens.yaml"
+        },
+        "./stories/tsconfig.json": {
+            "default": "./src/stories/tsconfig.json"
+        }
     },
     "typesVersions": {
         "*": {}

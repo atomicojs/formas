@@ -16,10 +16,22 @@
     },
     "types": "src/index.tsx",
     "exports": {
-        "./icon": "./src/icon.tsx",
-        "./icons": "./src/icons.tsx",
-        ".": "./src/index.tsx",
-        "./stories/index.stories": "./src/stories/index.stories.tsx"
+        "./icon": {
+            "types": "./src/icon.tsx",
+            "default": "./src/icon.tsx"
+        },
+        "./icons": {
+            "types": "./src/icons.tsx",
+            "default": "./src/icons.tsx"
+        },
+        ".": {
+            "types": "./src/index.tsx",
+            "default": "./src/index.tsx"
+        },
+        "./stories/index.stories": "./src/stories/index.stories.tsx",
+        "./tsconfig.json": {
+            "default": "./src/stories/tsconfig.json"
+        }
     },
     "typesVersions": {
         "*": {

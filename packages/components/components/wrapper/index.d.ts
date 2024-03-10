@@ -15,6 +15,5 @@ export * from "@formas/loading";
 export * from "@formas/props";
 export * from "@formas/radio";
 export * from "@formas/select";
-export * from "@formas/sidebar";
 export * from "@formas/switch";
 export * from "@formas/tokens";

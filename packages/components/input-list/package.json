@@ -19,12 +19,33 @@
     "types": "src/index.tsx",
     "exports": {
         "./element": "./src/element.tsx",
-        ".": "./src/index.tsx",
-        "./elements": "./src/elements.ts",
-        "./InputList": "./src/InputList.tsx",
-        "./InputListOption": "./src/InputListOption.tsx",
-        "./InputListBadge": "./src/InputListBadge.tsx",
-        "./utils": "./src/utils.ts"
+        ".": {
+            "types": "./src/index.tsx",
+            "default": "./src/index.tsx"
+        },
+        "./elements": {
+            "types": "./src/elements.ts",
+            "default": "./src/elements.ts"
+        },
+        "./InputList": {
+            "types": "./src/InputList.tsx",
+            "default": "./src/InputList.tsx"
+        },
+        "./InputListOption": {
+            "types": "./src/InputListOption.tsx",
+            "default": "./src/InputListOption.tsx"
+        },
+        "./InputListBadge": {
+            "types": "./src/InputListBadge.tsx",
+            "default": "./src/InputListBadge.tsx"
+        },
+        "./utils": {
+            "types": "./src/utils.ts",
+            "default": "./src/utils.ts"
+        },
+        "./tsconfig.json": {
+            "default": "./src/stories/tsconfig.json"
+        }
     },
     "typesVersions": {
         "*": {

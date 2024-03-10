@@ -18,8 +18,17 @@
     },
     "types": "src/index.tsx",
     "exports": {
-        "./element": "./src/element.tsx",
-        ".": "./src/index.tsx"
+        "./element": {
+            "types": "./src/element.tsx",
+            "default": "./src/element.tsx"
+        },
+        ".": {
+            "types": "./src/index.tsx",
+            "default": "./src/index.tsx"
+        },
+        "./tsconfig.json": {
+            "default": "./src/stories/tsconfig.json"
+        }
     },
     "typesVersions": {
         "*": {

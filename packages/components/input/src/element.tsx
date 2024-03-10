@@ -3,13 +3,12 @@ import { useDisabled } from "@atomico/hooks/use-disabled";
 import { usePropProxy } from "@atomico/hooks/use-prop-proxy";
 import { useRender } from "@atomico/hooks/use-render";
 import { useSlot } from "@atomico/hooks/use-slot";
+import { Button } from "@formas/button";
 import { Icon } from "@formas/icon";
 import { InputGenericProps } from "@formas/props";
 import { Props, c, css, useProp, useRef } from "atomico";
 import { serialize } from "atomico/utils";
 import { InputLayout } from "./layout";
-import { Button } from "@formas/button";
-import { Loading } from "@formas/loading";
 
 const cssLightdom = css`
     input[type="file"]::file-selector-button,

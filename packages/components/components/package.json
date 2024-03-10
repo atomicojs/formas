@@ -46,10 +46,108 @@
     },
     "types": "wrapper/index.d.ts",
     "exports": {
-        ".": "./wrapper/index.js",
-        "./react": "./wrapper/react.js",
-        "./preact": "./wrapper/preact.js",
-        "./vue": "./wrapper/vue.js"
+        ".": {
+            "types": "./wrapper/index.d.ts",
+            "default": "./wrapper/index.js"
+        },
+        "./react": {
+            "types": "./wrapper/react.d.ts",
+            "default": "./wrapper/react.js"
+        },
+        "./preact": {
+            "types": "./wrapper/preact.d.ts",
+            "default": "./wrapper/preact.js"
+        },
+        "./vue": {
+            "types": "./wrapper/vue.d.ts",
+            "default": "./wrapper/vue.js"
+        },
+        "./alert": {
+            "types": "./wrapper/@formas/alert.d.ts",
+            "default": "./wrapper/@formas/alert.js"
+        },
+        "./avatar": {
+            "types": "./wrapper/@formas/avatar.d.ts",
+            "default": "./wrapper/@formas/avatar.js"
+        },
+        "./badge": {
+            "types": "./wrapper/@formas/badge.d.ts",
+            "default": "./wrapper/@formas/badge.js"
+        },
+        "./button": {
+            "types": "./wrapper/@formas/button.d.ts",
+            "default": "./wrapper/@formas/button.js"
+        },
+        "./card": {
+            "types": "./wrapper/@formas/card.d.ts",
+            "default": "./wrapper/@formas/card.js"
+        },
+        "./checkbox": {
+            "types": "./wrapper/@formas/checkbox.d.ts",
+            "default": "./wrapper/@formas/checkbox.js"
+        },
+        "./container": {
+            "types": "./wrapper/@formas/container.d.ts",
+            "default": "./wrapper/@formas/container.js"
+        },
+        "./content": {
+            "types": "./wrapper/@formas/content.d.ts",
+            "default": "./wrapper/@formas/content.js"
+        },
+        "./dropdown": {
+            "types": "./wrapper/@formas/dropdown.d.ts",
+            "default": "./wrapper/@formas/dropdown.js"
+        },
+        "./icon": {
+            "types": "./wrapper/@formas/icon.d.ts",
+            "default": "./wrapper/@formas/icon.js"
+        },
+        "./input": {
+            "types": "./wrapper/@formas/input.d.ts",
+            "default": "./wrapper/@formas/input.js"
+        },
+        "./input-list": {
+            "types": "./wrapper/@formas/input-list.d.ts",
+            "default": "./wrapper/@formas/input-list.js"
+        },
+        "./label": {
+            "types": "./wrapper/@formas/label.d.ts",
+            "default": "./wrapper/@formas/label.js"
+        },
+        "./loading": {
+            "types": "./wrapper/@formas/loading.d.ts",
+            "default": "./wrapper/@formas/loading.js"
+        },
+        "./props": {
+            "types": "./wrapper/@formas/props.d.ts",
+            "default": "./wrapper/@formas/props.js"
+        },
+        "./radio": {
+            "types": "./wrapper/@formas/radio.d.ts",
+            "default": "./wrapper/@formas/radio.js"
+        },
+        "./select": {
+            "types": "./wrapper/@formas/select.d.ts",
+            "default": "./wrapper/@formas/select.js"
+        },
+        "./sidebar": {
+            "default": "./wrapper/@formas/sidebar.js",
+            "types": "./wrapper/@formas/sidebar.d.ts"
+        },
+        "./switch": {
+            "types": "./wrapper/@formas/switch.d.ts",
+            "default": "./wrapper/@formas/switch.js"
+        },
+        "./tokens": {
+            "types": "./wrapper/@formas/tokens.d.ts",
+            "default": "./wrapper/@formas/tokens.js"
+        },
+        "./package.json": {
+            "default": "../alert/package.json"
+        },
+        "./package": {
+            "default": "../tokens/package.json"
+        }
     },
     "typesVersions": {
         "*": {
@@ -61,6 +159,66 @@
             ],
             "vue": [
                 "wrapper/vue.d.ts"
+            ],
+            "alert": [
+                "wrapper/@formas/alert.d.ts"
+            ],
+            "avatar": [
+                "wrapper/@formas/avatar.d.ts"
+            ],
+            "badge": [
+                "wrapper/@formas/badge.d.ts"
+            ],
+            "button": [
+                "wrapper/@formas/button.d.ts"
+            ],
+            "card": [
+                "wrapper/@formas/card.d.ts"
+            ],
+            "checkbox": [
+                "wrapper/@formas/checkbox.d.ts"
+            ],
+            "container": [
+                "wrapper/@formas/container.d.ts"
+            ],
+            "content": [
+                "wrapper/@formas/content.d.ts"
+            ],
+            "dropdown": [
+                "wrapper/@formas/dropdown.d.ts"
+            ],
+            "icon": [
+                "wrapper/@formas/icon.d.ts"
+            ],
+            "input": [
+                "wrapper/@formas/input.d.ts"
+            ],
+            "input-list": [
+                "wrapper/@formas/input-list.d.ts"
+            ],
+            "label": [
+                "wrapper/@formas/label.d.ts"
+            ],
+            "loading": [
+                "wrapper/@formas/loading.d.ts"
+            ],
+            "props": [
+                "wrapper/@formas/props.d.ts"
+            ],
+            "radio": [
+                "wrapper/@formas/radio.d.ts"
+            ],
+            "select": [
+                "wrapper/@formas/select.d.ts"
+            ],
+            "sidebar": [
+                "wrapper/@formas/sidebar.d.ts"
+            ],
+            "switch": [
+                "wrapper/@formas/switch.d.ts"
+            ],
+            "tokens": [
+                "wrapper/@formas/tokens.d.ts"
             ]
         }
     },

@@ -15,6 +15,5 @@ export * from "@formas/loading/react";
 export * from "@formas/props/react";
 export * from "@formas/radio/react";
 export * from "@formas/select/react";
-export * from "@formas/sidebar/react";
 export * from "@formas/switch/react";
 export * from "@formas/tokens/react";

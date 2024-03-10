@@ -15,6 +15,5 @@ export * from "@formas/loading/preact";
 export * from "@formas/props/preact";
 export * from "@formas/radio/preact";
 export * from "@formas/select/preact";
-export * from "@formas/sidebar/preact";
 export * from "@formas/switch/preact";
 export * from "@formas/tokens/preact";
