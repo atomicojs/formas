@@ -1,7 +1,6 @@
 import { define } from "@atomico/storybook";
 import { Avatar } from "@formas/avatar";
 import { Button } from "@formas/button";
-import { Content } from "@formas/content";
 import { Icon } from "@formas/icon";
 import { Card } from "@formas/card";
 
@@ -45,7 +44,7 @@ export const ContentAndFooter = (props) => (
             src="https://images.unsplash.com/photo-1501862700950-18382cd41497?w=420&q=80"
             alt="Image"
         />
-        <Content>
+        <article>
             <h5>Title</h5>
             <span>Subtitle</span>
             <p>
@@ -54,7 +53,7 @@ export const ContentAndFooter = (props) => (
                 duis reprehenderit Lorem aliqua aute consequat dolor culpa
                 tempor quis
             </p>
-        </Content>
+        </article>
         <Button slot="footer" small outline>
             Create
         </Button>
