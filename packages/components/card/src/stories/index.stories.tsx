@@ -23,7 +23,7 @@ export const Default = (props) => (
             alt="Image"
             width="100%"
         />
-        <Content>
+        <article>
             <h5>Title</h5>
             <span>Subtitle</span>
             <p>
@@ -32,7 +32,7 @@ export const Default = (props) => (
                 duis reprehenderit Lorem aliqua aute consequat dolor culpa
                 tempor quis
             </p>
-        </Content>
+        </article>
         <Button slot="footer" small outline>
             Create
         </Button>

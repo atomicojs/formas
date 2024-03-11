@@ -1,6 +1,6 @@
 import { useRender } from "@atomico/hooks/use-render";
 import { ActionTokens, PrimitiveTokens } from "@formas/tokens";
-import { c, css, Props, Type } from "atomico";
+import { Type, c, css } from "atomico";
 
 export const Avatar = c(
     ({ status, statusPosition, placeholder }) => {

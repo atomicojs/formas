@@ -34,9 +34,7 @@ export const Radio = c(
         );
     },
     {
-        props: {
-            ...Checkbox.props,
-        },
+        props: Checkbox.props,
         styles: [
             PrimitiveTokens,
             ActionTokens,
