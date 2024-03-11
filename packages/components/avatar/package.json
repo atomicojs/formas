@@ -17,10 +17,19 @@
     "types": "src/index.tsx",
     "exports": {
         "./element": "./src/element.tsx",
-        ".": "./src/index.tsx",
+        ".": {
+            "types": "./src/index.tsx",
+            "default": "./src/index.tsx"
+        },
         "./label": "./src/label.tsx",
         "./stories/index.stories": "./src/stories/index.stories.tsx",
-        "./avatar": "./src/avatar.tsx"
+        "./avatar": {
+            "types": "./src/avatar.tsx",
+            "default": "./src/avatar.tsx"
+        },
+        "./tsconfig.json": {
+            "default": "./src/stories/tsconfig.json"
+        }
     },
     "typesVersions": {
         "*": {

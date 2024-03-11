@@ -1,4 +1,4 @@
-import { Container } from "@atomico/container";
+import { Container } from "@formas/container";
 import { define } from "@atomico/storybook";
 
 export default {
@@ -11,4 +11,3 @@ export default {
 };
 
 export const Story = (props) => <Container {...props}>Atomico!</Container>;
-

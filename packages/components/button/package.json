@@ -25,9 +25,21 @@
         }
     },
     "exports": {
-        "./button-active": "./src/button-active.tsx",
-        "./button": "./src/button.tsx",
-        ".": "./src/index.tsx"
+        "./button-active": {
+            "types": "./src/button-active.tsx",
+            "default": "./src/button-active.tsx"
+        },
+        "./button": {
+            "types": "./src/button.tsx",
+            "default": "./src/button.tsx"
+        },
+        ".": {
+            "types": "./src/index.tsx",
+            "default": "./src/index.tsx"
+        },
+        "./tsconfig.json": {
+            "default": "./src/stories/tsconfig.json"
+        }
     },
     "typesVersions": {
         "*": {

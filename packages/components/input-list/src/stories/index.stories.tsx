@@ -3,7 +3,7 @@ import { Input } from "@formas/input";
 import { InputList, InputListOption, InputListBadge } from "@formas/input-list";
 
 export default {
-    title: "components/Input list",
+    title: "In progress/Input list",
     ...define(InputList),
 };
 
@@ -21,4 +21,3 @@ export const Story = (props) => (
         <InputListOption value="Value 3" />
     </InputList>
 );
-

@@ -7,28 +7,32 @@ export default {
     ...define(Input),
 };
 
-export const Default = (props) => <Input {...props}></Input>;
+export const Default = (props) => <Input key="defaul" {...props}></Input>;
 
-export const DefaultDate = (props) => <Input {...props} type="date"></Input>;
-
-export const DefaultNumber = (props) => (
-    <Input {...props} type="number"></Input>
+export const DefaultDate = (props) => (
+    <Input key="date" {...props} type="date"></Input>
 );
 
-export const DefaultFile = (props) => <Input {...props} type="file"></Input>;
+export const DefaultNumber = (props) => (
+    <Input key="number" id="debug" {...props} type="number"></Input>
+);
+
+export const DefaultFile = (props) => (
+    <Input key="file" {...props} type="file"></Input>
+);
 
 export const DefaultSearch = (props) => (
-    <Input {...props} type="search" loading></Input>
+    <Input key="search" {...props} type="search" loading></Input>
 );
 
 export const IconPrefixInput = (props) => (
-    <Input {...props}>
+    <Input key="prefix" {...props}>
         <Icon slot="icon-prefix"></Icon>
     </Input>
 );
 
 export const IconSuffixInput = (props) => (
-    <Input {...props}>
+    <Input key="" {...props}>
         <Icon slot="icon-suffix"></Icon>
     </Input>
 );

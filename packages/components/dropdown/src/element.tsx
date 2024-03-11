@@ -1,101 +1,106 @@
-import { useChannel } from "@atomico/hooks/use-channel";
 import { useListener } from "@atomico/hooks/use-listener";
-import { useSlot } from "@atomico/hooks/use-slot";
+import { useParent } from "@atomico/hooks/use-parent";
 import { useResizeObserverState } from "@atomico/hooks/use-resize-observer";
+import { useSlot } from "@atomico/hooks/use-slot";
 import {
     c,
     css,
     DOMEvent,
     DOMListener,
-    Props,
     useEffect,
     useHost,
     useProp,
     useRef,
+    useContext,
+    createContext,
+    createRef,
 } from "atomico";
 import { DropdownLayout } from "./layout";
-import { useParent } from "@atomico/hooks/use-parent";
 
-function dropdown({ showWithOver }: Props<typeof dropdown>) {
-    const host = useHost();
-    const refSlotAction = useRef();
-    const slotAction = useSlot<Element>(refSlotAction);
-    const [show, setShow] = useProp<boolean>("show");
-    const refAction = useRef();
+export const DropdownContext = createContext({ show: false });
 
-    refAction.current = slotAction.at(0);
+const refWindow = createRef(window);
 
-    useListener({ current: window }, "click", (event) => {
-        if (!event.composedPath().includes(host.current)) {
-            setShow(false);
-        }
-    });
+export const Dropdown = c(
+    ({ showWithOver }) => {
+        const host = useHost();
+        const refSlotAction = useRef();
+        const slotAction = useSlot<Element>(refSlotAction);
+        const [show, setShow] = useProp<boolean>("show");
+        const refAction = useRef();
 
-    const [parentShowWithOver, setShowWithOver] = useChannel<boolean>(
-        "DropdownShowWithOver"
-    );
+        refAction.current = slotAction.at(0);
 
-    showWithOver = parentShowWithOver || showWithOver;
+        useListener(refWindow, "click", (event) => {
+            if (!event.composedPath().includes(host.current)) {
+                setShow(false);
+            }
+        });
 
-    useEffect(() => {
-        setShowWithOver(showWithOver);
-    }, [showWithOver]);
+        const { show: parentShowWithOver } = useContext(DropdownContext);
 
-    const listenerShow: DOMListener<DOMEvent> = (event) =>
-        event.isTrusted && setShow(!show);
+        showWithOver = parentShowWithOver || showWithOver;
 
-    listenerShow.capture = true;
+        const listenerShow: DOMListener<DOMEvent> = (event) =>
+            event.isTrusted && setShow(!show);
 
-    const state = useResizeObserverState(refAction);
+        listenerShow.capture = true;
 
-    const withIntDropdown = useParent(host.current.localName);
+        const state = useResizeObserverState(refAction);
 
-    console.log({ withIntDropdown });
+        const withIntDropdown = useParent(host.current.localName);
 
-    return (
-        <host
-            shadowDom
-            onmouseleave={() => {
-                showWithOver && setShow(false);
-            }}
-        >
-            <slot
-                onclick={listenerShow}
-                onmouseover={showWithOver ? listenerShow : null}
-                ref={refSlotAction}
-                name="action"
-            ></slot>
-            <DropdownLayout
-                show={show}
-                reference={slotAction[0]}
-                style={state?.width ? `--min-width: ${state.width}px;` : null}
+        console.log({ withIntDropdown });
+
+        return (
+            <host
+                shadowDom
+                onmouseleave={() => {
+                    showWithOver && setShow(false);
+                }}
             >
-                <slot />
-            </DropdownLayout>
-        </host>
-    );
-}
-
-dropdown.props = {
-    show: {
-        type: Boolean,
-        reflect: true,
+                <slot
+                    onclick={listenerShow}
+                    onmouseover={showWithOver ? listenerShow : null}
+                    ref={refSlotAction}
+                    name="action"
+                ></slot>
+                <DropdownContext value={{ show: showWithOver }}>
+                    <DropdownLayout
+                        show={show}
+                        reference={slotAction[0]}
+                        style={
+                            state?.width
+                                ? `--min-width: ${state.width}px;`
+                                : null
+                        }
+                    >
+                        <slot />
+                    </DropdownLayout>
+                </DropdownContext>
+            </host>
+        );
     },
-    showWithOver: {
-        type: Boolean,
-        reflect: true,
-    },
-    width: String,
-    widthFull: {
-        type: Boolean,
-        reflect: true,
-    },
-};
-
-dropdown.styles = css`
-    :host {
-        display: contents;
+    {
+        props: {
+            show: {
+                type: Boolean,
+                reflect: true,
+            },
+            showWithOver: {
+                type: Boolean,
+                reflect: true,
+            },
+            width: String,
+            widthFull: {
+                type: Boolean,
+                reflect: true,
+            },
+        },
+        styles: css`
+            :host {
+                display: contents;
+            }
+        `,
     }
-`;
-
-export const Dropdown = c(dropdown);
+);
