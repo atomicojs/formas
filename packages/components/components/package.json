@@ -5,11 +5,6 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {
-        "atomico": "*",
-        "@atomico/react": "*",
-        "@atomico/vue": "*"
-    },
     "scripts": {
         "dev:exports": "npm run centralize",
         "centralize": "exports \"../**\" --centralize-packages --wrappers"
@@ -223,5 +218,9 @@
         }
     },
     "main": "wrapper/index.js",
-    "module": "wrapper/index.js"
+    "module": "wrapper/index.js",
+    "peerDependencies": {
+        "@atomico/react": "*",
+        "@atomico/vue": "*"
+    }
 }

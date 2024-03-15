@@ -1,12 +1,15 @@
-import { useCssLightDom } from "@atomico/hooks/use-css-light-dom";
-import { useDisabled } from "@atomico/hooks/use-disabled";
-import { usePropProxy } from "@atomico/hooks/use-prop-proxy";
-import { useRender } from "@atomico/hooks/use-render";
-import { useSlot } from "@atomico/hooks/use-slot";
+import {
+    useCssLightDom,
+    useDisabled,
+    usePropProxy,
+    useRender,
+    useSlot,
+    useClickPress,
+} from "@atomico/hooks";
 import { Button } from "@formas/button";
 import { Icon } from "@formas/icon";
 import { InputGenericProps } from "@formas/props";
-import { Props, c, css, useProp, useRef } from "atomico";
+import { c, css, useProp, useRef } from "atomico";
 import { serialize } from "atomico/utils";
 import { InputLayout } from "./layout";
 
@@ -35,6 +38,15 @@ export const Input = c(
     (props) => {
         const refInput = useRef<HTMLInputElement>();
         const [focused, setFocused] = useProp<boolean>("focused");
+        const refIncrement = useRef<HTMLInputElement>();
+        const refDecrement = useRef<HTMLInputElement>();
+
+        useClickPress(refIncrement, () => {
+            refInput.current.stepUp();
+        });
+        useClickPress(refDecrement, () => {
+            refInput.current.stepDown();
+        });
 
         useRender(() => (
             <input
@@ -151,13 +163,7 @@ export const Input = c(
                                     ></Icon>
                                 </Button>
                             ) : props.type === "date" ? (
-                                <Button
-                                    ghost
-                                    small={props.small}
-                                    onclick={() => {
-                                        refInput.current?.showPicker();
-                                    }}
-                                >
+                                <Button ghost small={props.small}>
                                     <Icon slot="prefix" type="calendar"></Icon>
                                 </Button>
                             ) : props.type === "search" ? (
@@ -175,26 +181,16 @@ export const Input = c(
                                     <Button
                                         ghost
                                         small={props.small}
-                                        onclick={() => {
-                                            refInput.current?.showPicker();
-                                        }}
+                                        ref={refDecrement}
                                     >
-                                        <Icon
-                                            slot="prefix"
-                                            type="search"
-                                        ></Icon>
+                                        <Icon slot="prefix" type="dash"></Icon>
                                     </Button>
                                     <Button
                                         ghost
                                         small={props.small}
-                                        onclick={() => {
-                                            refInput.current?.showPicker();
-                                        }}
+                                        ref={refIncrement}
                                     >
-                                        <Icon
-                                            slot="prefix"
-                                            type="search"
-                                        ></Icon>
+                                        <Icon slot="prefix" type="plus"></Icon>
                                     </Button>
                                 </>
                             ) : null}
