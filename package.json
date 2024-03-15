@@ -30,8 +30,8 @@
         "@atomico/use-disabled": "^2.0.0",
         "@atomico/vite": "^2.11.2",
         "atomico": "^1.77.1",
-        "typescript": "^5.0.4",
-        "vite": "^4.3.9"
+        "typescript": "^5.2.2",
+        "vite": "^5.1.6"
     },
     "version": "0.0.1"
 }

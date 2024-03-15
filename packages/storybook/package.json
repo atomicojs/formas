@@ -10,20 +10,18 @@
         "create:component": "scaff component-storybook src"
     },
     "dependencies": {
-        "@storybook/cli": "^7.0.17",
         "atomico": "^1.68.0"
     },
     "devDependencies": {
         "@atomico/storybook": "^2.6.0",
-        "@storybook/addon-essentials": "^7.6.7",
-        "@storybook/addon-links": "^7.6.7",
-        "@storybook/blocks": "^7.6.7",
-        "@storybook/web-components": "^7.6.7",
-        "@storybook/web-components-vite": "^7.6.7",
-        "lit": "^2.7.4",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "storybook": "^7.6.7"
+        "@chromatic-com/storybook": "^1.2.20",
+        "@storybook/addon-essentials": "^8.0.0",
+        "@storybook/addon-links": "^8.0.0",
+        "@storybook/blocks": "^8.0.0",
+        "@storybook/test": "^8.0.0",
+        "@storybook/web-components": "^8.0.0",
+        "@storybook/web-components-vite": "^8.0.0",
+        "storybook": "^8.0.0"
     },
     "postcss": {
         "plugins": {
