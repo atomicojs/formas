@@ -1,6 +1,6 @@
 export * from "@formas/avatar";
-export * from "@formas/badge";
 export * from "@formas/button";
+export * from "@formas/badge";
 export * from "@formas/card";
 export * from "@formas/checkbox";
 export * from "@formas/container";

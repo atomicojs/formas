@@ -1,6 +1,6 @@
 export * from "@formas/avatar/vue";
-export * from "@formas/badge/vue";
 export * from "@formas/button/vue";
+export * from "@formas/badge/vue";
 export * from "@formas/card/vue";
 export * from "@formas/checkbox/vue";
 export * from "@formas/container/vue";
