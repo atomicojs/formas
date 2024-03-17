@@ -13,7 +13,7 @@
         "atomico": "^1.68.0"
     },
     "devDependencies": {
-        "@atomico/storybook": "^2.6.0",
+        "@atomico/storybook": "^2.6.1",
         "@chromatic-com/storybook": "^1.2.20",
         "@storybook/addon-essentials": "^8.0.0",
         "@storybook/addon-links": "^8.0.0",
