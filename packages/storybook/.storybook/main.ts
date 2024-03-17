@@ -4,8 +4,8 @@ import atomico from "@atomico/vite";
 const config = {
     stories: [
         "../src/**/*.mdx",
-        // "../../components/**/*.mdx",
-        // "../../components/**/*.stories.@(js|jsx|ts|tsx)",
+        "../../components/**/*.mdx",
+        "../../components/**/*.stories.@(js|jsx|ts|tsx)",
     ],
     addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
     staticDirs: ["../public"],
