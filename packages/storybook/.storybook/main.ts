@@ -18,6 +18,9 @@ const config = {
     },
     async viteFinal(config) {
         return mergeConfig(config, {
+            build: {
+                target: "esnext",
+            },
             plugins: [
                 atomico({
                     cssLiterals: {
