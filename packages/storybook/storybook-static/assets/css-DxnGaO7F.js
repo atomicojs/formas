@@ -1,1 +1,0 @@
-import{o as S}from"./jsx-runtime-BESKN28P.js";const c={};function h(t,...e){const n=(t.raw||t).reduce((o,r,s)=>o+r+(e[s]||""),"");return c[n]=c[n]||u(n)}function u(t){if(S.sheet){const e=new CSSStyleSheet;return e.replaceSync(t),e}else{const e=document.createElement("style");return e.textContent=t,e}}export{h as c};
