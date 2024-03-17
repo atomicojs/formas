@@ -8,7 +8,7 @@
         "dev": "run dev:* -p",
         "build": "run build:* centralize publish -s",
         "dev:storybook": "npm run dev -w=st",
-        "build:storybook": "npm run build -w=storybook",
+        "build:storybook": "npm run build -w=st",
         "create:component": "scaff component-monorepo packages/components && npm i"
     },
     "keywords": [],
