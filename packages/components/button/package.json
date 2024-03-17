@@ -26,30 +26,54 @@
     },
     "exports": {
         "./button-active": {
-            "types": "./src/button-active.tsx",
-            "default": "./src/button-active.tsx"
+            "types": "./types/button-active.d.ts",
+            "default": "./lib/button-active.js"
         },
         "./button": {
             "types": "./src/button.tsx",
             "default": "./src/button.tsx"
         },
         ".": {
-            "types": "./src/index.tsx",
-            "default": "./src/index.tsx"
+            "types": "./types/index.d.ts",
+            "default": "./lib/index.js"
         },
         "./tsconfig.json": {
             "default": "./src/stories/tsconfig.json"
+        },
+        "./button2": {
+            "default": "./lib/button2.js"
+        },
+        "./react": {
+            "types": "./wrapper/react.d.ts",
+            "default": "./wrapper/react.js"
+        },
+        "./preact": {
+            "types": "./wrapper/preact.d.ts",
+            "default": "./wrapper/preact.js"
+        },
+        "./vue": {
+            "types": "./wrapper/vue.d.ts",
+            "default": "./wrapper/vue.js"
         }
     },
     "typesVersions": {
         "*": {
             "button-active": [
-                "src/button-active.tsx"
+                "types/button-active.d.ts"
             ],
             "button": [
-                "src/button.tsx"
+                "types/button.d.ts"
+            ],
+            "react": [
+                "wrapper/react.d.ts"
+            ],
+            "preact": [
+                "wrapper/preact.d.ts"
+            ],
+            "vue": [
+                "wrapper/vue.d.ts"
             ]
         }
     },
-    "types": "src/index.tsx"
+    "types": "types/index.d.ts"
 }

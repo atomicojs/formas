@@ -1,4 +1,4 @@
-import { Button } from './button.js';
+import { Button } from './button2.js';
 import { ButtonActive } from './button-active.js';
 
 customElements.define("forma-button-active", ButtonActive);
