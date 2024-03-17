@@ -1,4 +1,5 @@
 import { Container } from "@formas/container";
+import { Checkbox } from "@formas/checkbox";
 import { define } from "@atomico/storybook";
 
 export default {
@@ -10,4 +11,10 @@ export default {
     },
 };
 
-export const Story = (props) => <Container {...props}>Atomico!</Container>;
+export const Default = (props) => <Container {...props}>Atomico!</Container>;
+export const DefaultWithCheckbox = (props) => (
+    <Container {...props}>
+        Atomico!
+        <Checkbox></Checkbox>
+    </Container>
+);

@@ -1,7 +1,7 @@
 import { computePosition, flip, shift } from "@floating-ui/dom";
 import { Container } from "@formas/container";
 import { CardTokens, PrimitiveTokens } from "@formas/tokens";
-import { Props, c, css, useEffect, useRef, useState } from "atomico";
+import { c, css, useEffect, useRef, useState } from "atomico";
 
 export const DropdownLayout = c(
     ({ show, reference }) => {

@@ -114,11 +114,11 @@ checkbox:
         size: 2
 card:
     space:
-        =: $size-xs
+        =: $$size-xs
     radius:
-        =: $size-xl
+        =: $$size-xl
         (small):
-            =: $size-xs
+            =: $$size-xs
     border:
         =: $card-border-size $card-border-style $card-border-color
         size: 1px

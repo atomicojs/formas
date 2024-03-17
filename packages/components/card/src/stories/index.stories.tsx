@@ -23,7 +23,7 @@ export const Default = (props) => (
             width="100%"
         />
         <article>
-            <h5>Title</h5>
+            <h3>Title</h3>
             <span>Subtitle</span>
             <p>
                 fugiat veniam quis incididunt anim eiusmod nulla minim sunt

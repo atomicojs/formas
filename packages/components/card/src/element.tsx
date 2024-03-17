@@ -31,7 +31,7 @@ export const Card = c(
                             <slot ref={refHeader} name="header"></slot>
                         </div>
                         <slot ref={ref}></slot>
-                        <div class="content">
+                        <div class="layout content">
                             {slots.map((element, i) => (
                                 <div
                                     class={
@@ -98,6 +98,9 @@ export const Card = c(
                 }
                 .item {
                     padding: var(--space);
+                }
+                .content{
+                    gap: var(--space)
                 }
                 .footer {
                     display: var(--display-footer);

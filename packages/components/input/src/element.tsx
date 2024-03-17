@@ -9,7 +9,7 @@ import {
 import { Button } from "@formas/button";
 import { Icon } from "@formas/icon";
 import { InputGenericProps } from "@formas/props";
-import { c, css, useProp, useRef } from "atomico";
+import { c, css, useHost, useProp, useRef } from "atomico";
 import { serialize } from "atomico/utils";
 import { InputLayout } from "./layout";
 
@@ -33,6 +33,13 @@ const cssLightdom = css`
         -moz-appearance: textfield;
     }
 `;
+
+const ROOT = Symbol();
+
+function useCssLightDOM(){
+    const {current} =useHost();
+    current[ROOT] = current[ROOT] || current.getRootNode();
+}
 
 export const Input = c(
     (props) => {
