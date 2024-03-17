@@ -1,5 +1,5 @@
 export declare const Checkbox: import("atomico/types/dom").Atomico<{
-    value: any;
+    value: string;
     focusable: boolean;
 } & {
     small?: boolean;
@@ -10,7 +10,7 @@ export declare const Checkbox: import("atomico/types/dom").Atomico<{
     checked?: boolean;
     focused?: boolean;
 }, {
-    value: any;
+    value: string;
     focusable: boolean;
 } & {
     small?: boolean;

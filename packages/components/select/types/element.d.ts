@@ -10,8 +10,8 @@ export declare const Select: import("atomico/types/dom").Atomico<{
     value?: any;
     disabled?: boolean;
     placeholder?: string;
-    focused?: boolean;
     ghost?: boolean;
+    focused?: boolean;
 }, {
     value: any;
     focusable: boolean;
@@ -23,8 +23,8 @@ export declare const Select: import("atomico/types/dom").Atomico<{
     value?: any;
     disabled?: boolean;
     placeholder?: string;
-    focused?: boolean;
     ghost?: boolean;
+    focused?: boolean;
 }, {
     new (): HTMLElement;
     prototype: HTMLElement;

@@ -1,3 +1,6 @@
+export declare const DropdownContext: import("atomico/types/context").Context<{
+    show: boolean;
+}>;
 export declare const Dropdown: import("atomico/types/dom").Atomico<{} & {
     show?: boolean;
     width?: string;
