@@ -1,6 +1,6 @@
 {
     "name": "@formas/components",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "module",
     "publishConfig": {
         "access": "public"
@@ -10,6 +10,8 @@
         "centralize": "exports \"../**\" --centralize-packages --wrappers"
     },
     "dependencies": {
+        "@atomico/hooks": "^4.1.1",
+        "atomico": "^1.77.1",
         "@formas/avatar": "^1.0.0",
         "@formas/badge": "^1.0.0",
         "@formas/button": "^1.0.0",
