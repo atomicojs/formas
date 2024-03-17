@@ -1,6 +1,6 @@
 {
     "name": "@formas/avatar",
-    "version": "0.0.4",
+    "version": "1.0.0",
     "type": "module",
     "publishConfig": {
         "access": "public"
