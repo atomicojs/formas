@@ -24,7 +24,7 @@
         "@atomico/exports": "^1.9.0",
         "@atomico/hooks": "^4.1.1",
         "@atomico/postcss-tokens": "^3.4.5",
-        "@atomico/run": "^0.11.0",
+        "@atomico/run": "^0.14.2",
         "@atomico/scaffold": "^2.9.5",
         "@atomico/storybook": "^2.6.0",
         "@atomico/tsconfig": "^1.1.2",
