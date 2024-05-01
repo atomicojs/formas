@@ -5,6 +5,14 @@
     "publishConfig": {
         "access": "public"
     },
+    "dependencies": {
+        "@formas/tokens": "*",
+        "@formas/input": "*",
+        "@formas/badge": "*",
+        "@formas/icon": "*",
+        "@formas/label": "*",
+        "@formas/checkbox": "*"
+    },
     "peerDependencies": {
         "atomico": "*"
     },

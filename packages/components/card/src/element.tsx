@@ -1,8 +1,7 @@
-import { useChildNodes } from "@atomico/hooks";
 import { useProxySlot, useSlot } from "@atomico/hooks/use-slot";
 import { Container } from "@formas/container";
 import { PrimitiveTokens } from "@formas/tokens";
-import { Props, c, css, useRef } from "atomico";
+import { c, css, useRef } from "atomico";
 import { serialize } from "atomico/utils";
 
 export const Card = c(

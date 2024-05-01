@@ -21,17 +21,20 @@
             }
         }
     },
-    "types": "src/index.tsx",
+    "types": "types/index.d.ts",
     "exports": {
         ".": {
-            "types": "./src/index.tsx",
-            "default": "./src/index.tsx"
+            "types": "./types/index.d.ts",
+            "default": "./lib/index.js"
         },
         "./tokens.yaml": {
             "default": "./src/tokens.yaml"
         },
         "./stories/tsconfig.json": {
             "default": "./src/stories/tsconfig.json"
+        },
+        "./README.md": {
+            "default": "./types/README.md"
         }
     },
     "typesVersions": {

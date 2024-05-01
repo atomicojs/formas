@@ -5,6 +5,9 @@
     "publishConfig": {
         "access": "public"
     },
+    "dependencies": {
+        "@formas/tokens": "*"
+    },
     "peerDependencies": {
         "atomico": "*",
         "@atomico/react": "*",

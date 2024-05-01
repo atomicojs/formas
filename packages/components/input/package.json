@@ -5,6 +5,11 @@
     "publishConfig": {
         "access": "public"
     },
+    "dependencies": {
+        "@formas/tokens": "*",
+        "@formas/button": "*",
+        "@formas/props": "*"
+    },
     "peerDependencies": {
         "atomico": "*"
     },

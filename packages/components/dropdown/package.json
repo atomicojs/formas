@@ -6,7 +6,9 @@
         "access": "public"
     },
     "dependencies": {
-        "@floating-ui/dom": "latest"
+        "@floating-ui/dom": "latest",
+        "@formas/container": "*",
+        "@formas/tokens": "*"
     },
     "peerDependencies": {
         "atomico": "*"
