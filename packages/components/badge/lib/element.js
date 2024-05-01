@@ -1,5 +1,6 @@
 import { jsxs, jsx } from 'atomico/jsx-runtime';
-import { useRef, useEffect, useLayoutEffect, useState, Mark, useHost, css, c } from 'atomico';
+import { useRef, useEffect, useLayoutEffect, useState, Mark, useHost, c, css } from 'atomico';
+import { PrimitiveTokens, BadgeTokens } from '@formas/tokens';
 import { serialize } from 'atomico/utils';
 
 function useCurrentValue(value) {
@@ -107,40 +108,6 @@ function useProxySlot(ref, filter) {
     }, currentChildren);
     return currentChildren;
 }
-
-const Sizes = [
-  "5xs",
-  "4xs",
-  "3xs",
-  "xxs",
-  "xs",
-  "s",
-  "m",
-  "l",
-  "xl",
-  "xxl",
-  "3xl"
-];
-const ColorsBackground = [
-  "primary",
-  "secondary",
-  "tertiary",
-  "neutral",
-  "container",
-  "surface"
-];
-const ShadowDeep = [1, 2, 3, 4];
-const PrimitiveTokens = css`@tokens "./tokens.yaml" use(primitive);`;
-const ActionTokens = css`@tokens "./tokens.yaml" use(action);:host{font-size:var(--font-size);font-weight:var(--font-weight);color:var(--font-color);opacity:var(--opacity)}`;
-const ButtonTokens = css`@tokens "./tokens.yaml" use(button);`;
-const CheckboxTokens = css`@tokens "./tokens.yaml" use(checkbox);`;
-const CardTokens = css`@tokens "./tokens.yaml" use(card);`;
-const BadgeTokens = css`@tokens "./tokens.yaml" use(badge);`;
-const tokens = css`@tokens "./tokens.yaml" scope(:root);`;
-document.adoptedStyleSheets = [
-  tokens,
-  ...document.adoptedStyleSheets
-];
 
 const Badge = c(
   ({ action, color }) => {
