@@ -8,7 +8,8 @@
     "dependencies": {
         "@formas/tokens": "*",
         "@formas/button": "*",
-        "@formas/props": "*"
+        "@formas/props": "*",
+        "@formas/dropdown": "*"
     },
     "peerDependencies": {
         "atomico": "*",
